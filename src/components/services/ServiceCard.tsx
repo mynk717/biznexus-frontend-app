@@ -24,14 +24,14 @@ export default function ServiceCard({ service, onViewDetails }: ServiceCardProps
     >
       <CardHeader className="flex flex-row items-start gap-4 space-y-0 pb-2">
         <div className="relative mt-1 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <Image
-              src={service.iconUrl ? service.iconUrl : 'https://placehold.co/48x48.png'}
+          <img
+            src={service.iconUrl ? service.iconUrl : 'https://placehold.co/48x48.png'}
             alt={`${service.title} icon`}
-            fill
-            className="rounded-full object-cover p-1"
-            data-ai-hint="service icon"
+            // Styling adjusted for <img> tag to match next/image's fill/object-cover behavior
+            className="absolute inset-0 w-full h-full rounded-full object-cover p-1"
             onError={(e) => {
-              e.currentTarget.src = 'https://placehold.co/48x48.png';
+              e.currentTarget.src = 'https://placehold.co/48x48.png'; // Fallback image on error
+              e.currentTarget.onerror = null; // Prevent infinite loop
             }}
           />
         </div>
