@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biznexus Services</title> <!-- Changed title for relevance -->
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script> <!-- IMPORTANT: Firestore SDK is included -->
+    <script defer src="/__/firebase/11.8.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.8.1/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+      #header { background: #ffa100; color: white; width: 100%; padding: 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      #header h1 { margin: 0; font-size: 28px; }
+      #services-container {
+        background: white;
+        max-width: 960px; /* Increased max-width for content */
+        margin: 40px auto;
+        padding: 32px 24px;
+        border-radius: 8px; /* Slightly more rounded */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Stronger shadow */
+        display: grid; /* Use grid for layout */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+        gap: 24px; /* Space between grid items */
+        width: 90%; /* Fluid width */
+      }
+      .service-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-card h3 { color: #039be5; font-size: 20px; margin-top: 0; }
+      .service-card p { font-size: 14px; color: rgba(0,0,0,0.7); }
+      .service-card .icon { width: 60px; height: 60px; margin-bottom: 15px; border-radius: 50%; object-fit: cover; border: 2px solid #ffa100; }
+      .service-card .price { font-size: 18px; font-weight: bold; color: #ffa100; margin-top: 10px; }
+      .service-card ul { list-style: none; padding: 0; text-align: left; width: 100%; margin-top: 15px; }
+      .service-card ul li { font-size: 13px; margin-bottom: 5px; color: rgba(0,0,0,0.8); display: flex; align-items: center; }
+      .service-card ul li::before { content: '✓'; color: #039be5; margin-right: 8px; font-weight: bold; }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; margin-top: 20px; }
+      @media (max-width: 600px) {
+        body, #services-container { margin-top: 0; border-radius: 0; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+        #services-container { width: 100%; padding: 15px; }
+        .service-card { padding: 15px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Biznexus Services</h1>
+    </div>
+    <div id="services-container">
+      <!-- Services will be dynamically loaded here -->
+      <p id="load">Loading services...</p>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth',
+            'database',
+            'firestore', // Ensure firestore is here
+            'functions',
+            'messaging',
+            'storage',
+            'analytics',
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+
+          // --- YOUR NEW JAVASCRIPT CODE TO FETCH AND DISPLAY SERVICES WILL GO HERE ---
+
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>

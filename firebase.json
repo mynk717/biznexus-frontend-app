@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "source": ".",
+    "frameworks": {
+      "next.js": {
+        "options": {
+          "functions": {
+            "region": "us-central1", 
+            "memory": "512MiB",      
+            "timeoutSeconds": 60     
+          }
+        }
+      }
+    }
+  }
+}
