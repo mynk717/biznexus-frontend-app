@@ -10,12 +10,17 @@
       "next.js": {
         "options": {
           "functions": {
-            "region": "us-central1", 
-            "memory": "512MiB",      
-            "timeoutSeconds": 60     
+            "region": "us-central1",
+            "memory": "1GiB",
+            "timeoutSeconds": 60
           }
         }
       }
     }
+  },
+  "functions": { 
+    "source": "functions",
+    "codebase": "default",
+    "runtime": "nodejs18"
   }
 }
