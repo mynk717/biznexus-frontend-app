@@ -12,7 +12,7 @@ if (!admin.apps.length) {
 const db = admin.firestore();
 
 // HTTP-triggered function to receive WordPress webhooks
-export const wordpressWebhook = functions.https.onRequest(async (req: Request, res: Response) => {
+export const wordpressWebhookV2 = functions.https.onRequest(async (req: Request, res: Response) => {
   // Ensure it's a POST request
   if (req.method !== 'POST') {
     functions.logger.warn('Received non-POST request to webhook:', req.method);

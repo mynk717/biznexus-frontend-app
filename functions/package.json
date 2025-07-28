@@ -12,21 +12,21 @@
   },
   "main": "lib/index.js",
   "engines": {
-    "node": "18"
+    "node": "20"
   },
   "dependencies": {
-    "firebase-admin": "^11.8.0",
-    "firebase-functions": "^4.3.0"
+    "firebase-admin": "^12.6.0", 
+    "firebase-functions": "^5.0.0", 
+    "express": "^4.19.2" 
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/glob": "^8.0.1",
-    "@types/node": "^18.0.0",
-    "eslint": "^8.9.0",
+    "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.29.1", 
     "firebase-functions-test": "^3.1.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.5.3",
+    "@types/node": "^20.14.12",
+    "@types/express": "^4.17.21" 
   },
   "private": true
 }

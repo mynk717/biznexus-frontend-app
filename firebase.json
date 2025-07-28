@@ -18,11 +18,19 @@
       }
     }
   },
-  "functions": { 
+  "functions": {
     "source": "functions",
     "codebase": "default",
-    "runtime": "nodejs18",
-    "region": "us-central1", 
-    "gen": 2
+    "runtime": "nodejs20",
+    "region": "us-central1",
+    "memory": "1GiB",
+    "gen": 2, 
+    "cpu": 1, 
+    "wordpressWebhookV2": { 
+      "region": "us-central1",
+      "memory": "1GiB",
+      "gen": 2,
+      "cpu": 1
+    }
   }
 }
