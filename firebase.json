@@ -23,7 +23,6 @@
     "codebase": "default",
     "runtime": "nodejs18",
     "region": "us-central1", 
-    "gen": 2, 
-    "cpu": 1
+    "gen": 2
   }
 }
