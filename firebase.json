@@ -21,6 +21,9 @@
   "functions": { 
     "source": "functions",
     "codebase": "default",
-    "runtime": "nodejs18"
+    "runtime": "nodejs18",
+    "region": "us-central1", 
+    "gen": 2, 
+    "cpu": 1
   }
 }
