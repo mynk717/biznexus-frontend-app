@@ -1,122 +1,61 @@
-// functions/src/index.ts
+import { onRequest } from "firebase-functions/v2/https";
+import * as admin from "firebase-admin";
+import * as logger from "firebase-functions/logger";
+import * as dotenv from "dotenv";
 
-import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
-import { Request, Response } from 'express'; // Import Request and Response types from 'express'
-
-// Initialize Firebase Admin SDK if not already initialized
-if (!admin.apps.length) {
-  admin.initializeApp();
-}
+// Load environment variables
+dotenv.config();
+admin.initializeApp();
 
 const db = admin.firestore();
+db.settings({ ignoreUndefinedProperties: true });
 
-// HTTP-triggered function to receive WordPress webhooks
-export const wordpressWebhookV2 = functions.https.onRequest(async (req: Request, res: Response) => {
-  // Ensure it's a POST request
-  if (req.method !== 'POST') {
-    functions.logger.warn('Received non-POST request to webhook:', req.method);
-    res.status(405).send('Method Not Allowed');
-    return; // Explicitly return void
-  }
+export const wordpressWebhookV2 = onRequest(
+  {
+    region: "us-central1",
+    memory: "1GiB",
+    cpu: 1,
+    timeoutSeconds: 120,
+  },
+  async (req, res) => {
+    try {
+      const payload = req.body;
+      logger.info("Received payload:", { structuredData: true, payload });
 
-  try {
-    const payload = req.body;
-    functions.logger.info('Received WordPress webhook payload:', payload);
+      if (!payload || !payload.post_id) {
+        throw new Error("No valid payload or post_id received");
+      }
 
-    // Extract common post data
-    const postId = payload.post_id; // WordPress Post ID
-    const postType = payload.post_type; // WordPress Post Type (e.g., 'service', 'pillar_page')
-    const postTitle = payload.post_title; // Main post title
-    const postSlug = payload.post_name; // Post slug
+      const postId = payload.post_id;
+      const postSlug = payload.post_name || `post-${postId}`;
+      const acfData = payload.acf_data?.[0] || {};
+      const postType = payload.post_type || "pillar_page"; // Default to pillar_page if undefined
 
-    // Ensure we have a post ID and type to proceed
-    if (!postId || !postType) {
-      functions.logger.error('Missing post_id or post_type in webhook payload.');
-      res.status(400).send('Missing post_id or post_type');
-      return; // Explicitly return void
+      const pillarPagesRef = admin.firestore().collection("pillarPages");
+      const snapshot = await pillarPagesRef.where("id", "==", postId).limit(1).get();
+
+      const dataToSet = {
+        id: postId,
+        slug: postSlug,
+        type: postType,
+        ...acfData,
+      };
+
+      if (!snapshot.empty) {
+        // Update existing document
+        const docId = snapshot.docs[0].id;
+        await pillarPagesRef.doc(docId).set(dataToSet, { merge: true });
+        logger.info(`Updated pillar page for post_id ${postId}`, { structuredData: true });
+      } else {
+        // Create new document
+        await pillarPagesRef.doc(postSlug).set(dataToSet, { merge: true });
+        logger.info(`Created new pillar page for post_id ${postId}`, { structuredData: true });
+      }
+
+      res.status(200).send("Data synced successfully");
+    } catch (error) {
+      logger.error("Error syncing data:", { error: (error as Error).message, structuredData: true });
+      res.status(500).send(`Error syncing data: ${(error as Error).message}`);
     }
-
-    // Initialize data to save
-    let dataToSave: { [key: string]: any } = {
-      id: postId,
-      post_type: postType,
-      post_title: postTitle,
-      post_name: postSlug, // slug
-      // Add standard fields that might be useful
-      post_status: payload.post_status,
-      post_date: payload.post_date,
-      post_modified: payload.post_modified,
-      link: payload.permalink, // WordPress permalink
-    };
-
-    // Handle ACF data if present
-    if (payload.acf_data) {
-      // Process ACF data for 'service' CPT
-      if (postType === 'service') {
-        functions.logger.info('Processing ACF data for service CPT.');
-        const acf = payload.acf_data;
-
-        dataToSave.title = postTitle; // Use post_title as the main 'title' field
-        dataToSave.shortDescription = acf.service_short_description || '';
-        dataToSave.fullDetails = acf.service_full_details || '';
-        dataToSave.iconUrl = acf.service_icon ? acf.service_icon.url : ''; // Ensure URL is extracted
-        dataToSave.price = acf.service_price !== undefined ? acf.service_price : null; // Handle number or string
-        dataToSave.keyFeatures = [];
-        for (let i = 1; i <= 7; i++) {
-          const feature = acf[`key_feature_${i}`];
-          if (feature) {
-            dataToSave.keyFeatures.push(feature);
-          }
-        }
-        // Add other service-specific fields if they exist in ACF
-        dataToSave.longDescription = acf.long_description || ''; // Example
-        dataToSave.offerings = acf.offerings || []; // Example
-
-        // Determine Firestore collection based on post type
-        const collectionName = 'services';
-        const docRef = db.collection(collectionName).doc(String(postId)); // Use postId as document ID
-
-        await docRef.set(dataToSave, { merge: true });
-        functions.logger.info(`Service (ID: ${postId}) synced to Firestore collection: ${collectionName}`);
-
-      }
-      // Process ACF data for 'pillar_page' CPT
-      else if (postType === 'pillar_page') {
-        functions.logger.info('Processing ACF data for pillar_page CPT.');
-        const acf = payload.acf_data;
-
-        // Map ACF fields to Firestore document fields
-        dataToSave.seoTitle = acf.seo_title || '';
-        dataToSave.metaDescription = acf.meta_description || '';
-        dataToSave.pillarPageFullContent = acf.pillar_page_full_content || '';
-        dataToSave.faqSchemaJson = acf.faq_schema_json || '{}'; // Ensure it's a valid JSON string or empty object
-
-        // Determine Firestore collection for pillar pages
-        const collectionName = 'pillarPages'; // New collection for pillar pages
-        const docRef = db.collection(collectionName).doc(postSlug); // Use slug as document ID for pillar pages
-
-        await docRef.set(dataToSave, { merge: true });
-        functions.logger.info(`Pillar Page (Slug: ${postSlug}) synced to Firestore collection: ${collectionName}`);
-      }
-      // Handle other custom post types if needed
-      else {
-        functions.logger.info(`Webhook received for unhandled post type: ${postType}. Data not synced.`);
-        res.status(200).send(`Webhook received for unhandled post type: ${postType}`);
-        return; // Explicitly return void
-      }
-    } else {
-      functions.logger.warn('No ACF data found in webhook payload.');
-      res.status(200).send('Webhook received, but no ACF data to process.');
-      return; // Explicitly return void
-    }
-
-    res.status(200).send('Webhook processed successfully!');
-    return; // Explicitly return void
-
-  } catch (error: any) {
-    functions.logger.error('Error processing WordPress webhook:', error);
-    res.status(500).send(`Error processing webhook: ${error.message}`);
-    return; // Explicitly return void
   }
-});
+);
