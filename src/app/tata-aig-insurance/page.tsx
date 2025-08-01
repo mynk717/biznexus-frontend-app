@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -40,22 +40,28 @@ export default function TataAIGInsurancePage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const pageSlug = "tata-aig-health-insurance-plans-benefits-how-to-buy-biznexus";
+  // CORRECT SLUG: This is the updated and final slug value.
+  const pageSlug = "post-42";
 
   useEffect(() => {
     const fetchPillarPageAndRelatedBlogs = async () => {
       setLoading(true);
       setError(null);
       try {
-        // 1. Fetch Pillar Page Content from Firestore
-        const pillarPageDocRef = doc(db, 'pillarPages', pageSlug);
-        const pillarPageSnapshot = await getDoc(pillarPageDocRef);
+        // 1. Fetch Pillar Page Content from Firestore using a QUERY
+        const pillarPagesCollection = collection(db, 'pillarPages');
+        const pillarPageQuery = query(
+          pillarPagesCollection,
+          where('slug', '==', pageSlug),
+          limit(1) // We only expect one document for this slug
+        );
+        const pillarPageSnapshot = await getDocs(pillarPageQuery);
 
         let fetchedPillarPage: PillarPageContent | null = null;
-        if (pillarPageSnapshot.exists()) {
-          // FIX START: Remove explicit id assignment to avoid overwrite error
-          fetchedPillarPage = { ...pillarPageSnapshot.data() as PillarPageContent, id: pillarPageSnapshot.id };
-          // FIX END
+        if (!pillarPageSnapshot.empty) {
+          // Get the first document from the result
+          const docData = pillarPageSnapshot.docs[0].data() as PillarPageContent;
+          fetchedPillarPage = { ...docData, id: pillarPageSnapshot.docs[0].id };
           setPillarPage(fetchedPillarPage);
         } else {
           setError('Pillar page content not found in Firestore.');
@@ -79,9 +85,7 @@ export default function TataAIGInsurancePage() {
             const blogSnapshot = await getDocs(relatedBlogsQuery);
 
             const blogsData: BlogPost[] = blogSnapshot.docs.map(doc => ({
-              // FIX START: Remove explicit id assignment to avoid overwrite error
               ...doc.data() as BlogPost, id: doc.id
-              // FIX END
             }));
             setRelatedBlogs(blogsData);
           }
