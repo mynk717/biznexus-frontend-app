@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70">
+  <!-- Network icon -->
+  <circle cx="20" cy="20" r="8" fill="#fdd04c"/>
+  <circle cx="20" cy="40" r="8" fill="#784cfd"/>
+  <circle cx="45" cy="30" r="8" fill="#4cd2fd"/>
+  <line x1="20" y1="20" x2="45" y2="30" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+  <line x1="20" y1="40" x2="45" y2="30" stroke="#ffffff" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Text "MDNetwork" -->
+  <text x="65" y="38" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">MDNetwork</text>
+</svg>

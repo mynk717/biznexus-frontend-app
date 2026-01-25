@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <!-- Background (optional, can remove for transparency) -->
+  <rect width="400" height="120" fill="white"/>
+
+  <!-- Network icon (3 nodes connected) -->
+  <circle cx="40" cy="40" r="12" fill="#fdd04c"/> <!-- Yellow node -->
+  <circle cx="40" cy="80" r="12" fill="#784cfd"/> <!-- Purple node -->
+  <circle cx="90" cy="60" r="12" fill="#4cd2fd"/> <!-- Cyan node -->
+  <line x1="40" y1="40" x2="90" y2="60" stroke="#4c79fd" stroke-width="4"/>
+  <line x1="40" y1="80" x2="90" y2="60" stroke="#4c79fd" stroke-width="4"/>
+</svg>

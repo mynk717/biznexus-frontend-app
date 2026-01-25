@@ -1,112 +1,303 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { LogIn, LogOut, Newspaper, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useAuth } from "@/hooks/useAuth";
-import { auth } from "@/lib/firebase";
-import { signOut } from "firebase/auth";
-import { useRouter } from "next/navigation";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 export default function Header() {
-  const { user, loading } = useAuth();
-  const router = useRouter();
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      router.push("/");
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
-  };
-
-  const getInitials = (name?: string | null) => {
-    if (!name) return "";
-    const names = name.split(" ");
-    if (names.length === 1) return names[0][0].toUpperCase();
-    return names[0][0].toUpperCase() + names[names.length - 1][0].toUpperCase();
-  };
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Image 
-            src="/images/blog/biznexus_MD.svg" 
-            alt="BizNexus Marketing Dime Logo" 
-            width={180} 
-            height={48} 
-            priority
-            data-ai-hint="logo"
-            className="h-12 w-auto"
-          />
-        </Link>
-        <nav className="hidden items-center gap-1 md:flex">
-          <Button variant="ghost" asChild>
-            <Link href="/blog">
-              <Newspaper className="mr-2 h-4 w-4" />
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+  <div className="container mx-auto px-4">
+    <div className="flex h-16 items-center justify-between gap-4">
+      {/* Logo - Now with more space */}
+      <Link href="/" className="flex items-center gap-2 flex-shrink-0 min-w-[180px]">
+        <img 
+          src="/images/branding/logo.svg" 
+          alt="MDNetwork" 
+          className="h-12 w-auto max-w-none"
+        />
+      </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {/* Insurance Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Insurance</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                      <li className="row-span-3">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500/20 to-blue-500/10 p-6 no-underline outline-none focus:shadow-md"
+                            href="/insurance/travel/international"
+                          >
+                            <div className="mb-2 mt-4 text-lg font-medium">
+                              Travel Insurance
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              Comprehensive coverage for international and domestic travel
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/insurance/health"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Health Insurance</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Medical coverage for you and your family
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/insurance/life"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Life Insurance</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Secure your family's future
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/insurance/vehicle"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Vehicle Insurance</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Car and two-wheeler insurance plans
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Solar Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Solar Solutions</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 p-4 w-[400px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/solar/residential"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Residential Solar</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Solar panels for homes with government subsidies
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/solar/commercial"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Commercial Solar</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Solar solutions for businesses and industries
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/solar/calculator"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Solar Calculator</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Calculate savings and ROI for solar installation
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            <Link 
+              href="/blog" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
               Blog
             </Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <a href="tel:+917225991909">
-              <Phone className="mr-2 h-4 w-4" />
-             +91 72259 91909
-            </a>
-          </Button>
-          {loading ? (
-            <div className="h-8 w-20 animate-pulse rounded-md bg-muted"></div>
-          ) : user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                  <Avatar className="h-10 w-10">
-                    <AvatarImage src={user.photoURL || undefined} alt={user.displayName || "User"} data-ai-hint="user avatar" />
-                    <AvatarFallback>{getInitials(user.displayName)}</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">
-                      {user.displayName || "User"}
-                    </p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      {user.email}
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={handleSignOut}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <Button asChild>
-              <Link href="/login">
-                <LogIn className="mr-2 h-4 w-4" />
-                Login
+            
+            <Link 
+              href="/about" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              About
+            </Link>
+            
+            <Link 
+              href="/contact" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
+
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-4">
+            <Button asChild variant="outline" size="sm">
+              <Link href="/contact">Get Quote</Link>
+            </Button>
+            <Button asChild size="sm">
+              <Link href="/insurance/travel/international">
+                Buy Insurance
               </Link>
             </Button>
-          )}
-        </nav>
-        <div className="md:hidden">
-          {/* Mobile menu trigger can be added here if needed */}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t py-4">
+            <nav className="flex flex-col gap-4">
+              {/* Insurance Mobile Menu */}
+              <div className="space-y-2">
+                <div className="font-semibold text-sm text-gray-900 px-2">Insurance</div>
+                <Link
+                  href="/insurance/travel/international"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Travel Insurance
+                </Link>
+                <Link
+                  href="/insurance/health"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Health Insurance
+                </Link>
+                <Link
+                  href="/insurance/life"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Life Insurance
+                </Link>
+                <Link
+                  href="/insurance/vehicle"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Vehicle Insurance
+                </Link>
+              </div>
+
+              {/* Solar Mobile Menu */}
+              <div className="space-y-2 border-t pt-4">
+                <div className="font-semibold text-sm text-gray-900 px-2">Solar Solutions</div>
+                <Link
+                  href="/solar/residential"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Residential Solar
+                </Link>
+                <Link
+                  href="/solar/commercial"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Commercial Solar
+                </Link>
+                <Link
+                  href="/solar/calculator"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Solar Calculator
+                </Link>
+              </div>
+
+              {/* Other Links */}
+              <div className="border-t pt-4 space-y-2">
+                <Link
+                  href="/blog"
+                  className="block px-2 py-2 text-sm font-medium text-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/about"
+                  className="block px-2 py-2 text-sm font-medium text-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block px-2 py-2 text-sm font-medium text-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+
+              {/* Mobile CTA */}
+              <div className="border-t pt-4 space-y-2">
+                <Button asChild variant="outline" className="w-full">
+                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                    Get Quote
+                  </Link>
+                </Button>
+                <Button asChild className="w-full">
+                  <Link href="/insurance/travel/international" onClick={() => setMobileMenuOpen(false)}>
+                    Buy Insurance
+                  </Link>
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

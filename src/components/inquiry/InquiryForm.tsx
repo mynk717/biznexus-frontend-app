@@ -1,257 +1,333 @@
+'use client';
 
-"use client";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import type { Service } from "@/lib/types";
-import { submitInquiryAction, InquiryFormState } from "@/lib/actions";
-import { useFormStatus } from "react-dom";
-import { useEffect, useActionState } from "react"; 
-
-// Schema for client-side validation (matches user-editable fields)
-const inquiryClientSchema = z.object({
-  fullName: z.string().min(2, { message: "Full name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  phone: z.string().min(10, { message: "Phone number seems too short." }).max(15, "Phone number is too long."),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-  companyName: z.string().optional(),
-  preferredContactMethod: z.enum(['Email', 'Phone']).optional(),
-  budget: z.string().optional(),
-});
-
-type InquiryFormValues = z.infer<typeof inquiryClientSchema>;
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
+import { Loader2, Send, CheckCircle2 } from 'lucide-react';
 
 interface InquiryFormProps {
-  service: Service;
-  onFormSubmitSuccess?: () => void;
+  defaultServiceType?: string;
+  title?: string;
+  description?: string;
+  showDestination?: boolean;
 }
 
-const initialState: InquiryFormState = {
-  message: "",
-  success: false,
-  fieldErrors: {},
-  issues: [],
-};
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? "Submitting..." : "Submit Inquiry"}
-    </Button>
-  );
-}
-
-export default function InquiryForm({ service, onFormSubmitSuccess }: InquiryFormProps) {
+export default function InquiryForm({
+  defaultServiceType = '',
+  title = 'Get a Free Quote',
+  description = 'Fill in your details and we\'ll get back to you within 24 hours',
+  showDestination = false,
+}: InquiryFormProps) {
   const { toast } = useToast();
-  const [state, formAction] = useActionState(submitInquiryAction, initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const form = useForm<InquiryFormValues>({
-    resolver: zodResolver(inquiryClientSchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-      companyName: "",
-      preferredContactMethod: undefined,
-      budget: "",
-    },
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    serviceType: defaultServiceType,
+    destination: '',
+    travelDates: '',
+    travelers: '',
+    message: '',
   });
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        form.reset();
-        if (onFormSubmitSuccess) {
-          onFormSubmitSuccess();
-        }
-      } else {
-        // Handle server-side validation errors
-        if (state.fieldErrors) {
-          for (const [fieldName, errors] of Object.entries(state.fieldErrors)) {
-            if (errors && errors.length > 0) {
-              if (fieldName in form.getValues()) {
-                form.setError(fieldName as keyof InquiryFormValues, {
-                  type: "server",
-                  message: errors.join(", "),
-                });
-              }
-            }
-          }
-        }
-        let toastDescription = state.message;
-        if (state.issues && state.issues.length > 0 && state.message !== "Please correct the errors highlighted below.") {
-           toastDescription += ` Details: ${state.issues.join('; ')}`;
-        }
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    serviceType: '',
+  });
 
-        toast({
-          title: "Submission Error",
-          description: toastDescription,
-          variant: "destructive",
-        });
-      }
+  const validateForm = () => {
+    const newErrors = {
+      name: '',
+      email: '',
+      phone: '',
+      serviceType: '',
+    };
+
+    let isValid = true;
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+      isValid = false;
     }
-  }, [state, toast, form, onFormSubmitSuccess]);
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+      isValid = false;
+    }
+
+    // Phone validation
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const cleanPhone = formData.phone.replace(/\D/g, '');
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+      isValid = false;
+    } else if (!phoneRegex.test(cleanPhone)) {
+      newErrors.phone = 'Enter a valid 10-digit mobile number';
+      isValid = false;
+    }
+
+    // Service type validation
+    if (!formData.serviceType) {
+      newErrors.serviceType = 'Please select a service type';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      toast({
+        title: 'Validation Error',
+        description: 'Please fix the errors in the form',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit');
+      }
+
+      setIsSuccess(true);
+      toast({
+        title: 'Success!',
+        description: data.message,
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        serviceType: defaultServiceType,
+        destination: '',
+        travelDates: '',
+        travelers: '',
+        message: '',
+      });
+
+    } catch (error: any) {
+      toast({
+        title: 'Error',
+        description: error.message || 'Failed to submit inquiry. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData({ ...formData, [field]: value });
+    // Clear error for this field
+    if (errors[field as keyof typeof errors]) {
+      setErrors({ ...errors, [field]: '' });
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <Card>
+        <CardContent className="py-12 text-center">
+          <CheckCircle2 className="h-16 w-16 text-green-600 mx-auto mb-4" />
+          <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+          <p className="text-gray-600 mb-6">
+            We've received your inquiry. Our team will contact you within 24 hours.
+          </p>
+          <Button onClick={() => setIsSuccess(false)} variant="outline">
+            Submit Another Inquiry
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
-    <Form {...form}>
-      <form
-        action={formAction}
-        className="space-y-4"
-      >
-        <input type="hidden" name="serviceId" value={service.id} />
-        <input type="hidden" name="serviceName" value={service.title} />
-        
-        <FormField
-          control={form.control}
-          name="fullName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Full Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
+    <Card>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Name */}
+          <div className="space-y-2">
+            <Label htmlFor="name">Full Name *</Label>
+            <Input
+              id="name"
+              type="text"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={(e) => handleInputChange('name', e.target.value)}
+              className={errors.name ? 'border-red-500' : ''}
+            />
+            {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+          </div>
+
+          {/* Email */}
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address *</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="your.email@example.com"
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              className={errors.email ? 'border-red-500' : ''}
+            />
+            {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+          </div>
+
+          {/* Phone */}
+          <div className="space-y-2">
+            <Label htmlFor="phone">Mobile Number *</Label>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder="10-digit mobile number"
+              value={formData.phone}
+              onChange={(e) => handleInputChange('phone', e.target.value)}
+              className={errors.phone ? 'border-red-500' : ''}
+              maxLength={10}
+            />
+            {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
+          </div>
+
+          {/* Service Type */}
+          <div className="space-y-2">
+            <Label htmlFor="serviceType">Service Type *</Label>
+            <Select
+              value={formData.serviceType}
+              onValueChange={(value) => handleInputChange('serviceType', value)}
+            >
+              <SelectTrigger id="serviceType" className={errors.serviceType ? 'border-red-500' : ''}>
+                <SelectValue placeholder="Select a service" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="travel-insurance">Travel Insurance</SelectItem>
+                <SelectItem value="health-insurance">Health Insurance</SelectItem>
+                <SelectItem value="life-insurance">Life Insurance</SelectItem>
+                <SelectItem value="vehicle-insurance">Vehicle Insurance</SelectItem>
+                <SelectItem value="solar-residential">Solar - Residential</SelectItem>
+                <SelectItem value="solar-commercial">Solar - Commercial</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+            {errors.serviceType && <p className="text-sm text-red-600">{errors.serviceType}</p>}
+          </div>
+
+          {/* Destination (Conditional) */}
+          {showDestination && (
+            <div className="space-y-2">
+              <Label htmlFor="destination">Travel Destination (Optional)</Label>
+              <Input
+                id="destination"
+                type="text"
+                placeholder="e.g., France, Thailand, USA"
+                value={formData.destination}
+                onChange={(e) => handleInputChange('destination', e.target.value)}
+              />
+            </div>
           )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email Address</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="you@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
+
+          {/* Travel Dates (Conditional) */}
+          {showDestination && (
+            <div className="space-y-2">
+              <Label htmlFor="travelDates">Travel Dates (Optional)</Label>
+              <Input
+                id="travelDates"
+                type="text"
+                placeholder="e.g., 15 Feb - 28 Feb 2026"
+                value={formData.travelDates}
+                onChange={(e) => handleInputChange('travelDates', e.target.value)}
+              />
+            </div>
           )}
-        />
-         <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <Input type="tel" placeholder="+1234567890" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
+
+          {/* Number of Travelers (Conditional) */}
+          {showDestination && (
+            <div className="space-y-2">
+              <Label htmlFor="travelers">Number of Travelers (Optional)</Label>
+              <Input
+                id="travelers"
+                type="number"
+                min="1"
+                max="10"
+                placeholder="e.g., 2"
+                value={formData.travelers}
+                onChange={(e) => handleInputChange('travelers', e.target.value)}
+              />
+            </div>
           )}
-        />
-        <FormField
-          control={form.control}
-          name="companyName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Company Name (Optional)</FormLabel>
-              <FormControl>
-                <Input placeholder="Your Company Inc." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="budget"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Estimated Budget (Optional)</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a budget range" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="Below ₹10,000">Below ₹10,000</SelectItem>
-                    <SelectItem value="₹10,000 - ₹50,000">₹10,000 - ₹50,000</SelectItem>
-                    <SelectItem value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</SelectItem>
-                    <SelectItem value="Above ₹1,00,000">Above ₹1,00,000</SelectItem>
-                    <SelectItem value="Not Sure">Not Sure</SelectItem>
-                  </SelectContent>
-                </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-         <FormField
-          control={form.control}
-          name="preferredContactMethod"
-          render={({ field }) => (
-            <FormItem className="space-y-3">
-              <FormLabel>Preferred Contact Method (Optional)</FormLabel>
-              <FormControl>
-                <RadioGroup
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  className="flex flex-col space-y-1"
-                >
-                  <FormItem className="flex items-center space-x-3 space-y-0">
-                    <FormControl>
-                      <RadioGroupItem value="Email" />
-                    </FormControl>
-                    <FormLabel className="font-normal">
-                      Email
-                    </FormLabel>
-                  </FormItem>
-                  <FormItem className="flex items-center space-x-3 space-y-0">
-                    <FormControl>
-                      <RadioGroupItem value="Phone" />
-                    </FormControl>
-                    <FormLabel className="font-normal">
-                      Phone Call
-                    </FormLabel>
-                  </FormItem>
-                </RadioGroup>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Your Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Please describe your needs or questions..."
-                  rows={5}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <SubmitButton />
-      </form>
-    </Form>
+
+          {/* Message */}
+          <div className="space-y-2">
+            <Label htmlFor="message">Additional Information (Optional)</Label>
+            <Textarea
+              id="message"
+              placeholder="Any specific requirements or questions..."
+              rows={4}
+              value={formData.message}
+              onChange={(e) => handleInputChange('message', e.target.value)}
+            />
+          </div>
+
+          {/* Submit Button */}
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Submitting...
+              </>
+            ) : (
+              <>
+                <Send className="mr-2 h-4 w-4" />
+                Submit Inquiry
+              </>
+            )}
+          </Button>
+
+          <p className="text-xs text-center text-gray-500">
+            By submitting this form, you agree to receive communication from MDNetwork regarding your inquiry.
+          </p>
+        </form>
+      </CardContent>
+    </Card>
   );
 }
