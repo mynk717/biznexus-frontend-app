@@ -56,7 +56,7 @@ export default function InternationalTravelInsurancePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white/10">
                 <Link href="/contact">
                   Get Free Quote
                 </Link>
@@ -458,7 +458,7 @@ export default function InternationalTravelInsurancePage() {
                 Call: +91 72259 91909
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white/10">
               <Link href="/contact">
                 Get Free Quote
               </Link>

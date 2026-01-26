@@ -18,16 +18,16 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-  <div className="container mx-auto px-4">
-    <div className="flex h-16 items-center justify-between gap-4">
-      {/* Logo - Now with more space */}
-      <Link href="/" className="flex items-center gap-2 flex-shrink-0 min-w-[180px]">
-        <img 
-          src="/images/branding/logo.svg" 
-          alt="MDNetwork" 
-          className="h-12 w-auto max-w-none"
-        />
-      </Link>
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between gap-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0 min-w-[180px]">
+            <img 
+              src="/images/branding/logo.svg" 
+              alt="MDNetwork" 
+              className="h-12 w-auto max-w-none"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
@@ -38,17 +38,30 @@ export default function Header() {
                   <NavigationMenuTrigger>Insurance</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                      <li className="row-span-3">
+                      <li className="row-span-4">
                         <NavigationMenuLink asChild>
                           <Link
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500/20 to-blue-500/10 p-6 no-underline outline-none focus:shadow-md"
-                            href="/insurance/travel/international"
+                            href="/insurance"
                           >
                             <div className="mb-2 mt-4 text-lg font-medium">
-                              Travel Insurance
+                              TATA AIG Insurance
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Comprehensive coverage for international and domestic travel
+                              Comprehensive coverage for travel, health, life & vehicle
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/insurance/travel/international"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Travel Insurance</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              International & domestic travel coverage
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -88,6 +101,19 @@ export default function Header() {
                             <div className="text-sm font-medium leading-none">Vehicle Insurance</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Car and two-wheeler insurance plans
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/insurance/travel/compare"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Compare Plans</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Compare all insurance plans side-by-side
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -152,14 +178,14 @@ export default function Header() {
             >
               Blog
             </Link>
-            
+
             <Link 
               href="/about" 
               className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
             >
               About
             </Link>
-            
+
             <Link 
               href="/contact" 
               className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
@@ -202,6 +228,13 @@ export default function Header() {
               <div className="space-y-2">
                 <div className="font-semibold text-sm text-gray-900 px-2">Insurance</div>
                 <Link
+                  href="/insurance"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  All Insurance Plans
+                </Link>
+                <Link
                   href="/insurance/travel/international"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
                   onClick={() => setMobileMenuOpen(false)}
@@ -228,6 +261,13 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Vehicle Insurance
+                </Link>
+                <Link
+                  href="/insurance/travel/compare"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Compare Plans
                 </Link>
               </div>
 
