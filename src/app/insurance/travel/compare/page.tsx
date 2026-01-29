@@ -541,7 +541,7 @@ export default function CompareTravelInsurancePage() {
             asChild
             size="lg"
             variant="outline"
-            className="border-white text-white hover:bg-white/10"
+            className="border-white text-blue-600 hover:bg-white/10"
           >
             <Link href="/contact">Get Recommendation</Link>
           </Button>

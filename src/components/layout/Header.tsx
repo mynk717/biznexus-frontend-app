@@ -169,8 +169,119 @@ export default function Header() {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                {/* Digital & Apps Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Digital & Apps</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 p-4 w-[400px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/services/digital"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">All Digital Services</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Custom websites, SaaS apps, automation tools
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="https://mktgdime.com/"
+                            target="_blank"
+                            rel="noopener"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Web Development</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Next.js websites and responsive designs
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="https://mktgdime.com/"
+                            target="_blank"
+                            rel="noopener"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Automation Tools</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              API integrations and business automation
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Media & Marketing Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Media & Marketing</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 p-4 w-[400px]">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="/services/media"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">All Media Services</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Social media, ads, branding and creatives
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="https://mktgdime.com/"
+                            target="_blank"
+                            rel="noopener"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Social Media</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Instagram, Facebook, YouTube management
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href="https://mktgdime.com/"
+                            target="_blank"
+                            rel="noopener"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">Paid Ads</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Google Ads and Facebook advertising
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+
+            <Link 
+              href="/services/used-cars" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Used Cars
+            </Link>
 
             <Link 
               href="/blog" 
@@ -297,8 +408,75 @@ export default function Header() {
                 </Link>
               </div>
 
+              {/* Digital Mobile Menu */}
+              <div className="space-y-2 border-t pt-4">
+                <div className="font-semibold text-sm text-gray-900 px-2">Digital & Apps</div>
+                <Link
+                  href="/services/digital"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  All Digital Services
+                </Link>
+                <Link
+                  href="https://mktgdime.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Web Development
+                </Link>
+                <Link
+                  href="https://mktgdime.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Automation Tools
+                </Link>
+              </div>
+
+              {/* Media Mobile Menu */}
+              <div className="space-y-2 border-t pt-4">
+                <div className="font-semibold text-sm text-gray-900 px-2">Media & Marketing</div>
+                <Link
+                  href="/services/media"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  All Media Services
+                </Link>
+                <Link
+                  href="https://mktgdime.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Social Media
+                </Link>
+                <Link
+                  href="https://mktgdime.com/"
+                  target="_blank"
+                  rel="noopener"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Paid Ads
+                </Link>
+              </div>
+
               {/* Other Links */}
               <div className="border-t pt-4 space-y-2">
+                <Link
+                  href="/services/used-cars"
+                  className="block px-2 py-2 text-sm font-medium text-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Used Cars
+                </Link>
                 <Link
                   href="/blog"
                   className="block px-2 py-2 text-sm font-medium text-gray-700"
