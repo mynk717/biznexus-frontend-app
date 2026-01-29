@@ -110,7 +110,7 @@ export default function InquiryForm({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-lead', {
+      const response = await fetch('/api/inquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -242,10 +242,14 @@ export default function InquiryForm({
               <SelectContent>
                 <SelectItem value="travel-insurance">Travel Insurance</SelectItem>
                 <SelectItem value="health-insurance">Health Insurance</SelectItem>
-                <SelectItem value="life-insurance">Life Insurance</SelectItem>
+                <SelectItem value="life-insurance">Life Insurance (Tata AIA)</SelectItem>
                 <SelectItem value="vehicle-insurance">Vehicle Insurance</SelectItem>
                 <SelectItem value="solar-residential">Solar - Residential</SelectItem>
                 <SelectItem value="solar-commercial">Solar - Commercial</SelectItem>
+                <SelectItem value="properties">Properties (Land/Flats/Houses)</SelectItem>
+                <SelectItem value="used-cars">Used Cars</SelectItem>
+                <SelectItem value="digital-services">Digital & Web Services</SelectItem>
+                <SelectItem value="media-marketing">Media & Marketing</SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>

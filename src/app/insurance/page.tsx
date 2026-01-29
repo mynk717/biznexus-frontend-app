@@ -37,7 +37,7 @@ export default function InsuranceHub() {
                 Start with Travel Insurance
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-700 text-lg">
+            <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-700 text-lg text-gray-700">
               <Link href="/insurance/travel/compare">
                 Compare All Plans
               </Link>

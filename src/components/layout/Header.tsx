@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Shield, Plane, Heart, CarFront, ShieldCheck, TrendingUp, ArrowBigRight as ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -41,15 +41,34 @@ export default function Header() {
                       <li className="row-span-4">
                         <NavigationMenuLink asChild>
                           <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500/20 to-blue-500/10 p-6 no-underline outline-none focus:shadow-md"
+                            className="group relative flex h-full w-full select-none flex-col justify-end rounded-md overflow-hidden p-6 no-underline outline-none focus:shadow-md hover:shadow-lg transition-all"
                             href="/insurance"
                           >
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              TATA AIG Insurance
+                            {/* Animated gradient background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/15 to-purple-500/20 group-hover:from-blue-500/30 group-hover:via-indigo-500/25 group-hover:to-purple-500/30 transition-all" />
+
+                            {/* Animated circles */}
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl animate-pulse" />
+                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-400/10 rounded-full blur-xl animate-pulse delay-300" />
+
+                            {/* Icon */}
+                            <div className="absolute top-4 right-4 p-2 rounded-full bg-white/80 shadow-sm group-hover:scale-110 transition-transform">
+                              <Shield className="h-6 w-6 text-blue-600" />
                             </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Comprehensive coverage for travel, health, life & vehicle
-                            </p>
+
+                            {/* Content */}
+                            <div className="relative z-10">
+                              <div className="mb-2 text-lg font-bold text-gray-900">
+                                Insurance Solutions
+                              </div>
+                              <p className="text-sm leading-tight text-gray-700 font-medium">
+                                Tata AIG (travel, health, vehicle) & Tata AIA (life)
+                              </p>
+                              <div className="mt-3 inline-flex items-center text-xs text-blue-600 font-semibold">
+                                View All Plans
+                                <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
                           </Link>
                         </NavigationMenuLink>
                       </li>
@@ -57,10 +76,13 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/insurance/travel/international"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 focus:bg-blue-50 border border-transparent hover:border-blue-200"
                           >
-                            <div className="text-sm font-medium leading-none">Travel Insurance</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-semibold leading-none flex items-center gap-2">
+                              <Plane className="h-4 w-4 text-blue-600 group-hover:translate-x-0.5 transition-transform" />
+                              Travel Insurance
+                            </div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                               International & domestic travel coverage
                             </p>
                           </Link>
@@ -70,10 +92,13 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/insurance/health"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-green-50 focus:bg-green-50 border border-transparent hover:border-green-200"
                           >
-                            <div className="text-sm font-medium leading-none">Health Insurance</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-semibold leading-none flex items-center gap-2">
+                              <Heart className="h-4 w-4 text-green-600 group-hover:scale-110 transition-transform" />
+                              Health Insurance
+                            </div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                               Medical coverage for you and your family
                             </p>
                           </Link>
@@ -83,11 +108,14 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/insurance/life"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-purple-50 focus:bg-purple-50 border border-transparent hover:border-purple-200"
                           >
-                            <div className="text-sm font-medium leading-none">Life Insurance</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Secure your family's future
+                            <div className="text-sm font-semibold leading-none flex items-center gap-2">
+                              <Shield className="h-4 w-4 text-purple-600 group-hover:rotate-6 transition-transform" />
+                              Life Insurance
+                            </div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                              Secure your family's future (Tata AIA)
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -96,10 +124,13 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/insurance/vehicle"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-50 focus:bg-orange-50 border border-transparent hover:border-orange-200"
                           >
-                            <div className="text-sm font-medium leading-none">Vehicle Insurance</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-semibold leading-none flex items-center gap-2">
+                              <CarFront className="h-4 w-4 text-orange-600 group-hover:translate-x-1 transition-transform" />
+                              Vehicle Insurance
+                            </div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                               Car and two-wheeler insurance plans
                             </p>
                           </Link>
@@ -109,10 +140,13 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href="/insurance/travel/compare"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-indigo-50 focus:bg-indigo-50 border border-transparent hover:border-indigo-200"
                           >
-                            <div className="text-sm font-medium leading-none">Compare Plans</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            <div className="text-sm font-semibold leading-none flex items-center gap-2">
+                              <TrendingUp className="h-4 w-4 text-indigo-600 group-hover:scale-110 transition-transform" />
+                              Compare Plans
+                            </div>
+                            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                               Compare all insurance plans side-by-side
                             </p>
                           </Link>
