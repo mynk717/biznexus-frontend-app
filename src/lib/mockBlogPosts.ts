@@ -415,7 +415,7 @@ export const blogPosts: BlogPost[] = [
   </div>
 </div>
 `,
-    imageUrl: "/images/blog/schengen-travel-insurance.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=630&fit=crop&q=80",
     imageAlt: "Schengen visa travel insurance documents with European map",
     publicationDate: "2026-01-30",
     lastModified: "2026-01-30",
@@ -1120,7 +1120,7 @@ export const blogPosts: BlogPost[] = [
   </div>
 </div>
 `,
-    imageUrl: "/images/blog/solar-panel-subsidy-india.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=630&fit=crop&q=80",
     imageAlt: "Rooftop solar panel installation with government subsidy in India",
     publicationDate: "2026-01-30",
     lastModified: "2026-01-30",
@@ -1936,7 +1936,7 @@ export const blogPosts: BlogPost[] = [
   </div>
 </div>
 `,
-    imageUrl: "/images/blog/international-travel-insurance-india.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop&q=80",
     imageAlt: "International travel insurance coverage for Indian travelers",
     publicationDate: "2026-01-30",
     lastModified: "2026-01-30",
