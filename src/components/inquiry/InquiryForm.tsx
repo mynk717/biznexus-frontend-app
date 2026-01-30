@@ -7,8 +7,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Send, CheckCircle2 } from 'lucide-react';
+import { trackFormSubmission } from '@/lib/tracking';
+
 
 interface InquiryFormProps {
   defaultServiceType?: string;
@@ -20,21 +23,37 @@ interface InquiryFormProps {
 export default function InquiryForm({
   defaultServiceType = '',
   title = 'Get a Free Quote',
-  description = 'Fill in your details and we\'ll get back to you within 24 hours',
+  description = "Fill in your details and we'll get back to you within 24 hours",
   showDestination = false,
 }: InquiryFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     serviceType: defaultServiceType,
+    // Travel Insurance fields
     destination: '',
-    travelDates: '',
+    departureDate: '',
+    returnDate: '',
     travelers: '',
+    // Insurance fields
+    dob: '',
+    // Vehicle Insurance fields
+    vehicleType: '',
+    registrationNumber: '',
+    // Solar fields
+    monthlyBill: '',
+    roofArea: '',
+    city: '',
+    // Properties fields
+    propertyType: '',
+    budget: '',
+    // General
     message: '',
   });
 
@@ -43,6 +62,11 @@ export default function InquiryForm({
     email: '',
     phone: '',
     serviceType: '',
+    departureDate: '',
+    returnDate: '',
+    dob: '',
+    monthlyBill: '',
+    city: '',
   });
 
   const validateForm = () => {
@@ -51,6 +75,11 @@ export default function InquiryForm({
       email: '',
       phone: '',
       serviceType: '',
+      departureDate: '',
+      returnDate: '',
+      dob: '',
+      monthlyBill: '',
+      city: '',
     };
 
     let isValid = true;
@@ -81,13 +110,40 @@ export default function InquiryForm({
       newErrors.phone = 'Phone number is required';
       isValid = false;
     } else if (!phoneRegex.test(cleanPhone)) {
-      newErrors.phone = 'Enter a valid 10-digit mobile number';
+      newErrors.phone = 'Enter a valid 10-digit mobile number starting with 6-9';
       isValid = false;
     }
 
     // Service type validation
     if (!formData.serviceType) {
       newErrors.serviceType = 'Please select a service type';
+      isValid = false;
+    }
+
+    // Conditional validations based on service type
+    const isTravel = formData.serviceType.includes('travel-insurance') || showDestination;
+    if (isTravel && formData.departureDate && formData.returnDate) {
+      if (new Date(formData.departureDate) >= new Date(formData.returnDate)) {
+        newErrors.returnDate = 'Return date must be after departure date';
+        isValid = false;
+      }
+    }
+
+    // DOB validation for insurance
+    const needsDOB = formData.serviceType === 'health-insurance' || formData.serviceType === 'life-insurance';
+    if (needsDOB && !formData.dob) {
+      newErrors.dob = 'Date of birth is required for insurance quotes';
+      isValid = false;
+    }
+
+    // Solar validation
+    const isSolar = formData.serviceType === 'solar-residential' || formData.serviceType === 'solar-commercial';
+    if (isSolar && !formData.monthlyBill) {
+      newErrors.monthlyBill = 'Monthly electricity bill is required for solar quotes';
+      isValid = false;
+    }
+    if (isSolar && !formData.city) {
+      newErrors.city = 'City is required for solar installation';
       isValid = false;
     }
 
@@ -107,15 +163,51 @@ export default function InquiryForm({
       return;
     }
 
+    if (!agreedToPrivacy) {
+      toast({
+        title: 'Consent Required',
+        description: 'Please agree to receive communication from MDNetwork',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      // Prepare payload with only relevant fields
+      const payload: any = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        serviceType: formData.serviceType,
+        message: formData.message,
+      };
+
+      // Add service-specific fields
+      const isTravel = formData.serviceType.includes('travel-insurance') || showDestination;
+      if (isTravel) {
+        if (formData.destination) payload.destination = formData.destination;
+        if (formData.departureDate) payload.departureDate = formData.departureDate;
+        if (formData.returnDate) payload.returnDate = formData.returnDate;
+        if (formData.travelers) payload.travelers = formData.travelers;
+      }
+
+      if (formData.dob) payload.dob = formData.dob;
+      if (formData.vehicleType) payload.vehicleType = formData.vehicleType;
+      if (formData.registrationNumber) payload.registrationNumber = formData.registrationNumber;
+      if (formData.monthlyBill) payload.monthlyBill = formData.monthlyBill;
+      if (formData.roofArea) payload.roofArea = formData.roofArea;
+      if (formData.city) payload.city = formData.city;
+      if (formData.propertyType) payload.propertyType = formData.propertyType;
+      if (formData.budget) payload.budget = formData.budget;
+
       const response = await fetch('/api/inquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -125,6 +217,7 @@ export default function InquiryForm({
       }
 
       setIsSuccess(true);
+      trackFormSubmission('inquiry_form', formData.serviceType);
       toast({
         title: 'Success!',
         description: data.message,
@@ -137,11 +230,20 @@ export default function InquiryForm({
         phone: '',
         serviceType: defaultServiceType,
         destination: '',
-        travelDates: '',
+        departureDate: '',
+        returnDate: '',
         travelers: '',
+        dob: '',
+        vehicleType: '',
+        registrationNumber: '',
+        monthlyBill: '',
+        roofArea: '',
+        city: '',
+        propertyType: '',
+        budget: '',
         message: '',
       });
-
+      setAgreedToPrivacy(false);
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -154,6 +256,12 @@ export default function InquiryForm({
   };
 
   const handleInputChange = (field: string, value: string) => {
+    // Special handling for travelers number
+    if (field === 'travelers') {
+      const num = parseInt(value);
+      if (value && (num < 1 || num > 10)) return;
+    }
+
     setFormData({ ...formData, [field]: value });
     // Clear error for this field
     if (errors[field as keyof typeof errors]) {
@@ -177,6 +285,14 @@ export default function InquiryForm({
       </Card>
     );
   }
+
+  // Determine which fields to show
+  const isTravel = formData.serviceType.includes('travel-insurance') || showDestination;
+  const needsDOB = formData.serviceType === 'health-insurance' || formData.serviceType === 'life-insurance';
+  const isVehicle = formData.serviceType === 'vehicle-insurance';
+  const isSolar = formData.serviceType === 'solar-residential' || formData.serviceType === 'solar-commercial';
+  const isProperty = formData.serviceType === 'properties';
+  const isUsedCars = formData.serviceType === 'used-cars';
 
   return (
     <Card>
@@ -221,6 +337,8 @@ export default function InquiryForm({
               id="phone"
               type="tel"
               placeholder="10-digit mobile number"
+              pattern="[6-9][0-9]{9}"
+              inputMode="numeric"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               className={errors.phone ? 'border-red-500' : ''}
@@ -256,51 +374,235 @@ export default function InquiryForm({
             {errors.serviceType && <p className="text-sm text-red-600">{errors.serviceType}</p>}
           </div>
 
-          {/* Destination (Conditional) */}
-          {showDestination && (
+          {/* === TRAVEL INSURANCE FIELDS === */}
+          {isTravel && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="destination">Travel Destination (Optional)</Label>
+                <Input
+                  id="destination"
+                  type="text"
+                  placeholder="e.g., France, Thailand, USA"
+                  value={formData.destination}
+                  onChange={(e) => handleInputChange('destination', e.target.value)}
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="departureDate">Departure Date (Optional)</Label>
+                  <Input
+                    id="departureDate"
+                    type="date"
+                    min={new Date().toISOString().split('T')[0]}
+                    value={formData.departureDate}
+                    onChange={(e) => handleInputChange('departureDate', e.target.value)}
+                    className={errors.departureDate ? 'border-red-500' : ''}
+                  />
+                  {errors.departureDate && <p className="text-sm text-red-600">{errors.departureDate}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="returnDate">Return Date (Optional)</Label>
+                  <Input
+                    id="returnDate"
+                    type="date"
+                    min={formData.departureDate || new Date().toISOString().split('T')[0]}
+                    value={formData.returnDate}
+                    onChange={(e) => handleInputChange('returnDate', e.target.value)}
+                    className={errors.returnDate ? 'border-red-500' : ''}
+                  />
+                  {errors.returnDate && <p className="text-sm text-red-600">{errors.returnDate}</p>}
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="travelers">Number of Travelers (Optional)</Label>
+                <Input
+                  id="travelers"
+                  type="number"
+                  min="1"
+                  max="10"
+                  placeholder="e.g., 2"
+                  inputMode="numeric"
+                  value={formData.travelers}
+                  onChange={(e) => handleInputChange('travelers', e.target.value)}
+                />
+              </div>
+            </>
+          )}
+
+          {/* === HEALTH/LIFE INSURANCE FIELDS === */}
+          {needsDOB && (
             <div className="space-y-2">
-              <Label htmlFor="destination">Travel Destination (Optional)</Label>
+              <Label htmlFor="dob">Date of Birth *</Label>
               <Input
-                id="destination"
-                type="text"
-                placeholder="e.g., France, Thailand, USA"
-                value={formData.destination}
-                onChange={(e) => handleInputChange('destination', e.target.value)}
+                id="dob"
+                type="date"
+                max={new Date().toISOString().split('T')[0]}
+                value={formData.dob}
+                onChange={(e) => handleInputChange('dob', e.target.value)}
+                className={errors.dob ? 'border-red-500' : ''}
               />
+              {errors.dob && <p className="text-sm text-red-600">{errors.dob}</p>}
+              <p className="text-xs text-gray-500">Required for accurate premium calculation</p>
             </div>
           )}
 
-          {/* Travel Dates (Conditional) */}
-          {showDestination && (
-            <div className="space-y-2">
-              <Label htmlFor="travelDates">Travel Dates (Optional)</Label>
-              <Input
-                id="travelDates"
-                type="text"
-                placeholder="e.g., 15 Feb - 28 Feb 2026"
-                value={formData.travelDates}
-                onChange={(e) => handleInputChange('travelDates', e.target.value)}
-              />
-            </div>
+          {/* === VEHICLE INSURANCE FIELDS === */}
+          {isVehicle && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="vehicleType">Vehicle Type *</Label>
+                <Select
+                  value={formData.vehicleType}
+                  onValueChange={(value) => handleInputChange('vehicleType', value)}
+                >
+                  <SelectTrigger id="vehicleType">
+                    <SelectValue placeholder="Select vehicle type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="two-wheeler">Two Wheeler (Bike/Scooter)</SelectItem>
+                    <SelectItem value="four-wheeler">Four Wheeler (Car)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="registrationNumber">Registration Number (Optional)</Label>
+                <Input
+                  id="registrationNumber"
+                  type="text"
+                  placeholder="e.g., CG01AB1234"
+                  value={formData.registrationNumber}
+                  onChange={(e) => handleInputChange('registrationNumber', e.target.value.toUpperCase())}
+                  style={{ textTransform: 'uppercase' }}
+                  maxLength={10}
+                />
+                <p className="text-xs text-gray-500">For faster quote generation</p>
+              </div>
+            </>
           )}
 
-          {/* Number of Travelers (Conditional) */}
-          {showDestination && (
-            <div className="space-y-2">
-              <Label htmlFor="travelers">Number of Travelers (Optional)</Label>
-              <Input
-                id="travelers"
-                type="number"
-                min="1"
-                max="10"
-                placeholder="e.g., 2"
-                value={formData.travelers}
-                onChange={(e) => handleInputChange('travelers', e.target.value)}
-              />
-            </div>
+          {/* === SOLAR FIELDS === */}
+          {isSolar && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="monthlyBill">Monthly Electricity Bill (₹) *</Label>
+                <Input
+                  id="monthlyBill"
+                  type="number"
+                  min="0"
+                  placeholder="e.g., 5000"
+                  inputMode="numeric"
+                  value={formData.monthlyBill}
+                  onChange={(e) => handleInputChange('monthlyBill', e.target.value)}
+                  className={errors.monthlyBill ? 'border-red-500' : ''}
+                />
+                {errors.monthlyBill && <p className="text-sm text-red-600">{errors.monthlyBill}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="roofArea">Approximate Roof Area (sq ft) (Optional)</Label>
+                <Input
+                  id="roofArea"
+                  type="number"
+                  min="0"
+                  placeholder="e.g., 500"
+                  inputMode="numeric"
+                  value={formData.roofArea}
+                  onChange={(e) => handleInputChange('roofArea', e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="city">City *</Label>
+                <Input
+                  id="city"
+                  type="text"
+                  placeholder="e.g., Raipur"
+                  value={formData.city}
+                  onChange={(e) => handleInputChange('city', e.target.value)}
+                  className={errors.city ? 'border-red-500' : ''}
+                />
+                {errors.city && <p className="text-sm text-red-600">{errors.city}</p>}
+              </div>
+            </>
           )}
 
-          {/* Message */}
+          {/* === PROPERTIES FIELDS === */}
+          {isProperty && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="propertyType">Property Type</Label>
+                <Select
+                  value={formData.propertyType}
+                  onValueChange={(value) => handleInputChange('propertyType', value)}
+                >
+                  <SelectTrigger id="propertyType">
+                    <SelectValue placeholder="Select property type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="land">Land/Plot</SelectItem>
+                    <SelectItem value="flat">Flat/Apartment</SelectItem>
+                    <SelectItem value="house">Independent House</SelectItem>
+                    <SelectItem value="commercial">Commercial Property</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="budget">Budget Range (₹)</Label>
+                <Input
+                  id="budget"
+                  type="text"
+                  placeholder="e.g., 50 Lakhs - 1 Crore"
+                  value={formData.budget}
+                  onChange={(e) => handleInputChange('budget', e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="city">Preferred Location</Label>
+                <Input
+                  id="city"
+                  type="text"
+                  placeholder="e.g., Raipur"
+                  value={formData.city}
+                  onChange={(e) => handleInputChange('city', e.target.value)}
+                />
+              </div>
+            </>
+          )}
+
+          {/* === USED CARS FIELDS === */}
+          {isUsedCars && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="budget">Budget Range (₹)</Label>
+                <Input
+                  id="budget"
+                  type="text"
+                  placeholder="e.g., 3-5 Lakhs"
+                  value={formData.budget}
+                  onChange={(e) => handleInputChange('budget', e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="city">Preferred Location</Label>
+                <Input
+                  id="city"
+                  type="text"
+                  placeholder="e.g., Raipur"
+                  value={formData.city}
+                  onChange={(e) => handleInputChange('city', e.target.value)}
+                />
+              </div>
+            </>
+          )}
+
+          {/* Message - Always visible */}
           <div className="space-y-2">
             <Label htmlFor="message">Additional Information (Optional)</Label>
             <Textarea
@@ -312,8 +614,20 @@ export default function InquiryForm({
             />
           </div>
 
+          {/* Privacy Consent */}
+          <div className="flex items-start space-x-2">
+            <Checkbox
+              id="privacy"
+              checked={agreedToPrivacy}
+              onCheckedChange={(checked) => setAgreedToPrivacy(checked as boolean)}
+            />
+            <Label htmlFor="privacy" className="text-sm font-normal leading-relaxed cursor-pointer">
+              I agree to receive communication from MDNetwork regarding my inquiry *
+            </Label>
+          </div>
+
           {/* Submit Button */}
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button type="submit" className="w-full" disabled={isSubmitting || !agreedToPrivacy}>
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -328,7 +642,7 @@ export default function InquiryForm({
           </Button>
 
           <p className="text-xs text-center text-gray-500">
-            By submitting this form, you agree to receive communication from MDNetwork regarding your inquiry.
+            Our team will contact you within 24 hours during business hours (Mon-Sat, 9 AM - 7 PM IST)
           </p>
         </form>
       </CardContent>

@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import FooterYear from '@/components/layout/FooterYear';
 import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Analytics, { GTMNoscript } from '@/components/Analytics';
+
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -85,6 +87,8 @@ export default function RootLayout({
         <Header />
         
         <main className="flex-grow container mx-auto px-4 py-8">
+        <Analytics />
+<GTMNoscript />
           {children}
         </main>
 
