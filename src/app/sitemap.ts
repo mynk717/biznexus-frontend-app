@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/mockBlogPosts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mdnetwork.in';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mdn.mktgdime.com';
   const currentDate = new Date().toISOString();
 
   // Static pages
