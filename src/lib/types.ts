@@ -1,5 +1,5 @@
-
-import type { Timestamp } from "firebase/firestore";
+// src/lib/types.ts
+// Clean version without Firebase dependencies
 
 export interface ServiceSection {
   title: string;
@@ -24,11 +24,9 @@ export interface Service {
   slug: string;
   shortDescription: string;
   iconUrl: string;
-  // --- Fields from Headless CMS ---
   price?: number | string;
   keyFeatures?: string[];
   fullDetails?: string;
-  // --- Original fields for fallback ---
   sections?: ServiceSection[];
   offerings?: Offering[];
   brands?: string[];
@@ -48,7 +46,7 @@ export interface Inquiry {
   preferredContactMethod?: 'Email' | 'Phone';
   budget?: string;
   summary?: string;
-  timestamp: Timestamp | Date;
+  timestamp: Date;  // CHANGED: Removed Firebase Timestamp, now just Date
   status: "New" | "Contacted" | "Resolved";
 }
 
@@ -59,21 +57,35 @@ export interface FirebaseUser {
   photoURL?: string | null;
 }
 
+// Enhanced BlogPost interface with SEO and schema support
 export interface BlogPostAuthor {
   name: string;
   avatarUrl?: string;
+  bio?: string;
+  credentials?: string;
 }
 
 export interface BlogPost {
   id: string;
   slug: string;
   title: string;
+  metaTitle: string;
+  metaDescription: string;
   excerpt: string;
   content: string;
   imageUrl?: string;
-  publicationDate: Date | Timestamp;
+  imageAlt?: string;
+  publicationDate: string | Date;  // CLEAN: Just string or Date, no Firebase Timestamp
+  lastModified?: string;
   author: BlogPostAuthor;
-  tags?: string[];
-  metaTitle?: string;
-  metaDescription?: string;
+  category?: 'insurance' | 'solar' | 'digital-marketing';
+  tags: string[];
+  readingTime?: number;
+  featured?: boolean;
+  searchVolume?: number;
+  schema?: {
+    faqSchema?: object;
+    howToSchema?: object;
+    articleSchema?: object;
+  };
 }

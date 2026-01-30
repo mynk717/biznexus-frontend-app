@@ -106,3 +106,128 @@
     /* font-family is managed by Next/Font variables applied in layout.tsx and Tailwind config */
   }
 }
+/* Blog Post Styling - Add at the end of file */
+
+.blog-content {
+  @apply prose prose-lg dark:prose-invert max-w-none;
+}
+
+.blog-content .lead {
+  @apply text-xl font-semibold mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 rounded;
+}
+
+.blog-content table.comparison-table {
+  @apply w-full border-collapse my-6 shadow-md;
+}
+
+.blog-content table.comparison-table th {
+  @apply bg-blue-600 text-white p-3 text-left font-semibold;
+}
+
+.blog-content table.comparison-table td {
+  @apply border border-gray-300 dark:border-gray-700 p-3;
+}
+
+.blog-content table.comparison-table tr:nth-child(even) {
+  @apply bg-gray-50 dark:bg-gray-800/50;
+}
+
+.blog-content .alert {
+  @apply p-4 rounded-lg my-6 border-l-4;
+}
+
+.blog-content .alert-info {
+  @apply bg-blue-50 dark:bg-blue-900/20 border-blue-600;
+}
+
+.blog-content .alert-success {
+  @apply bg-green-50 dark:bg-green-900/20 border-green-600;
+}
+
+.blog-content .alert-warning {
+  @apply bg-yellow-50 dark:bg-yellow-900/20 border-yellow-600;
+}
+
+.blog-content .alert-danger {
+  @apply bg-red-50 dark:bg-red-900/20 border-red-600;
+}
+
+.blog-content .numbered-steps {
+  @apply space-y-6 my-8 list-decimal list-inside;
+}
+
+.blog-content .numbered-steps li {
+  @apply pl-4 border-l-4 border-blue-600 mb-4;
+}
+
+.blog-content .numbered-steps li strong {
+  @apply text-blue-700 dark:text-blue-400 text-lg;
+}
+
+.blog-content .benefits-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-8;
+}
+
+.blog-content .benefit-card {
+  @apply p-6 border-2 border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-lg hover:border-blue-400 transition-all;
+}
+
+.blog-content .benefit-card h3 {
+  @apply text-lg font-bold mb-3 text-blue-700 dark:text-blue-400;
+}
+
+.blog-content .cta-box {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg my-12 shadow-xl;
+}
+
+.blog-content .cta-box h3 {
+  @apply text-2xl font-bold mb-4 text-white;
+}
+
+.blog-content .cta-box ul {
+  @apply space-y-2 my-4;
+}
+
+.blog-content .author-box {
+  @apply bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mt-12 border-t-4 border-blue-600;
+}
+
+.blog-content .faq-section {
+  @apply space-y-6 my-8;
+}
+
+.blog-content .faq-item {
+  @apply border-l-4 border-blue-600 pl-4 py-2 bg-gray-50 dark:bg-gray-800 rounded-r;
+}
+
+.blog-content .faq-item h3 {
+  @apply font-semibold text-lg mb-2 text-blue-700 dark:text-blue-400;
+}
+
+.blog-content .coverage-grid {
+  @apply grid md:grid-cols-2 gap-6 my-8;
+}
+
+.blog-content .coverage-item {
+  @apply p-4 border border-gray-300 dark:border-gray-700 rounded-lg;
+}
+
+.blog-content .coverage-item h4 {
+  @apply font-bold text-lg mb-3 text-blue-700 dark:text-blue-400;
+}
+
+.blog-content .eligibility-checklist {
+  @apply bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg my-6;
+}
+
+/* Ensure tables are responsive */
+@media (max-width: 768px) {
+  .blog-content table.comparison-table {
+    @apply text-sm;
+  }
+  
+  .blog-content table.comparison-table th,
+  .blog-content table.comparison-table td {
+    @apply p-2;
+  }
+}
