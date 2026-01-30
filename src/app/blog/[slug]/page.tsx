@@ -1,4 +1,4 @@
-// src/app/blog/[slug]/page.tsx - UPDATED with Schema Markup
+// src/app/blog/[slug]/page.tsx - FINAL FIX (No onError)
 
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -13,13 +13,13 @@ import { format } from 'date-fns';
 import type { BlogPost } from '@/lib/types';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {
@@ -175,14 +175,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </header>
 
-        {/* Featured Image */}
+        {/* Featured Image - Only show if URL exists */}
         {post.imageUrl && (
-          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md">
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md bg-gray-100">
             <Image
               src={post.imageUrl}
               alt={post.imageAlt || post.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               priority
             />
           </div>
