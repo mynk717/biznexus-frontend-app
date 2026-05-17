@@ -23,96 +23,11 @@ import {
   Award,
   Users,
   TrendingUp,
-  ShieldCheck,
-  SunMedium,
   Building2,
   CarFront,
   Globe2,
   Megaphone,
-  Plane as PlaneIcon,
 } from 'lucide-react';
-
-const serviceHubs = [
-  {
-    id: 'insurance',
-    name: 'Insurance',
-    description: 'TATA AIG insurance with full coverage for travel, health, life & vehicle.',
-    icon: ShieldCheck,
-    href: '/insurance',
-    badge: 'Protection',
-    subItems: [
-      { name: 'Travel Insurance', href: '/insurance/travel/domestic' },
-      { name: 'Health Insurance', href: '/insurance/health' },
-      { name: 'Life Insurance', href: '/insurance/life' },
-      { name: 'Vehicle Insurance', href: '/insurance/vehicle' },
-      { name: 'Compare Plans', href: '/insurance/travel/compare' },
-    ],
-  },
-  {
-    id: 'solar',
-    name: 'Solar Solutions',
-    description: 'Residential and commercial solar with subsidy support and net metering.',
-    icon: SunMedium,
-    href: '/solar/residential',
-    badge: 'Energy',
-    subItems: [
-      { name: 'Residential Solar', href: '/solar/residential' },
-      { name: 'Commercial Solar', href: '/solar/commercial' },
-      { name: 'Solar Calculator', href: '/solar/calculator' },
-    ],
-  },
-  {
-    id: 'properties',
-    name: 'Properties',
-    description: 'Land, flats and houses in and around Raipur with trusted partners.',
-    icon: Building2,
-    href: '/services/properties',
-    badge: 'Real Estate',
-  },
-  {
-    id: 'used-cars',
-    name: 'Used Cars',
-    description: 'Verified pre-owned cars with documentation and insurance support.',
-    icon: CarFront,
-    href: '/services/used-cars',
-    badge: 'Automobile',
-  },
-  {
-    id: 'tours',
-    name: 'Tour Packages',
-    description: 'Domestic and international tour packages with travel insurance.',
-    icon: PlaneIcon,
-    href: '/services/tours',
-    badge: 'Travel',
-  },
-  {
-    id: 'digital',
-    name: 'Digital, Web & Apps',
-    description: 'Websites, web apps and automation for small businesses and startups.',
-    icon: Globe2,
-    href: '/services/digital',
-    badge: 'Tech',
-    subItems: [
-      { name: 'Web Development', href: '/services/digital/web' },
-      { name: 'Mobile Apps', href: '/services/digital/apps' },
-      { name: 'Digital Marketing', href: '/services/digital/marketing' },
-    ],
-  },
-  {
-    id: 'media',
-    name: 'Media & Marketing',
-    description: 'Social media, ads, branding and creatives for Raipur businesses.',
-    icon: Megaphone,
-    href: '/services/media',
-    badge: 'Growth',
-    subItems: [
-      { name: 'Social Media', href: '/services/media/social' },
-      { name: 'Google Ads', href: '/services/media/google-ads' },
-      { name: 'Branding', href: '/services/media/branding' },
-    ],
-  },
-];
-
 
 export default function HomePage() {
   return (
@@ -155,9 +70,7 @@ export default function HomePage() {
                 <span className="text-yellow-300">Power Your Future</span>
               </h1>
               <p className="text-lg md:text-xl text-blue-100">
-                Comprehensive insurance solutions and solar energy services for
-                Raipur and Chhattisgarh. Get instant quotes, expert guidance, and
-                hassle-free claims.
+                Raipur's trusted hub for TATA AIG Insurance & Government Subsidy Solar. Get up to ₹1,08,000 in Solar Subsidy in Chhattisgarh — we handle the entire process for you.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -198,7 +111,6 @@ export default function HomePage() {
             </div>
 
             <div className="hidden md:block relative">
-              {/* Network Illustration */}
               <div className="relative w-full h-96">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
@@ -213,98 +125,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Actions */}
-      <section className="container mx-auto -mt-8">
-        <div className="bg-blue-50 rounded-xl px-4 py-4 md:px-6 md:py-5 flex flex-col md:flex-row items-center gap-3 justify-between">
-          <p className="text-sm font-medium text-blue-900">
-            What do you want to do today?
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/insurance/travel/international">Buy Insurance</Link>
-            </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/solar/calculator">Install Solar</Link>
-            </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/services/properties">Find Property</Link>
-            </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/services/used-cars">Buy Used Car</Link>
-            </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/services/tours">Book Tour</Link>
-            </Button>
-            <Button asChild size="sm" variant="secondary">
-              <Link href="/services/digital">Build Website/App</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Hub Dashboard */}
-      <section id="service-hub" className="container mx-auto space-y-8">
-        <div className="text-center">
-          <Badge variant="outline" className="mb-4">
-            Service Hub
-          </Badge>
-          <h2 className="text-3xl font-bold tracking-tight">
-            All Your Services in One Place
-          </h2>
-          <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-            MDNetwork is your multi-service hub for protection, energy, real
-            estate, automobiles, travel, digital and marketing.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {serviceHubs.map((s) => (
-            <Card
-              key={s.id}
-              className="relative overflow-hidden hover:shadow-lg transition-shadow group"
-            >
-              <CardHeader className="flex flex-row items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center">
-                  <s.icon className="h-5 w-5 text-blue-600" />
-                </div>
-                <div>
-                  <CardTitle className="flex items-center gap-2">
-                    {s.name}
-                    <span className="text-xs rounded-full bg-blue-100 text-blue-700 px-2 py-0.5">
-                      {s.badge}
-                    </span>
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  {s.description}
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full group-hover:bg-blue-600 group-hover:text-white"
-                >
-                  <Link href={s.href}>Go to {s.name}</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
       {/* Insurance Services */}
-      <section className="container mx-auto">
+      <section className="container mx-auto scroll-mt-20" id="insurance">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4">
-            Our Services
+            Insurance
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Comprehensive Insurance Solutions
+            Protect What Matters Most
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            TATA AIG insurance plans designed to protect what matters most to you
-            and your family
+            Authorized TATA AIG insurance plans designed for Raipur residents. Instant quotes, expert guidance, and dedicated claim support.
           </p>
         </div>
 
@@ -317,7 +148,7 @@ export default function HomePage() {
               </div>
               <CardTitle>Travel Insurance</CardTitle>
               <CardDescription>
-                International & domestic coverage with COVID-19 protection
+                Don't risk Schengen visa rejection — get compliant coverage from Raipur
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -354,7 +185,7 @@ export default function HomePage() {
               </div>
               <CardTitle>Health Insurance</CardTitle>
               <CardDescription>
-                Comprehensive medical coverage for your family
+                Comprehensive medical coverage with Raipur's top cashless hospitals
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -391,7 +222,7 @@ export default function HomePage() {
               </div>
               <CardTitle>Life Insurance</CardTitle>
               <CardDescription>
-                Secure your family's financial future
+                Secure your family's financial future with Tata AIA plans
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -428,7 +259,7 @@ export default function HomePage() {
               </div>
               <CardTitle>Vehicle Insurance</CardTitle>
               <CardDescription>
-                Protect your car and two-wheeler
+                Quick claim settlement and 24/7 roadside assistance in CG
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -460,21 +291,20 @@ export default function HomePage() {
       </section>
 
       {/* Solar Solutions Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-yellow-50 -mx-4 px-4 py-16">
+      <section className="bg-gradient-to-br from-orange-50 to-yellow-50 -mx-4 px-4 py-16 scroll-mt-20" id="solar">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <Badge
               variant="outline"
               className="mb-4 border-orange-500 text-orange-700"
             >
-              Green Energy Solutions
+              Solar Energy
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Switch to Solar, Save More
+              Raipur's Electricity Bills Are Rising — Cut Them by 90%
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Reduce your electricity bills by up to 90% with
-              government-subsidized solar installations
+              Get up to ₹1,08,000 in Solar Subsidy in Chhattisgarh with PM Surya Ghar Yojana. We handle the entire CSPDCL process for you.
             </p>
           </div>
 
@@ -486,14 +316,14 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Residential Solar</CardTitle>
                 <CardDescription>
-                  Solar panels for homes with up to 40% government subsidy
+                  Get up to ₹1,08,000 subsidy on 3kW systems in Chhattisgarh (Central + State stack)
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>₹30,000 subsidy for 3kW system</span>
+                    <span>₹78,000 Central + ₹30,000 State Subsidy</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -501,7 +331,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Net metering support</span>
+                    <span>Net metering support via CSPDCL</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -529,7 +359,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Commercial Solar</CardTitle>
                 <CardDescription>
-                  Industrial solar solutions for businesses
+                  Industrial solar solutions for Raipur businesses
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -568,15 +398,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Other Services Section */}
+      <section className="container mx-auto scroll-mt-20" id="services">
+        <div className="text-center mb-12">
+          <Badge variant="outline" className="mb-4">
+            Expert Solutions
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Beyond Protection: Real Estate & Growth
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            From finding your dream plot in Raipur to building your digital presence, we are your one-stop partner for business and lifestyle.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Properties */}
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-blue-600">
+            <CardHeader>
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                <Building2 className="h-6 w-6 text-blue-600" />
+              </div>
+              <CardTitle>Plots & Properties</CardTitle>
+              <CardDescription>
+                Verified land, flats, and houses in Raipur's top neighborhoods.
+              </CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button asChild variant="ghost" className="p-0 text-blue-600 hover:bg-transparent hover:underline">
+                <Link href="/services/properties">View Listings <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Used Cars */}
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-indigo-600">
+            <CardHeader>
+              <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center mb-4">
+                <CarFront className="h-6 w-6 text-indigo-600" />
+              </div>
+              <CardTitle>Verified Used Cars</CardTitle>
+              <CardDescription>
+                Quality pre-owned vehicles with complete RTO and insurance support.
+              </CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button asChild variant="ghost" className="p-0 text-indigo-600 hover:bg-transparent hover:underline">
+                <Link href="/services/used-cars">Browse Cars <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Tech/Digital */}
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-purple-600">
+            <CardHeader>
+              <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mb-4">
+                <Globe2 className="h-6 w-6 text-purple-600" />
+              </div>
+              <CardTitle>Digital & Marketing</CardTitle>
+              <CardDescription>
+                Build your business with custom websites and local marketing ads.
+              </CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button asChild variant="ghost" className="p-0 text-purple-600 hover:bg-transparent hover:underline">
+                <Link href="/services/digital">Start Growing <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </section>
+
       {/* Why Choose MDNetwork */}
       <section className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose MDNetwork?
+            Why Trust MDNetwork?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Trusted by thousands in Raipur and Chhattisgarh for insurance and
-            solar solutions
+            We combine authorized corporate partnerships with deep local expertise in Chhattisgarh.
           </p>
         </div>
 
@@ -585,9 +485,9 @@ export default function HomePage() {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Award className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Authorized Partner</h3>
+            <h3 className="text-xl font-semibold mb-2">Authorized Advisor</h3>
             <p className="text-gray-600">
-              Official TATA AIG insurance partner with certified advisors
+              Official TATA AIG insurance partner with certified advisors for hassle-free claims.
             </p>
           </div>
 
@@ -595,9 +495,9 @@ export default function HomePage() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Expert Guidance</h3>
+            <h3 className="text-xl font-semibold mb-2">Local Expertise</h3>
             <p className="text-gray-600">
-              Personalized recommendations based on your unique needs
+              Deep understanding of Raipur's RTO, CSPDCL, and property regulations.
             </p>
           </div>
 
@@ -605,9 +505,9 @@ export default function HomePage() {
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <TrendingUp className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Quick Processing</h3>
+            <h3 className="text-xl font-semibold mb-2">Full-Cycle Support</h3>
             <p className="text-gray-600">
-              Instant policy issuance and hassle-free claim support
+              We don't just sell; we handle subsidies, paperwork, and documentation for you.
             </p>
           </div>
         </div>
@@ -617,11 +517,10 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white -mx-4 px-4 py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Started?
+            Ready to Protect Your Future?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Get a free quote in under 2 minutes. No hidden charges, expert
-            support guaranteed.
+            Get a free quote or expert consultation in under 2 minutes. No hidden charges, just honest advice.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -638,7 +537,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-blue-600 hover:bg-white/10"
+              className="border-white text-white hover:bg-white/10"
             >
               <Link href="/contact">
                 <Mail className="mr-2 h-5 w-5" />

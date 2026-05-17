@@ -68,8 +68,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Email</div>
-                  <a href="mailto:contact@mdnetwork.in" className="text-purple-600 hover:underline">
-                    contact@mdnetwork.in
+                  <a href="mailto:contact@mdn.mktgdime.com" className="text-purple-600 hover:underline">
+                    contact@mdn.mktgdime.com
                   </a>
                   <p className="text-sm text-gray-600 mt-1">We'll reply within 24 hours</p>
                 </div>

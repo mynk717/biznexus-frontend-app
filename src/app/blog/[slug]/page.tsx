@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.metaDescription || post.excerpt,
       images: post.imageUrl ? [{ url: post.imageUrl }] : [],
       type: 'article',
-      publishedTime: new Date(post.publicationDate as Date).toISOString(),
+      publishedTime: new Date(post.publicationDate).toISOString(),
       authors: [post.author.name],
     },
     twitter: {
@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const formattedDate = post.publicationDate 
-    ? format(new Date(post.publicationDate as Date), "MMMM d, yyyy") 
+    ? format(new Date(post.publicationDate), "MMMM d, yyyy") 
     : 'Date N/A';
 
   const authorInitials = post.author.name
@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <div className="flex items-center gap-1 text-sm">
               <CalendarDays className="h-4 w-4" />
-              <time dateTime={new Date(post.publicationDate as Date).toISOString()}>
+              <time dateTime={new Date(post.publicationDate).toISOString()}>
                 {formattedDate}
               </time>
             </div>
@@ -157,13 +157,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             )}
           </div>
-
-          {/* Last Modified Date */}
-          {post.lastModified && (
-            <p className="text-xs text-muted-foreground">
-              Last updated: {format(new Date(post.lastModified), "MMMM d, yyyy")}
-            </p>
-          )}
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
