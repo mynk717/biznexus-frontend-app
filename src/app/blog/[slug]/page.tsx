@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     alternates: {
       canonical: `https://mdn.mktgdime.com/blog/${slug}`,
     },
+    keywords: post.tags?.join(', ') || '',
     openGraph: {
       title: post.metaTitle || post.title,
       description: post.metaDescription || post.excerpt,
