@@ -31,6 +31,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.metaTitle || `${post.title} | MDNetwork Blog`,
     description: post.metaDescription || post.excerpt,
+    alternates: {
+      canonical: `https://mdn.mktgdime.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.metaTitle || post.title,
       description: post.metaDescription || post.excerpt,
@@ -73,11 +76,41 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       {/* Schema Markup - Article Schema */}
-      {post.schema?.articleSchema && (
+      {post.schema?.articleSchema ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ 
             __html: JSON.stringify(post.schema.articleSchema) 
+          }}
+        />
+      ) : (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ 
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: post.title,
+              description: post.excerpt,
+              image: post.imageUrl ? [`https://mdn.mktgdime.com${post.imageUrl}`] : [],
+              datePublished: post.publicationDate,
+              author: {
+                '@type': 'Person',
+                name: post.author.name,
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'MDNetwork',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://mdn.mktgdime.com/images/branding/logo.svg',
+                },
+              },
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://mdn.mktgdime.com/blog/${slug}`,
+              },
+            }) 
           }}
         />
       )}
