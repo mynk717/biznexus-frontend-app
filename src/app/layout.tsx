@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Analytics, { GTMNoscript } from '@/components/Analytics';
 import JsonLd from '@/components/SEO/JsonLd';
+import ConsentBanner from '@/components/layout/ConsentBanner';
 
 
 const geistSans = Geist({
@@ -209,6 +210,7 @@ export default function RootLayout({
         </footer>
 
         <Toaster />
+        <ConsentBanner />
       </body>
     </html>
   );

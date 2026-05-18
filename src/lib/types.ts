@@ -78,7 +78,7 @@ export interface BlogPost {
   publicationDate: string | Date;  // CLEAN: Just string or Date, no Firebase Timestamp
   lastModified?: string;
   author: BlogPostAuthor;
-  category?: 'insurance' | 'solar' | 'digital-marketing';
+  category?: 'insurance' | 'solar' | 'digital-marketing' | 'automotive' | 'real-estate';
   tags: string[];
   readingTime?: number;
   featured?: boolean;

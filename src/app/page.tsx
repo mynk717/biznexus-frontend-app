@@ -414,55 +414,55 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Properties */}
-          <Card className="hover:shadow-lg transition-all border-t-4 border-t-blue-600">
-            <CardHeader>
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-blue-600 flex flex-col">
+            <CardHeader className="flex-grow">
               <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mb-4">
                 <Building2 className="h-6 w-6 text-blue-600" />
               </div>
               <CardTitle>Plots & Properties</CardTitle>
               <CardDescription>
-                Verified land, flats, and houses in Raipur's top neighborhoods.
+                Verified land, flats, and houses in Raipur's top neighborhoods like Naya Raipur and Vidhan Sabha Road.
               </CardDescription>
             </CardHeader>
-            <CardFooter>
-              <Button asChild variant="ghost" className="p-0 text-blue-600 hover:bg-transparent hover:underline">
-                <Link href="/services/properties">View Listings <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            <CardFooter className="pt-0">
+              <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                <Link href="/services/properties">View Listings <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </CardFooter>
           </Card>
 
           {/* Used Cars */}
-          <Card className="hover:shadow-lg transition-all border-t-4 border-t-indigo-600">
-            <CardHeader>
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-indigo-600 flex flex-col">
+            <CardHeader className="flex-grow">
               <div className="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center mb-4">
                 <CarFront className="h-6 w-6 text-indigo-600" />
               </div>
               <CardTitle>Verified Used Cars</CardTitle>
               <CardDescription>
-                Quality pre-owned vehicles with complete RTO and insurance support.
+                Quality pre-owned vehicles with complete RTO transfer, loan checks, and insurance support.
               </CardDescription>
             </CardHeader>
-            <CardFooter>
-              <Button asChild variant="ghost" className="p-0 text-indigo-600 hover:bg-transparent hover:underline">
-                <Link href="/services/used-cars">Browse Cars <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            <CardFooter className="pt-0">
+              <Button asChild className="w-full bg-indigo-600 hover:bg-indigo-700">
+                <Link href="/services/used-cars">Browse Cars <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </CardFooter>
           </Card>
 
           {/* Tech/Digital */}
-          <Card className="hover:shadow-lg transition-all border-t-4 border-t-purple-600">
-            <CardHeader>
+          <Card className="hover:shadow-lg transition-all border-t-4 border-t-purple-600 flex flex-col">
+            <CardHeader className="flex-grow">
               <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mb-4">
                 <Globe2 className="h-6 w-6 text-purple-600" />
               </div>
               <CardTitle>Digital & Marketing</CardTitle>
               <CardDescription>
-                Build your business with custom websites and local marketing ads.
+                Build your business with custom websites, GMB optimization, and local marketing ads.
               </CardDescription>
             </CardHeader>
-            <CardFooter>
-              <Button asChild variant="ghost" className="p-0 text-purple-600 hover:bg-transparent hover:underline">
-                <Link href="/services/digital">Start Growing <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            <CardFooter className="pt-0">
+              <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
+                <Link href="/services/digital">Start Growing <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </CardFooter>
           </Card>

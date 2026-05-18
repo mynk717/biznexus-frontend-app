@@ -324,52 +324,198 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Comparison of different solar panel technologies like Mono-Perc and Bifacial for residential use in Raipur.",
     content: `
 <div class="blog-content">
-  <p class="lead"><strong>When homeowners in Raipur ask for 'cheap' solar panels, they often overlook the 'Cost per Unit' generated.</strong> A panel that costs ₹2,000 less today might lose you ₹50,000 in energy savings over its lifetime. Here is the ultimate 2026 comparison.</p>
-
-  <div class="table-of-contents p-6 bg-slate-50 border border-slate-200 rounded-xl mb-10 not-prose">
-    <h4 class="font-bold text-slate-900 mb-3">What we compare:</h4>
-    <ul class="list-disc pl-5 space-y-2 text-sm">
-      <li><a href="#polycrystalline" class="text-blue-600 hover:underline">1. Polycrystalline (The Old 'Cheap' Choice)</a></li>
-      <li><a href="#monoperc" class="text-blue-600 hover:underline">2. Mono-PERC (The Best Seller)</a></li>
-      <li><a href="#bifacial" class="text-blue-600 hover:underline">3. Bifacial (The Premium Performer)</a></li>
-      <li><a href="#decision" class="text-blue-600 hover:underline">4. Final Recommendation for Raipur</a></li>
-    </ul>
-  </div>
-
+  <p class="lead"><strong>When homeowners in Raipur ask for 'cheap' solar panels, they often overlook the 'Cost per Unit' generated.</strong> A panel that costs ₹2,00,000 less today might lose you ₹50,000 in energy savings over its lifetime. Here is the ultimate 2026 comparison.</p>
   <h2 id="polycrystalline">1. Polycrystalline: The Budget Choice</h2>
-  <p>These are the bluish-looking panels. They are the cheapest upfront, but in Raipur's 40°C+ summer, they lose efficiency faster than newer technologies. We only recommend these for small budget-constrained projects where area is not a problem.</p>
-
+  <p>These are the bluish-looking panels. They are the cheapest upfront, but in Raipur's 40°C+ summer, they lose efficiency faster than newer technologies.</p>
   <h2 id="monoperc">2. Mono-PERC: The Value-for-Money Standard</h2>
-  <p>Mono-PERC panels are black and highly efficient. They perform much better in the low-light conditions of Raipur's monsoon and handle the Chhattisgarh heat waves more effectively. <strong>90% of our Raipur customers choose this.</strong></p>
-
-  <h2 id="bifacial">3. Bifacial: The High-ROI Tech</h2>
-  <p>Bifacial panels generate power from both sides. If you have a reflective white roof or a raised structure in Raipur, these can give you <strong>15-20% more electricity</strong> from the same area. They are the 'Best' choice if you want the fastest payback period.</p>
-
-  <h2 id="decision">4. The Verdict: How to Choose?</h2>
-  <table class="w-full text-sm text-left border-collapse border border-slate-200 my-8">
-    <thead class="bg-slate-100">
-      <tr>
-        <th class="p-3 border">Feature</th>
-        <th class="p-3 border">Cheap (Poly)</th>
-        <th class="p-3 border">Value (Mono)</th>
-        <th class="p-3 border">Best (Bifacial)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="p-3 border">Upfront Cost</td><td class="p-3 border text-green-600">Low</td><td class="p-3 border">Medium</td><td class="p-3 border">High</td></tr>
-      <tr><td class="p-3 border">Raipur Heat Performance</td><td class="p-3 border text-red-600">Poor</td><td class="p-3 border">Good</td><td class="p-3 border">Excellent</td></tr>
-      <tr><td class="p-3 border">Space Needed</td><td class="p-3 border">High</td><td class="p-3 border text-green-600">Low</td><td class="p-3 border">Very Low</td></tr>
-    </tbody>
-  </table>
-
-  <div class="alert alert-info p-6 border-l-8 border-blue-500 bg-blue-50 my-10 not-prose">
-    <h4 class="font-bold text-blue-900 mb-2">Solar Selection Rule:</h4>
-    <p class="text-blue-800 text-sm italic">"Don't buy by the price per panel. Buy by the 'Price per Watt' and 'Projected Yield' over 25 years."</p>
-  </div>
+  <p>Mono-PERC panels are black and highly efficient. 90% of our Raipur customers choose this.</p>
 </div>
     `,
     tags: ["Solar Comparison", "Mono Perc vs Bifacial", "Cheap Solar Panels", "Raipur Solar"],
     readingTime: 6,
+  },
+  {
+    id: "used-car-buying-guide-raipur",
+    slug: "raipur-used-car-buying-guide-2026",
+    title: "Buying a Used Car in Raipur? 5 Things You Must Check to Avoid Fraud",
+    metaTitle: "Used Car Buying Guide Raipur 2026 | RTO & Paper Check Tips",
+    metaDescription: "Planning to buy a pre-owned car in Raipur? Learn how to check CG-04 RTO records, hidden bank loans, and insurance transfers in simple English.",
+    excerpt: "Buying a used car in Raipur can be tricky due to heat wear and paperwork issues. Here is a simple guide to help you buy with confidence and avoid scams.",
+    category: "automotive",
+    publicationDate: "2026-05-18",
+    author: {
+      name: "MDNetwork Automotive Team",
+      credentials: "Used Car & RTO Expert",
+      bio: "Helping Raipur buyers navigate the pre-owned market with honest advice and technical verification since 2015."
+    },
+    imageUrl: "/images/blog/used-car-raipur-guide.webp",
+    imageAlt: "A car expert inspecting the engine and paperwork of a used vehicle in Raipur.",
+    content: `
+<div class="blog-content authority-guide human-first">
+  <p class="lead text-xl"><strong>Buying a used car in Raipur is exciting, but it can also be a bit scary.</strong> Whether you're looking for a family car in Shankar Nagar or a sturdy SUV for GE Road, the shiny exterior doesn't always tell the whole story. At MDNetwork, we've seen many buyers get stuck with hidden bank loans or unpaid traffic fines at the CG-04 RTO.</p>
+
+  <div class="p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl my-8 not-prose">
+    <h4 class="font-bold text-slate-900 mb-2">Our Goal:</h4>
+    <p class="text-sm text-slate-700">We want you to drive your new gaddi with peace of mind. This guide simplifies the technical jargon so you can make the right decision without any stress.</p>
+  </div>
+
+  <h2 id="paperwork">1. The Paperwork: More Than Just a Smart Card</h2>
+  <p>Before you pay any "Token" amount, you need to verify the legal status of the vehicle. In Raipur, the RTO process is strict, so check these first:</p>
+  <ul>
+    <li><strong>Check for Bank Loans:</strong> Look at the Smart Card. If there is a "Hypothecation" or HPA entry, the car still has an active loan. You need an 'NOC' and 'Form 35' from the bank to transfer it to your name.</li>
+    <li><strong>Pending Challans:</strong> Raipur's traffic cameras are everywhere. Use the Vahan portal to ensure there are no heavy fines pending against the car number.</li>
+    <li><strong>Insurance Transfer:</strong> Don't assume the old insurance covers you. You must transfer the <a href="/insurance/vehicle" class="text-blue-600 font-semibold hover:underline">TATA AIG Insurance</a> to your name within 14 days of purchase, or it becomes invalid.</li>
+  </ul>
+
+  <h2 id="local-needs">2. Raipur-Specific Mechanical Checks</h2>
+  <p>Our city's 45°C heat and industrial dust (especially near Siltara) mean Raipur cars need extra care.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
+    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+      <h4 class="font-bold text-blue-700 mb-2">The Cooling System</h4>
+      <p class="text-sm text-slate-600">Check the AC and radiator. In Raipur's extreme summers, a weak cooling system will lead to engine overheating very quickly.</p>
+    </div>
+    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+      <h4 class="font-bold text-blue-700 mb-2">Air Filter & Dust</h4>
+      <p class="text-sm text-slate-600">If the car was driven primarily in Raipur's industrial areas, the air filter might be choked with fine dust. This affects fuel mileage and engine life.</p>
+    </div>
+  </div>
+
+  <h2 id="transfer">3. Making it Legal: The RC Transfer Process</h2>
+  <p>Even if you use an agent, you should know the steps at the Raipur RTO (Atal Nagar):</p>
+  <ol>
+    <li><strong>Chassis Pencil Print:</strong> You need a physical pencil rubbing of the chassis number on a piece of paper. This is a mandatory requirement for ownership transfer.</li>
+    <li><strong>Address Proof:</strong> Ensure you have a valid Raipur address proof (Aadhaar or Electricity bill) if you want the CG-04 registration.</li>
+  </ol>
+
+  <div class="cta-box bg-blue-600 text-white p-8 rounded-2xl text-center my-12 not-prose">
+    <h3 class="text-2xl font-bold mb-2">Found Your Dream Car? Let's Secure It!</h3>
+    <p class="mb-6 text-blue-100 text-sm">We provide instant TATA AIG insurance transfers and expert RTO advice.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/insurance/vehicle" class="bg-white text-blue-600 px-8 py-3 rounded-xl font-bold transition hover:bg-blue-50">Get Insurance Quote</a>
+      <a href="tel:+917225991909" class="bg-blue-800 text-white px-8 py-3 rounded-xl font-bold transition hover:bg-blue-900">Talk to our Expert</a>
+    </div>
+  </div>
+
+  <h2 id="faq">Common Questions from Raipur Buyers</h2>
+  <div class="space-y-4">
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
+        Can I buy a car with a Bhilai (CG-07) number in Raipur?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">Yes, but you will need an 'Inter-RTO NOC' from the Bhilai RTO. This takes about 2 weeks. Our team can help manage this coordination for you.</p>
+    </details>
+  </div>
+</div>
+    `,
+    tags: ["Used Cars", "Raipur RTO", "Ownership Transfer", "CG-04", "Vehicle History"],
+    readingTime: 10,
+    schema: {
+      faqSchema: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to verify used car ownership in Raipur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the Vahan portal to check the registration details, loan status, and pending challans before making a purchase in Raipur."
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: "residential-plots-raipur-guide",
+    slug: "top-residential-plots-raipur-2026",
+    title: "Buying a Plot in Raipur? A Simple Guide to Legal Checks & Top Areas",
+    metaTitle: "Residential Plots Raipur 2026 | Legal Checklist & Localities",
+    metaDescription: "Looking for land in Raipur? Understand RERA, land diversion, and the best areas like Naya Raipur and Vidhan Sabha Road in plain English.",
+    excerpt: "Don't let legal jargon confuse you. Learn the 3 essential things to check before buying land in Raipur and where to find the best plots for your dream home.",
+    category: "real-estate",
+    publicationDate: "2026-05-18",
+    author: {
+      name: "MDNetwork Real Estate Team",
+      credentials: "Property Advisor",
+      bio: "Helping families find safe, legal, and RERA-approved plots across Raipur's growing neighborhoods."
+    },
+    imageUrl: "/images/blog/raipur-real-estate-guide.webp",
+    imageAlt: "A beautiful aerial view of a new residential plot development in Raipur.",
+    content: `
+<div class="blog-content authority-guide human-first">
+  <p class="lead text-xl"><strong>Raipur's real estate is booming, especially towards Naya Raipur and Vidhan Sabha Road.</strong> But with so many new colonies coming up, how do you know which one is safe to invest in? Many buyers get attracted by low prices and forget to check the most important legal papers.</p>
+
+  <div class="p-6 bg-green-50 border-l-4 border-green-600 rounded-r-xl my-8 not-prose">
+    <h4 class="font-bold text-slate-900 mb-2">Expert Tip:</h4>
+    <p class="text-sm text-slate-700">A plot is only a good investment if it is "Bebaak"—meaning it has a clear title and no legal issues. Never buy land without a RERA number.</p>
+  </div>
+
+  <h2 id="legal">1. The 3 Things You Must Check (Simplified)</h2>
+  <p>Real estate can be confusing, but these three things are non-negotiable for any plot in Raipur:</p>
+  <ul>
+    <li><strong>RERA Registration:</strong> This is your safety net. If a colony is RERA registered, the builder is legally bound to provide roads, water, and electricity. You can verify this on the RERA Chhattisgarh website.</li>
+    <li><strong>Land Diversion:</strong> Was this land originally for farming? If yes, it must be "Diverted" for residential use. Without this, you cannot get a home loan or permission to build your house.</li>
+    <li><strong>B1 & Khasra Records:</strong> Think of this as the "ID card" of the land. Use the Bhuiyan portal to check the owner's name and see if the land is free from any bank mortgages.</li>
+  </ul>
+
+  <h2 id="areas">2. Where Should You Buy in 2026?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
+    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+      <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-100">Best for Investment</Badge>
+      <h4 class="font-bold text-slate-900 mb-2">Vidhan Sabha Road</h4>
+      <p class="text-sm text-slate-600">The growth here is incredible. Proximity to the new capital and premium schools makes it ideal for building a high-value home or villa.</p>
+    </div>
+    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+      <Badge className="mb-3 bg-orange-100 text-orange-700 hover:bg-orange-100">Best for Living</Badge>
+      <h4 class="font-bold text-slate-900 mb-2">Naya Raipur (Sectors)</h4>
+      <p class="text-sm text-slate-600">If you want wide roads, lots of trees, and zero pollution, Naya Raipur is the place. It's a fully planned city with modern utilities.</p>
+    </div>
+  </div>
+
+  <h2 id="solar">3. Planning Ahead: The Solar-Ready Home</h2>
+  <p>When choosing a plot, look at the sun! A plot with good south-facing space is perfect for <a href="/solar/residential" class="text-blue-600 font-semibold hover:underline">Solar Panels</a>. In Raipur, you can save up to ₹1,08,000 through government subsidies. We can help you plan your home to be energy-efficient from day one.</p>
+
+  <div class="cta-box bg-slate-900 text-white p-8 rounded-2xl text-center my-12 not-prose">
+    <h3 class="text-2xl font-bold mb-2">Confused About a Property? Let Us Verify It!</h3>
+    <p class="text-slate-400 mb-6 text-sm">We help Raipur families find RERA-approved land in the best localities.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/services/properties" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition">Browse Verified Plots</a>
+      <a href="/solar/calculator" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-xl font-bold transition">Solar Savings Calculator</a>
+    </div>
+  </div>
+
+  <h2 id="faq">Real Estate FAQ</h2>
+  <div class="space-y-4">
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-green-600">
+        Is it safe to buy "Abadi" land?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">Abadi land can be tricky. Unless you are very familiar with the local village records, it's much safer to stick with RERA-approved colonies where the titles are already verified.</p>
+    </details>
+  </div>
+</div>
+    `,
+    tags: ["Real Estate Raipur", "Plots for Sale", "RERA Chhattisgarh", "Naya Raipur", "Property Investment"],
+    readingTime: 12,
+    schema: {
+      faqSchema: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to check RERA status in Raipur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Visit the RERA Chhattisgarh portal and search by project name to ensure your plot is part of a legal, registered development."
+            }
+          }
+        ]
+      }
+    }
   }
 ];
 
@@ -382,7 +528,17 @@ export const getBlogPostBySlug = async (slug: string): Promise<BlogPost | undefi
 };
 
 export const getRelatedPosts = async (currentSlug: string, category: string): Promise<BlogPost[]> => {
-  return blogPosts
-    .filter((post) => post.category === category && post.slug !== currentSlug)
-    .slice(0, 3);
+  const related = blogPosts.filter(
+    (post) => post.category === category && post.slug !== currentSlug
+  );
+
+  if (related.length < 3) {
+    const others = blogPosts
+      .filter((post) => post.category !== category && post.slug !== currentSlug)
+      .sort(() => 0.5 - Math.random()) // Randomize for variety
+      .slice(0, 3 - related.length);
+    return [...related, ...others].slice(0, 3);
+  }
+
+  return related.slice(0, 3);
 };

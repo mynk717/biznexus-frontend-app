@@ -4,7 +4,7 @@ export interface BlogPost {
     slug: string;
     excerpt: string;
     content: string;
-    category: 'insurance' | 'solar' | 'travel' | 'business';
+    category: 'insurance' | 'solar' | 'travel' | 'business' | 'automotive' | 'real-estate';
     tags: string[];
     author: {
       name: string;
@@ -16,6 +16,62 @@ export interface BlogPost {
   }
   
   export const blogPosts: BlogPost[] = [
+    {
+      id: '4',
+      title: 'Raipur Used Car Buying Guide: Avoiding Loan Traps & RC Scams',
+      slug: 'raipur-used-car-buying-guide-2026',
+      excerpt: 'Essential checklist for buying a pre-owned car in Raipur. Learn how to verify RTO records and avoid undisclosed loan liabilities.',
+      content: `
+        <h2>The Growing Used Car Market in Raipur</h2>
+        <p>Raipur's pre-owned car market is booming, but it comes with risks. Whether you are buying from a dealer in Telibandha or a private seller in Samta Colony, verification is key.</p>
+        
+        <h2>Crucial Verification Steps</h2>
+        <ul>
+          <li><strong>Check for Hypothecation:</strong> Ensure the car is free from any active bank loans.</li>
+          <li><strong>RC Transfer (CG RTO):</strong> Follow the latest Chhattisgarh RTO guidelines for a smooth ownership transfer.</li>
+          <li><strong>Insurance Continuity:</strong> Verify if the TATA AIG or existing insurance is transferable.</li>
+        </ul>
+        
+        <h2>How to Avoid Scams</h2>
+        <p>Never pay a full amount before verifying the engine and chassis numbers against the Vahan database...</p>
+      `,
+      category: 'automotive',
+      tags: ['used cars', 'Raipur', 'RTO Chhattisgarh', 'buying guide'],
+      author: {
+        name: 'MDNetwork Automotive Team'
+      },
+      publishedAt: '2026-05-18',
+      imageUrl: '/images/blog/used-car-raipur-guide.jpg',
+      readTime: 10
+    },
+    {
+      id: '5',
+      title: 'Top Residential Plots in Raipur: RERA Verification & ROI Analysis',
+      slug: 'top-residential-plots-raipur-2026',
+      excerpt: 'Looking for the best plots in Raipur? Our 2026 guide covers top localities, RERA verification tips, and future growth potential.',
+      content: `
+        <h2>Why Invest in Raipur Real Estate Now?</h2>
+        <p>With infrastructure expanding towards Naya Raipur and GE Road, residential plots are seeing significant appreciation...</p>
+        
+        <h2>Top Areas to Consider</h2>
+        <ul>
+          <li><strong>Naya Raipur (Atal Nagar):</strong> Planned development with world-class amenities.</li>
+          <li><strong>Vidhan Sabha Road:</strong> The new hub for premium residential colonies.</li>
+          <li><strong>Dhamtari Road:</strong> Rapidly developing with affordable housing options.</li>
+        </ul>
+        
+        <h2>RERA Verification: Your Safety Net</h2>
+        <p>Before investing, always check the RERA Chhattisgarh website to ensure the project is registered and compliant...</p>
+      `,
+      category: 'real-estate',
+      tags: ['real estate', 'Raipur plots', 'RERA Chhattisgarh', 'investment'],
+      author: {
+        name: 'MDNetwork Real Estate Team'
+      },
+      publishedAt: '2026-05-18',
+      imageUrl: '/images/blog/raipur-real-estate-guide.jpg',
+      readTime: 12
+    },
     {
       id: '1',
       title: 'Complete Guide to International Travel Insurance in 2026',

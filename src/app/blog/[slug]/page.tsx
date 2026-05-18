@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getBlogPostBySlug } from '@/lib/mockBlogPosts';
+import { getBlogPostBySlug, getRelatedPosts } from '@/lib/mockBlogPosts';
 import SocialShareButtons from '@/components/blog/SocialShareButtons';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -65,6 +65,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .map(n => n[0])
     .join('')
     .toUpperCase();
+
+  const relatedPosts = post.category 
+    ? await getRelatedPosts(post.slug, post.category)
+    : [];
 
   return (
     <>
@@ -222,6 +226,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
         </footer>
       </article>
+
+      {/* Related Posts Section */}
+      {relatedPosts.length > 0 && (
+        <section className="max-w-5xl mx-auto py-12 border-t mt-12">
+          <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {relatedPosts.map((relatedPost) => (
+              <Link 
+                key={relatedPost.id} 
+                href={`/blog/${relatedPost.slug}`}
+                className="group flex flex-col gap-4"
+              >
+                {relatedPost.imageUrl && (
+                  <div className="relative aspect-video overflow-hidden rounded-xl">
+                    <Image
+                      src={relatedPost.imageUrl}
+                      alt={relatedPost.imageAlt || relatedPost.title}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <Badge variant="outline" className="capitalize text-[10px]">
+                    {relatedPost.category}
+                  </Badge>
+                  <h3 className="font-bold leading-tight group-hover:text-primary transition-colors">
+                    {relatedPost.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    {relatedPost.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }
