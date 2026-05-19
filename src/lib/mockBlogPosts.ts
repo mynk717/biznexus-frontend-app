@@ -357,6 +357,9 @@ export const blogPosts: BlogPost[] = [
 
   <h2 id="local-needs">2. Raipur-Specific Mechanical Checks</h2>
   <p>Our city's 45°C heat and industrial dust (especially near Siltara) mean Raipur cars need extra care.</p>
+  
+  [USED_CAR_CALCULATOR]
+
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
     <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">The Cooling System</h4>
@@ -433,8 +436,18 @@ export const blogPosts: BlogPost[] = [
   <h2 id="legal">1. The 3 Things You Must Check (Simplified)</h2>
   <p>Real estate can be confusing, but these three things are non-negotiable for any plot in Raipur:</p>
   <ul>
-    <li><strong>RERA Registration:</strong> This is your safety net. If a colony is RERA registered, the builder is legally bound to provide roads, water, and electricity. You can verify this on the <a href="https://rera.cgstate.gov.in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RERA Chhattisgarh website</a>.</li>
+    <li><strong>RERA CG Registration:</strong> Visit the <a href="https://rera.cgstate.gov.in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold hover:underline">RERA Chhattisgarh website</a> and enter the project name. Verify if the promised amenities (roads, drainage, electricity) are registered and have a completion deadline.</li>
+    <div class="my-4 p-4 bg-green-50 border border-green-200 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 not-prose">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-green-600 text-white rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+        </div>
+        <p class="text-sm font-medium text-green-900">Check if your colony is RERA Approved</p>
+      </div>
+      <a href="https://rera.cgstate.gov.in/ViewRegisteredProject.aspx" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg text-sm font-bold transition">Check RERA Status →</a>
+    </div>
     <li><strong>Land Diversion:</strong> Was this land originally for farming? If yes, it must be "Diverted" for residential use. Without this, you cannot get a home loan or permission to build your house.</li>
+
     <li><strong>B1 & Khasra Records:</strong> Think of this as the "ID card" of the land. Use the <a href="https://bhuiyan.cg.nic.in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Bhuiyan Portal</a> to check the owner's name and see if the land is free from any bank mortgages.</li>
   </ul>
 

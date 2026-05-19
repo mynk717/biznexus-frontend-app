@@ -186,19 +186,9 @@ export async function POST(request: Request) {
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    if (!botToken || !chatId) {
-      console.error('Telegram credentials not configured');
-      // Don't fail the request - log and continue
-      console.log('Inquiry received but Telegram notification not sent:', {
-        name: body.name,
-        email: body.email,
-        phone: cleanPhone,
-        service: body.serviceType
-      });
-    } else {
+    if (botToken && chatId) {
       const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-      const telegramResponse = await fetch(telegramUrl, {
+      await fetch(telegramUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -206,33 +196,39 @@ export async function POST(request: Request) {
           text: telegramMessage,
           parse_mode: 'Markdown',
         }),
-      });
-
-      if (!telegramResponse.ok) {
-        const errorText = await telegramResponse.text();
-        console.error('Telegram API error:', errorText);
-        // Don't fail the request - log and continue
-      }
+      }).catch(err => console.error('Telegram API error:', err));
+    } else {
+      console.warn('Telegram credentials not configured');
     }
 
-    // === OPTIONAL: SAVE TO DATABASE OR GOOGLE SHEETS ===
-    // Uncomment and implement your preferred storage method
+    // === SERVER-SIDE ANALYTICS (ADC) ===
+    
+    const GA_MEASUREMENT_ID = 'G-5VLVPV5R4K';
+    const GA_API_SECRET = process.env.GA_MP_API_SECRET;
 
-    /*
-    try {
-      await saveToGoogleSheets({
-        name: body.name,
-        email: body.email,
-        phone: cleanPhone,
-        serviceType: body.serviceType,
-        timestamp: new Date().toISOString(),
-        ...body
-      });
-    } catch (error) {
-      console.error('Failed to save to Google Sheets:', error);
-      // Don't fail the request
+    if (GA_API_SECRET) {
+      const gaUrl = `https://www.google-analytics.com/mp/collect?measurement_id=${GA_MEASUREMENT_ID}&api_secret=${GA_API_SECRET}`;
+      
+      // Generate or use existing client_id
+      const clientId = body.clientId || `ss-${Math.random().toString(36).substring(2, 15)}`;
+
+      await fetch(gaUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          client_id: clientId,
+          events: [{
+            name: 'generate_lead',
+            params: {
+              service_type: body.serviceType,
+              city: body.city || 'not_specified',
+              source: 'server_side_adc',
+              currency: 'INR',
+              value: body.budget ? parseInt(body.budget.replace(/\D/g, '')) || 0 : 0
+            },
+          }],
+        }),
+      }).catch(err => console.error('GA4 Measurement Protocol error:', err));
     }
-    */
 
     // === SUCCESS RESPONSE ===
 

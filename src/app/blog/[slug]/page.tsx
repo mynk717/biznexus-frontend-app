@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { CalendarDays, UserCircle, ArrowLeft, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import type { BlogPost } from '@/lib/types';
+import UsedCarCalculator from '@/components/tools/UsedCarCalculator';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -220,10 +221,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         {/* Blog Content */}
-        <div
-          className="blog-content prose prose-lg dark:prose-invert max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <div className="blog-content prose prose-lg dark:prose-invert max-w-none">
+          {post.content.includes('[USED_CAR_CALCULATOR]') ? (
+            <>
+              <div 
+                dangerouslySetInnerHTML={{ 
+                  __html: post.content.split('[USED_CAR_CALCULATOR]')[0] 
+                }} 
+              />
+              <div className="not-prose my-12">
+                <UsedCarCalculator />
+              </div>
+              <div 
+                dangerouslySetInnerHTML={{ 
+                  __html: post.content.split('[USED_CAR_CALCULATOR]')[1] 
+                }} 
+              />
+            </>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          )}
+        </div>
 
         <hr />
 
