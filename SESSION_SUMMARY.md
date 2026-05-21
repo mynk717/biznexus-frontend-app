@@ -1,25 +1,27 @@
-# MDNetwork Project Summary - May 21, 2026
+# MDNetwork Project Summary - May 22, 2026 (Early AM)
 
-## ✅ Completed Tasks (May 20 - May 21)
-1. **New Content Pillars (Insurance Cluster):**
-   - **Raipur Cashless Hospital Guide:** Neighborhood-sorted list of TATA AIG network hospitals (Ramkrishna CARE, MMI Narayana, etc.).
-   - **Senior Citizen Guide:** Specialized advice for parents in Raipur, including the new 2026 IRDAI age-cap removal updates.
-   - **SME/Shop Owner Guide:** Group health insurance benefits for Sadar Bazaar retailers and Siltara factory owners.
-2. **Interactive Tools & Utilities:**
-   - **Used Car ROI Calculator:** Injected a dynamic React tool into the automotive blog.
-   - **RERA Trust Utility:** Direct deep-link integration for CG RERA verification in real estate posts.
-3. **Advanced Tracking:**
-   - **Server-Side ADC:** GA4 Measurement Protocol implemented in `inquiry` API to bypass ad-blockers.
-   - `GA_MP_API_SECRET` confirmed and active in production.
-4. **Keyword R&D:**
-   - Audited `table-export-329-rows.csv`. Identified and executed a pivot from high-competition national terms to high-conversion local Raipur clusters.
+## ✅ Completed Tasks (May 21 Session)
+1. **Insurance Topic Cluster Expansion:**
+   - **Senior Citizen Guide:** Added long-form guide for Raipur parents (pre-existing disease cover, IRDAI age cap removal).
+   - **SME/Shop Owner Guide:** Added guide for Sadar Bazaar/Siltara business owners (tax savings, employee retention).
+2. **Indexing & SEO:**
+   - Compiled full URL list (7 total) for manual submission to GSC.
+   - Pushed all content to master.
+3. **Analytics Bridge (In Progress):**
+   - Created dedicated Service Account: `mdn-data-gscga4@mktdm-outh.iam.gserviceaccount.com`.
+   - Updated `settings.json` with GA4/GSC MCP server configurations.
+   - Enabled Analytics & Search Console APIs in Google Cloud.
 
 ## 🚀 Pending Tasks for Next Session
-1. **Pillar 4: Travel Insurance (Raipur):** Develop a guide for students and tourists traveling from Raipur to Schengen countries/USA.
-2. **Internal Link Audit:** Ensure all new guides are cross-linked correctly within the cluster (e.g., Senior guide linking to Cashless guide).
-3. **UX Refinement:** Add a "Quick Action" floating button on blog pages for mobile users to call the expert directly.
+1. **Analytics Activation:** Complete the "Add User" process in GA4/GSC using the OLD Verification Portal bypass.
+2. **Data Analysis:** Once connected, fetch the first performance report for the new Raipur guides.
+3. **Pillar 4 (Travel Insurance):** Begin R&D for the Raipur international travel guide (Schengen/USA).
 
-## 🔗 New Assets Live
+## 🔗 URL List for Manual Indexing
+- https://mdn.mktgdime.com/blog/raipur-used-car-buying-guide-2026
+- https://mdn.mktgdime.com/blog/top-residential-plots-raipur-2026
+- https://mdn.mktgdime.com/blog/tata-aig-cashless-hospitals-raipur-2026-guide
 - https://mdn.mktgdime.com/blog/health-insurance-senior-citizens-raipur-guide
 - https://mdn.mktgdime.com/blog/health-insurance-raipur-shop-owners-guide
-- https://mdn.mktgdime.com/blog/tata-aig-cashless-hospitals-raipur-2026-guide
+- https://mdn.mktgdime.com/neighborhood/samta-colony
+- https://mdn.mktgdime.com/neighborhood/ge-road
