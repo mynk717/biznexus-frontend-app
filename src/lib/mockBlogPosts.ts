@@ -2,6 +2,186 @@ import { BlogPost } from './types';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "senior-citizen-health-insurance-raipur",
+    slug: "health-insurance-senior-citizens-raipur-guide",
+    title: "Protecting Your Parents in Raipur: A Guide to Senior Citizen Health Insurance (2026)",
+    metaTitle: "Best Health Insurance for Senior Citizens in Raipur 2026 | TATA AIG",
+    metaDescription: "Looking for health insurance for parents in Raipur? Learn about pre-existing disease cover, cashless hospitals near Samta Colony, and TATA AIG senior plans.",
+    excerpt: "As our parents age, their health needs in Raipur's unique climate change. Discover how to choose the right health insurance with low waiting periods and local support.",
+    category: "insurance",
+    publicationDate: "2026-05-21",
+    author: {
+      name: "MDNetwork Insurance Team",
+      credentials: "Family Insurance Advisor",
+      bio: "Helping Raipur families secure their future. We specialize in senior citizen health plans and pre-existing disease coverage coordination."
+    },
+    imageUrl: "/images/blog/senior-citizen-health-insurance-raipur.webp",
+    imageAlt: "An elderly couple enjoying a walk in a peaceful park in Raipur, representing healthy aging with insurance protection.",
+    content: `
+<div class="blog-content authority-guide human-first">
+  <p class="lead text-xl"><strong>Our parents spent their lives taking care of us; now it's our turn to ensure they have the best medical care in Raipur without any financial stress.</strong> With the city's rising medical costs and extreme weather, having a robust health insurance policy isn't just an option—it's a necessity for every senior citizen living in neighborhoods like Samta Colony or Choubey Colony.</p>
+
+  <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl my-8 not-prose">
+    <p class="text-sm text-slate-900 font-semibold mb-2">New IRDAI Update for 2026:</p>
+    <p class="text-xs text-slate-700">The <a href="https://irdai.gov.in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">IRDAI (Insurance Regulatory and Development Authority of India)</a> has recently removed the age cap for buying health insurance. This means even if your parents are above 70, they can now apply for fresh comprehensive coverage!</p>
+  </div>
+
+  <h2 id="why-senior-cover">1. Why Standard Insurance Isn't Enough for Raipur Seniors</h2>
+  <p>Standard family floater plans often have high co-payment clauses for seniors. For our elders in Raipur, we need plans that address specific local challenges:</p>
+  <ul>
+    <li><strong>Pre-existing Disease (PED) Cover:</strong> Conditions like Diabetes or Hypertension are common. Look for TATA AIG plans that offer a shorter waiting period (e.g., 2 years instead of 4).</li>
+    <li><strong>Raipur's Heat Impact:</strong> Extreme summers can lead to respiratory or cardiac issues. Ensure your plan covers specialized care at top centers like <a href="/blog/tata-aig-cashless-hospitals-raipur-2026-guide" class="text-blue-600 font-semibold hover:underline">MMI Narayana or Ramkrishna CARE</a>.</li>
+    <li><strong>Annual Health Check-ups:</strong> Prevention is key. Most senior plans include a free annual check-up in Raipur, helping you catch issues early.</li>
+  </ul>
+
+  <h2 id="tax-benefits">2. The "Hidden" Benefit: Section 80D Tax Savings</h2>
+  <p>When you buy insurance for your parents, you don't just protect them—you also save on your own taxes. Under Section 80D of the Income Tax Act, you can claim an <strong>additional deduction of up to ₹50,000</strong> for premiums paid for parents above age 60. This is over and above your own health insurance limit.</p>
+
+  <h2 id="how-to-choose">3. 3 Things to Check Before Buying</h2>
+  <ol>
+    <li><strong>Co-payment Clause:</strong> Does the policy require you to pay 20% of every bill? We recommend plans with 0% co-pay for better financial freedom.</li>
+    <li><strong>OPD Coverage:</strong> Many senior health issues (like physiotherapy or eye drops) don't require hospitalization. Check if your plan covers Raipur's OPD clinics.</li>
+    <li><strong>No-Claim Bonus (NCB):</strong> If they stay healthy, the coverage amount should increase every year at no extra cost.</li>
+  </ol>
+
+  <div class="cta-box bg-slate-900 text-white p-8 rounded-2xl text-center my-12 not-prose">
+    <p class="text-2xl font-bold mb-2">Want a Personalized Plan for Your Parents?</p>
+    <p class="text-slate-400 mb-6 text-sm">We compare the best TATA AIG senior plans based on your parents' medical history in Raipur.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/insurance/health" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition">Compare Senior Plans</a>
+      <a href="tel:+917225991909" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-bold transition">Call Our Expert</a>
+    </div>
+  </div>
+
+  <h2 id="faq">Raipur Seniors FAQ</h2>
+  <div class="space-y-4">
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
+        Can I buy insurance for my 75-year-old mother in Raipur?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">Yes! Under the new 2026 guidelines, there is no entry age bar. However, a medical check-up will likely be required at a Raipur network lab.</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
+        Is Samta Colony covered by the cashless network?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">While Samta Colony itself is residential, many top network hospitals (like Shree Narayana or Suyash) are just 5-10 minutes away, providing excellent cashless coverage for the area.</p>
+    </details>
+  </div>
+</div>
+    `,
+    tags: ["Senior Citizen", "Health Insurance", "Raipur", "TATA AIG", "Parents", "Tax Benefits"],
+    readingTime: 10,
+    schema: {
+      faqSchema: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best health insurance for parents in Raipur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best plan is one that offers low waiting periods for pre-existing diseases and has a strong network of cashless hospitals like Ramkrishna CARE in Raipur."
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: "business-insurance-raipur-shop-owners",
+    slug: "health-insurance-raipur-shop-owners-guide",
+    title: "Medical Insurance for Raipur Shop Owners: Tax Savings & Staff Benefits (2026)",
+    metaTitle: "Health Insurance for Small Business Raipur | Group Plans & 80D",
+    metaDescription: "Raipur shop owners (Sadar Bazaar) and Siltara factory managers: Learn how to save tax and provide medical cover for staff with TATA AIG group insurance.",
+    excerpt: "Running a business in Sadar Bazaar or a factory in Urla? Discover how group health insurance can help you retain employees and save massive tax for your firm.",
+    category: "business",
+    publicationDate: "2026-05-21",
+    author: {
+      name: "MDNetwork Business Team",
+      credentials: "SME Risk Advisor",
+      bio: "Helping Raipur's business community thrive. We specialize in group health schemes and tax-efficient insurance planning for MSMEs."
+    },
+    imageUrl: "/images/blog/raipur-business-health-insurance.webp",
+    imageAlt: "A group of happy employees in a Raipur retail shop, representing a healthy and insured workforce.",
+    content: `
+<div class="blog-content authority-guide human-first">
+  <p class="lead text-xl"><strong>Your employees are the heartbeat of your business, whether you're running a major showroom in Sadar Bazaar or a manufacturing unit in Siltara.</strong> In 2026, providing health insurance isn't just a "corporate" thing—it's a smart strategy for small businesses in Raipur to retain talent and save on taxes.</p>
+
+  <div class="p-6 bg-green-50 border-l-4 border-green-600 rounded-r-xl my-8 not-prose">
+    <p class="text-sm text-slate-900 font-semibold mb-2">Did You Know?</p>
+    <p class="text-xs text-slate-700">Health insurance premiums paid by a business owner for their employees are considered a **100% tax-deductible business expense**. This can significantly lower your taxable income at the end of the financial year!</p>
+  </div>
+
+  <h2 id="why-group-insurance">1. Why Group Insurance is Cheaper Than Individual Plans</h2>
+  <p>For shop owners in Raipur, buying a "Group Plan" is much more cost-effective than asking employees to buy their own:</p>
+  <ul>
+    <li><strong>Lower Premiums:</strong> Because the risk is pooled, the cost per person is often 30-40% lower.</li>
+    <li><strong>No Medical Tests:</strong> Most group plans cover employees regardless of their current health status, without requiring expensive medical screenings.</li>
+    <li><strong>Maternity Benefits:</strong> Group plans often cover maternity costs from day one, which is a massive retention benefit for younger staff in Raipur.</li>
+  </ul>
+
+  <h2 id="esi-vs-group">2. ESI vs. Group Health Insurance: The Raipur Factory Angle</h2>
+  <p>If you own a factory in **Urla or Siltara**, you might already be paying for ESI (Employee State Insurance). However, for your managerial or skilled staff earning above ₹21,000, ESI doesn't apply. This is where a private group plan steps in to fill the gap and provide access to premium hospitals like <a href="/blog/tata-aig-cashless-hospitals-raipur-2026-guide" class="text-blue-600 font-semibold hover:underline">Shree Narayana or SBIMS</a>.</p>
+
+  <h2 id="how-to-start">3. Getting Started for Your Firm</h2>
+  <ol>
+    <li><strong>Employee List:</strong> You only need a basic list of employee names and ages to get a quote.</li>
+    <li><strong>Customize Coverage:</strong> You can choose to cover just the employee or their whole family.</li>
+    <li><strong>Micro-Plans:</strong> Even if you have as few as 5 or 7 employees, specialized "Micro Group" plans are now available for Raipur retailers.</li>
+  </ol>
+
+  <div class="cta-box bg-slate-900 text-white p-8 rounded-2xl text-center my-12 not-prose">
+    <p class="text-2xl font-bold mb-2">Calculate Your Business Tax Savings</p>
+    <p class="text-slate-400 mb-6 text-sm">Let our business advisors show you how much you can save this year by insuring your Raipur workforce.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/services/digital" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition">Get a Business Quote</a>
+      <a href="tel:+917225991909" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-bold transition">Speak to SME Advisor</a>
+    </div>
+  </div>
+
+  <h2 id="faq">Business Owner FAQ</h2>
+  <div class="space-y-4">
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
+        Can I cover my temporary or seasonal workers in Raipur?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">Yes! Modern group plans allow you to add or remove members throughout the year, making it ideal for industries with seasonal staff changes.</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
+        Is there a minimum number of employees required?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-2 text-slate-600 text-sm">While standard group plans start at 10-20 people, we have TATA AIG micro-schemes for Raipur shop owners with as few as 5-7 employees.</p>
+    </details>
+  </div>
+</div>
+    `,
+    tags: ["Group Insurance", "Business Owners", "Raipur", "SME", "Sadar Bazaar", "Tax Deductions"],
+    readingTime: 10,
+    schema: {
+      faqSchema: {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are health insurance premiums tax deductible for businesses in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, premiums paid by a business for employee health insurance are a 100% tax-deductible business expense under the Income Tax Act."
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
     id: "cashless-hospitals-raipur-tata-aig",
     slug: "tata-aig-cashless-hospitals-raipur-2026-guide",
     title: "Best TATA AIG Cashless Hospitals in Raipur: 2026 Neighborhood Guide",
