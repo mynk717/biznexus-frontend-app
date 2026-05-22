@@ -366,7 +366,7 @@ export const blogPosts: BlogPost[] = [
       credentials: "Solar Energy Consultant",
       bio: "Specializing in CSPDCL solar integrations and PM Surya Ghar Yojana subsidies in Chhattisgarh. Helped 200+ Raipur homes go green."
     },
-    imageUrl: "/images/blog/solar-panel-cost-chhattisgarh-subsidies.jpg",
+    imageUrl: "/images/blog/solar-panel-cost-chhattisgarh-subsidies.webp",
     imageAlt: "Detailed breakdown of solar panel costs and government subsidies in Chhattisgarh for 2026.",
     content: `
 <div class="blog-content">
