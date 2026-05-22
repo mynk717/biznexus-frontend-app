@@ -353,6 +353,7 @@ export const blogPosts: BlogPost[] = [
       }
     }
   },
+  {
     slug: "solar-subsidy-raipur-chhattisgarh-guide",
     title: "Complete Guide to Solar Subsidy in Raipur (2026): Save ₹1,08,000 on Rooftop Solar",
     metaTitle: "Solar Subsidy Raipur 2026 | PM Surya Ghar Yojana Chhattisgarh Guide",
