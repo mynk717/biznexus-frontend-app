@@ -23,6 +23,27 @@ export const metadata: Metadata = {
 };
 
 export default function ResidentialSolarPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'Residential Solar Installation in Raipur',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'MDNetwork',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Raipur',
+        'addressRegion': 'Chhattisgarh',
+        'addressCountry': 'IN'
+      }
+    },
+    'description': 'Professional residential solar panel installation and CSPDCL net metering assistance in Raipur, Chhattisgarh.',
+    'areaServed': {
+      '@type': 'City',
+      'name': 'Raipur'
+    }
+  };
+
   const packages = [
     {
       name: '3 kW Solar System',
@@ -96,6 +117,10 @@ export default function ResidentialSolarPage() {
 
   return (
     <div className="flex flex-col gap-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-600 via-yellow-600 to-orange-700 text-white -mt-8 -mx-4 px-4 py-20 md:py-28 overflow-hidden rounded-b-[50px]">
         <div className="absolute inset-0 opacity-10">
