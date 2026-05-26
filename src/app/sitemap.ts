@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/lib/mockBlogPosts';
+import { getAllBlogPosts } from '@/lib/mockBlogPosts';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://mdn.mktgdime.com';
+  const blogPosts = await getAllBlogPosts();
 
   const staticPages = [
     '',
