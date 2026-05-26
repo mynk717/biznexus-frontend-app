@@ -1,62 +1,48 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '@/lib/mockBlogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mdn.mktgdime.com';
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/insurance`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/insurance/travel/international`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/solar/residential`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/solar/calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/properties`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/services/used-cars`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ];
+  const staticPages = [
+    '',
+    '/insurance',
+    '/insurance/health',
+    '/insurance/life',
+    '/insurance/vehicle',
+    '/insurance/travel/international',
+    '/insurance/travel/student',
+    '/insurance/travel/senior-citizen',
+    '/insurance/travel/domestic',
+    '/insurance/travel/multi-trip',
+    '/insurance/travel/compare',
+    '/solar/residential',
+    '/solar/commercial',
+    '/solar/calculator',
+    '/services/digital',
+    '/services/media',
+    '/services/properties',
+    '/services/used-cars',
+    '/neighborhood/samta-colony',
+    '/neighborhood/ge-road',
+    '/neighborhood/shankar-nagar',
+    '/neighborhood/telibandha',
+    '/blog',
+    '/about',
+    '/contact',
+  ].map((route) => ({
+    url: \`\${baseUrl}\${route}\`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }));
+
+  const blogEntries = blogPosts.map((post) => ({
+    url: \`\${baseUrl}/blog/\${post.slug}\`,
+    lastModified: new Date(post.publicationDate),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogEntries];
 }
