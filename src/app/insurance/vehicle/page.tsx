@@ -22,6 +22,27 @@ export const metadata: Metadata = {
 };
 
 export default function VehicleInsurancePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'TATA AIG Car & Bike Insurance Raipur',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'MDNetwork',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Raipur',
+        'addressRegion': 'Chhattisgarh',
+        'addressCountry': 'IN'
+      }
+    },
+    'description': 'Comprehensive car and bike insurance in Raipur with TATA AIG. Zero dep cover and RC transfer support at Raipur RTO (Atal Nagar).',
+    'areaServed': {
+      '@type': 'City',
+      'name': 'Raipur'
+    }
+  };
+
   const carPlans = [
     {
       name: 'Third Party Insurance',

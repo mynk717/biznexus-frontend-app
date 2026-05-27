@@ -109,8 +109,27 @@ const propertyTypes = [
 ];
 
 export default function PropertiesPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    'name': 'MDNetwork Property Consulting Raipur',
+    'image': 'https://mdn.mktgdime.com/images/blog/raipur-real-estate-guide.webp',
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'Raipur',
+      'addressRegion': 'Chhattisgarh',
+      'addressCountry': 'IN'
+    },
+    'description': 'Verified residential plots, flats, and houses in Raipur with RERA CG documentation support.',
+    'areaServed': ['Raipur', 'Naya Raipur', 'Shankar Nagar', 'Telibandha']
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative -mx-4 sm:-mx-6 lg:-mx-8 mb-16 overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700" />

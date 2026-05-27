@@ -74,8 +74,33 @@ const dummyCars = [
 ];
 
 export default function UsedCarsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'Verified Used Cars & RTO Support Raipur',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'MDNetwork x MotoYard',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Raipur',
+        'addressRegion': 'Chhattisgarh',
+        'addressCountry': 'IN'
+      }
+    },
+    'description': 'Buy verified pre-owned cars in Raipur with RC transfer support at Raipur RTO (Atal Nagar) and TATA AIG insurance.',
+    'areaServed': {
+      '@type': 'City',
+      'name': 'Raipur'
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative -mx-4 sm:-mx-6 lg:-mx-8 mb-16 overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700" />

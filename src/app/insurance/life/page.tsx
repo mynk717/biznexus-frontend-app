@@ -135,8 +135,33 @@ const whyTataAIA = [
 ];
 
 export default function LifeInsurancePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'Tata AIA Life Insurance Consultation Raipur',
+    'provider': {
+      '@type': 'LocalBusiness',
+      'name': 'MDNetwork',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Raipur',
+        'addressRegion': 'Chhattisgarh',
+        'addressCountry': 'IN'
+      }
+    },
+    'description': 'Authorized Tata AIA life insurance advisor in Raipur. Term plans, ULIPs, and retirement planning with local claim support.',
+    'areaServed': {
+      '@type': 'City',
+      'name': 'Raipur'
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative -mx-4 sm:-mx-6 lg:-mx-8 mb-16 overflow-hidden rounded-3xl shadow-2xl">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700" />
