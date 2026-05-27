@@ -17,13 +17,16 @@ def get_used_keywords():
         with open(file_path, 'r', encoding='utf-8') as f:
             post = frontmatter.load(f)
             slug = os.path.basename(file_path).replace('.md', '')
-            # Check tags
-            tags = post.get('tags', [])
-            for tag in tags:
-                used[tag.lower()] = slug
-            # Check metaTitle
-            title = post.get('metaTitle', '')
-            used[title.lower()] = slug
+            
+            # 1. Check metadata (tags, title, description)
+            metadata_text = " ".join(post.get('tags', [])) + " " + post.get('metaTitle', '') + " " + post.get('metaDescription', '')
+            
+            # 2. Check full body content
+            full_text = (metadata_text + " " + post.content).lower()
+            
+            # Store the slug for any keywords found in this specific text
+            # We'll return the full text for the main loop to check against
+            used[slug] = full_text
     return used
 
 def main():
@@ -34,8 +37,8 @@ def main():
     # 1. Load SEMrush Data
     df = pd.read_excel(EXCEL_PATH)
     
-    # 2. Get currently used keywords from our blogs
-    used_map = get_used_keywords()
+    # 2. Get currently used content from our blogs
+    content_map = get_used_keywords()
     
     # 3. Build the Inventory
     inventory = []
@@ -44,10 +47,12 @@ def main():
         status = "Opportunity"
         page = ""
         
-        # Check if this keyword (or a very similar one) is used
-        if kw in used_map:
-            status = "Published"
-            page = used_map[kw]
+        # Check every blog's content for this keyword
+        for slug, body_text in content_map.items():
+            if kw in body_text:
+                status = "Published"
+                page = slug
+                break
             
         inventory.append({
             "keyword": row['Keyword'],
