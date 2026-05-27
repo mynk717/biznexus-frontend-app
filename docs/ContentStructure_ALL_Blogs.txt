@@ -1,0 +1,11 @@
+#Gemini and Claude, feel free to add more points as we find to add 
+
+> google first strcture
+> Human first content
+> No jargans or useless tech words 
+> Easy and understandable words
+> SERP content gaps and features to include
+> Proper cross check for duplication or keyword canabalism to avoid
+> internal linking opportunity
+> Semantic content
+> Must follow google's EEAT 
