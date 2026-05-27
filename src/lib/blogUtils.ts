@@ -1,7 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { marked } from 'marked';
 import { BlogPost } from './types';
+
+marked.setOptions({
+  gfm: true,
+  breaks: false,
+});
+
+function parseContent(raw: string): string {
+  let html = marked.parse(raw) as string;
+  // Convert inline markdown bold/italic that marked skips inside HTML blocks
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/(?<!\*)\*([^*<]+)\*(?!\*)/g, '<em>$1</em>');
+  return html;
+}
 
 const blogDirectory = path.join(process.cwd(), 'content/blog');
 
@@ -36,7 +50,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         },
         imageUrl: data.imageUrl,
         imageAlt: data.imageAlt,
-        content: content,
+        content: parseContent(content),
         tags: data.tags,
         readingTime: data.readingTime,
         schema: data.schema,
@@ -71,7 +85,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefi
       },
       imageUrl: data.imageUrl,
       imageAlt: data.imageAlt,
-      content: content,
+      content: parseContent(content),
       tags: data.tags,
       readingTime: data.readingTime,
       schema: data.schema,
