@@ -76,7 +76,7 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   </div>
 
   <h2 id="cost-roi">3. 3kW Solar System Cost & Payback Period</h2>
-  <p>A premium 3kW On-Grid solar system in Raipur typically costs between <strong>₹1,80,000 to ₹2,10,000</strong> (before subsidy). </p>
+  <p>A premium 3kW On-Grid solar system in Raipur typically costs between <strong>₹1,80,000 to ₹2,10,000</strong> (before subsidy). For a more granular view of individual component costs and brand comparisons, see our <a href="/blog/3-kilowatt-solar-panel-price-raipur-2026" class="text-blue-600 underline font-bold">3kW solar price master guide</a>.</p>
   <ul>
     <li><strong>System Cost:</strong> ₹2,00,000 (Average)</li>
     <li><strong>Total Subsidy:</strong> -₹1,08,000</li>
