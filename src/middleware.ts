@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // Protect admin routes
-  if (pathname.startsWith('/admin')) {
+  if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
     // Check for admin token in headers or cookies
     const token = request.headers.get('authorization')?.replace('Bearer ', '') ||
                   request.cookies.get('admin_token')?.value
