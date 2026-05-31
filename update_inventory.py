@@ -5,9 +5,9 @@ import os
 import glob
 import frontmatter
 
-EXCEL_PATH = r'C:\Users\mayank\Downloads\solar-subsidy-raipur-2026_list_2026-05-27.xlsx'
-CONTENT_DIR = r'content\blog\*.md'
-INVENTORY_PATH = r'docs\seo_tools' # Current path of the inventory file
+EXCEL_PATH = os.path.join(os.path.dirname(__file__), 'docs', 'raw_data', 'solar-subsidy-raipur-2026_list_2026-05-27.xlsx')
+CONTENT_DIR = os.path.join(os.path.dirname(__file__), 'content', 'blog', '*.md')
+INVENTORY_PATH = os.path.join(os.path.dirname(__file__), 'docs', 'seo_tools') # Current path of the inventory file
 
 def get_used_keywords():
     """Scans local markdown files for keywords used in tags or content."""
@@ -63,12 +63,18 @@ def main():
             "linked_page": page
         })
 
-    # 4. Save to the inventory file
+    # 4. Save to the inventory file (JSON for human/legacy, Parquet for AI/Performance)
     with open(INVENTORY_PATH, 'w') as f:
         json.dump(inventory, f, indent=2)
-        
-    print("\n--- SEO Inventory Updated ---")
+    
+    # Save as Parquet
+    parquet_path = INVENTORY_PATH + '.parquet'
     inv_df = pd.DataFrame(inventory)
+    inv_df.to_parquet(parquet_path, index=False)
+        
+    print(f"\n--- SEO Inventory Updated ---")
+    print(f"JSON: {INVENTORY_PATH}")
+    print(f"Parquet: {parquet_path}")
     published = inv_df[inv_df['status'] == 'Published']
     print(f"Keywords Published: {len(published)}")
     print(published[['keyword', 'linked_page']].head(20).to_string(index=False))
