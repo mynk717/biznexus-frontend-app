@@ -60,7 +60,7 @@ export default function ContentReview() {
       fetchDrafts()
       setSelectedDraft(null)
     } catch (err) {
-      alert('❌ ' + (err instanceof Error ? err.message : 'Unknown error'))
+      alert('❌'+ (err instanceof Error ? err.message : 'Unknown error'))
     } finally {
       setApproving(false)
     }
@@ -80,7 +80,7 @@ export default function ContentReview() {
       alert('❌ Article rejected')
       fetchDrafts()
     } catch (err) {
-      alert('Error: ' + (err instanceof Error ? err.message : 'Unknown error'))
+      alert('Error:'+ (err instanceof Error ? err.message : 'Unknown error'))
     }
   }
 
@@ -99,7 +99,7 @@ export default function ContentReview() {
       alert('🔄 Changes requested. Check the PR comments.')
       fetchDrafts()
     } catch (err) {
-      alert('Error: ' + (err instanceof Error ? err.message : 'Unknown error'))
+      alert('Error:'+ (err instanceof Error ? err.message : 'Unknown error'))
     }
   }
 

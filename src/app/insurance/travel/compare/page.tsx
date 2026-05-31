@@ -175,7 +175,7 @@ export default function CompareTravelInsurancePage() {
       multiTrip: '✓',
     },
     {
-      feature: ' 24/7 Assistance',
+      feature:'24/7 Assistance',
       domestic: '✓',
       international: '✓',
       student: '✓',
