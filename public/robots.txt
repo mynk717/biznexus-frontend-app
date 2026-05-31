@@ -1,0 +1,7 @@
+
+# Admin Panel - Do Not Index
+User-agent: *
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://mdn.mktgdime.com/sitemap.xml
