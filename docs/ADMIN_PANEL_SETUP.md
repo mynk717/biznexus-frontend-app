@@ -336,3 +336,24 @@ Disallow: /admin/
 **Setup Complete!** 🎉
 
 Your content review panel is ready to use. Visit `/admin/content-review` after logging in!
+# GitHub Configuration
+# ⚠️ IMPORTANT: Replace with new token (current one is exposed)
+# Go to: https://github.com/settings/tokens
+GITHUB_TOKEN=REPLACE_WITH_NEW_TOKEN
+GITHUB_ORG=mynk717
+GITHUB_REPO=biznexus-frontend-app
+
+# Admin Authentication
+ADMIN_PASSWORD=Project@biz909
+JWT_SECRET=HgZo74NUsNubJoqFQw+uoaoLi0uuAeiVuc7FohQzTHU=
+
+# Optional: Auto-deployment (Vercel)
+# Get from: Vercel Dashboard → Project → Settings → Git → Deploy Hooks
+VERCEL_DEPLOY_HOOK=https://api.vercel.com/v1/integrations/deploy/prj_DwGOuwdx9dUmkEkXKLOE9JfPjOu2/veQoVStW1m
+
+# Optional: Google Search Console API
+# Get from: Google Cloud Console → APIs & Services → Credentials
+GSC_API_KEY=your-gsc-api-key
+
+# Admin API Token (for direct /api/admin/* access)
+ADMIN_API_TOKEN=your-secure-api-token-here
