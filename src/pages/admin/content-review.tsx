@@ -18,26 +18,29 @@ interface DraftArticle {
 }
 
 export default function ContentReview() {
+  const [activeTab, setActiveTab] = useState<'drafts' | 'live'>('drafts')
   const [drafts, setDrafts] = useState<DraftArticle[]>([])
-  const [selectedDraft, setSelectedDraft] = useState<DraftArticle | null>(null)
+  const [liveArticles, setLiveArticles] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [approving, setApproving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetchDrafts()
-    // Refresh every 5 minutes
-    const interval = setInterval(fetchDrafts, 5 * 60 * 1000)
-    return () => clearInterval(interval)
-  }, [])
+    fetchData()
+  }, [activeTab])
 
-  async function fetchDrafts() {
+  async function fetchData() {
+    setLoading(true)
     try {
-      setLoading(true)
-      const res = await fetch('/api/admin/drafts')
-      if (!res.ok) throw new Error('Failed to fetch drafts')
-      const data = await res.json()
-      setDrafts(data)
+      if (activeTab === 'drafts') {
+        const res = await fetch('/api/admin/drafts')
+        if (!res.ok) throw new Error('Failed to fetch drafts')
+        setDrafts(await res.json())
+      } else {
+        const res = await fetch('/api/admin/live-articles')
+        if (!res.ok) throw new Error('Failed to fetch live articles')
+        setLiveArticles(await res.json())
+      }
       setError(null)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unknown error')
@@ -45,6 +48,35 @@ export default function ContentReview() {
       setLoading(false)
     }
   }
+... (rest of your existing component logic) ...
+
+  return (
+    <>
+      <Head>
+        <title>Content Review Panel - MDNetwork Admin</title>
+      </Head>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Header & Tabs */}
+          <div className="mb-12">
+            <h1 className="text-4xl font-bold text-white mb-6">📝 Content Management</h1>
+            <div className="flex gap-4 border-b border-slate-700">
+              <button 
+                onClick={() => setActiveTab('drafts')}
+                className={`pb-2 ${activeTab === 'drafts' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-slate-400'}`}
+              >
+                Pending Drafts
+              </button>
+              <button 
+                onClick={() => setActiveTab('live')}
+                className={`pb-2 ${activeTab === 'live' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-slate-400'}`}
+              >
+                Live Articles
+              </button>
+            </div>
+          </div>
+... (rest of the render function) ...
 
   async function approveArticle(pr: number, slug: string) {
     try {
