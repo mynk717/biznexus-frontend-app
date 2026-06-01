@@ -21,6 +21,7 @@ export default function ContentReview() {
   const [activeTab, setActiveTab] = useState<'drafts' | 'live'>('drafts')
   const [drafts, setDrafts] = useState<DraftArticle[]>([])
   const [liveArticles, setLiveArticles] = useState<any[]>([])
+  const [selectedDraft, setSelectedDraft] = useState<DraftArticle | null>(null)
   const [loading, setLoading] = useState(true)
   const [approving, setApproving] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -48,7 +49,63 @@ export default function ContentReview() {
       setLoading(false)
     }
   }
-... (rest of your existing component logic) ...
+
+  async function approveArticle(pr: number, slug: string) {
+    try {
+      setApproving(true)
+      const res = await fetch('/api/admin/approve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prNumber: pr, slug })
+      })
+      if (!res.ok) throw new Error('Failed to approve article')
+
+      alert('✅ Article approved and published!')
+      fetchData()
+      setSelectedDraft(null)
+    } catch (err) {
+      alert('❌ ' + (err instanceof Error ? err.message : 'Unknown error'))
+    } finally {
+      setApproving(false)
+    }
+  }
+
+  async function rejectArticle(pr: number) {
+    if (!confirm('Are you sure? This will close the PR.')) return
+
+    try {
+      const res = await fetch('/api/admin/reject', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prNumber: pr })
+      })
+      if (!res.ok) throw new Error('Failed to reject article')
+
+      alert('❌ Article rejected')
+      fetchData()
+    } catch (err) {
+      alert('Error: ' + (err instanceof Error ? err.message : 'Unknown error'))
+    }
+  }
+
+  async function requestChanges(pr: number) {
+    const feedback = prompt('What changes do you want?')
+    if (!feedback) return
+
+    try {
+      const res = await fetch('/api/admin/request-changes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prNumber: pr, feedback })
+      })
+      if (!res.ok) throw new Error('Failed to request changes')
+
+      alert('🔄 Changes requested. Check the PR comments.')
+      fetchData()
+    } catch (err) {
+      alert('Error: ' + (err instanceof Error ? err.message : 'Unknown error'))
+    }
+  }
 
   return (
     <>
@@ -76,90 +133,12 @@ export default function ContentReview() {
               </button>
             </div>
           </div>
-... (rest of the render function) ...
-
-  async function approveArticle(pr: number, slug: string) {
-    try {
-      setApproving(true)
-      const res = await fetch('/api/admin/approve', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prNumber: pr, slug })
-      })
-      if (!res.ok) throw new Error('Failed to approve article')
-
-      alert('✅ Article approved and published!')
-      fetchDrafts()
-      setSelectedDraft(null)
-    } catch (err) {
-      alert('❌'+ (err instanceof Error ? err.message : 'Unknown error'))
-    } finally {
-      setApproving(false)
-    }
-  }
-
-  async function rejectArticle(pr: number) {
-    if (!confirm('Are you sure? This will close the PR.')) return
-
-    try {
-      const res = await fetch('/api/admin/reject', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prNumber: pr })
-      })
-      if (!res.ok) throw new Error('Failed to reject article')
-
-      alert('❌ Article rejected')
-      fetchDrafts()
-    } catch (err) {
-      alert('Error:'+ (err instanceof Error ? err.message : 'Unknown error'))
-    }
-  }
-
-  async function requestChanges(pr: number) {
-    const feedback = prompt('What changes do you want?')
-    if (!feedback) return
-
-    try {
-      const res = await fetch('/api/admin/request-changes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prNumber: pr, feedback })
-      })
-      if (!res.ok) throw new Error('Failed to request changes')
-
-      alert('🔄 Changes requested. Check the PR comments.')
-      fetchDrafts()
-    } catch (err) {
-      alert('Error:'+ (err instanceof Error ? err.message : 'Unknown error'))
-    }
-  }
-
-  return (
-    <>
-      <Head>
-        <title>Content Review Panel - MDNetwork Admin</title>
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="googlebot" content="noindex, nofollow" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Internal admin panel - not for public access" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-4xl font-bold text-white mb-2">📝 Content Review Panel</h1>
-            <p className="text-slate-400">Approve, reject, or request changes to draft articles</p>
-            <p className="text-xs text-red-400 mt-2">⚠️ INTERNAL ADMIN PANEL - NOT INDEXED</p>
-          </div>
 
           {/* Status */}
           {loading && (
             <div className="text-center py-12">
               <div className="inline-block animate-spin">⏳</div>
-              <p className="text-white mt-4">Loading drafts...</p>
+              <p className="text-white mt-4">Loading data...</p>
             </div>
           )}
 
@@ -169,161 +148,107 @@ export default function ContentReview() {
             </div>
           )}
 
-          {!loading && drafts.length === 0 && (
-            <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-12 text-center">
-              <p className="text-slate-300 text-lg">✨ No drafts pending review</p>
-              <p className="text-slate-500 text-sm mt-2">Check back later or manually trigger the workflow</p>
-            </div>
-          )}
-
-          {/* Draft Articles Grid */}
-          {!loading && drafts.length > 0 && (
-            <div className="space-y-6">
-              {drafts.map(draft => (
-                <div
-                  key={draft.prNumber}
-                  className="bg-slate-700/50 border border-slate-600 rounded-xl p-8 hover:border-blue-500/50 transition"
-                >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-white mb-2">{draft.title}</h2>
-                      <div className="flex gap-4 text-sm text-slate-400">
-                        <span>🎯 Keyword: {draft.keyword}</span>
-                        <span>📅 {new Date(draft.createdAt).toLocaleString()}</span>
-                        <span>🔗 PR #{draft.prNumber}</span>
+          {/* Render based on active tab */}
+          {activeTab === 'drafts' ? (
+            !loading && drafts.length === 0 ? (
+              <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-12 text-center">
+                <p className="text-slate-300 text-lg">✨ No drafts pending review</p>
+              </div>
+            ) : (
+              <div className="space-y-6">
+                {drafts.map(draft => (
+                  <div
+                    key={draft.prNumber}
+                    className="bg-slate-700/50 border border-slate-600 rounded-xl p-8"
+                  >
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="flex-1">
+                        <h2 className="text-2xl font-bold text-white mb-2">{draft.title}</h2>
+                        <div className="flex gap-4 text-sm text-slate-400">
+                          <span>🎯 Keyword: {draft.keyword}</span>
+                          <span>📅 {new Date(draft.createdAt).toLocaleString()}</span>
+                          <span>🔗 PR #{draft.prNumber}</span>
+                        </div>
+                      </div>
+                      <div className="text-right bg-slate-900/50 rounded-lg p-4 ml-4">
+                        <div className="text-4xl font-bold text-blue-400">{draft.auditScore}%</div>
+                        <div className="text-xs text-slate-400 mt-1">SEO Score</div>
                       </div>
                     </div>
-
-                    {/* SEO Score Badge */}
-                    <div className="text-right bg-slate-900/50 rounded-lg p-4 ml-4">
-                      <div className="text-4xl font-bold text-blue-400">{draft.auditScore}%</div>
-                      <div className="text-xs text-slate-400 mt-1">SEO Score</div>
-                      {draft.auditScore >= 85 && (
-                        <div className="text-xs text-green-400 mt-1">✅ Excellent</div>
-                      )}
-                      {draft.auditScore >= 75 && draft.auditScore < 85 && (
-                        <div className="text-xs text-yellow-400 mt-1">⚠️ Good</div>
-                      )}
-                      {draft.auditScore < 75 && (
-                        <div className="text-xs text-red-400 mt-1">❌ Needs Work</div>
-                      )}
+                    
+                    {/* Action Buttons */}
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => setSelectedDraft(draft)}
+                        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition"
+                      >
+                        👁️ Preview Article
+                      </button>
+                      <button
+                        onClick={() => approveArticle(draft.prNumber, draft.slug)}
+                        disabled={approving}
+                        className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition"
+                      >
+                        {approving ? '⏳' : '✅ Approve'}
+                      </button>
+                      <button
+                        onClick={() => requestChanges(draft.prNumber)}
+                        className="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg font-medium transition"
+                      >
+                        🔄 Changes
+                      </button>
                     </div>
                   </div>
-
-                  {/* Audit Breakdown */}
-                  {draft.auditReport && (
-                    <div className="grid grid-cols-4 gap-4 mb-6 bg-slate-900/30 rounded-lg p-4">
-                      <div>
-                        <div className="text-2xl font-bold text-white">
-                          {draft.auditReport.checks.eeat?.score || 0}%
-                        </div>
-                        <div className="text-xs text-slate-400">E-E-A-T</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">
-                          {draft.auditReport.checks.aeo?.score || 0}%
-                        </div>
-                        <div className="text-xs text-slate-400">AEO</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">
-                          {draft.auditReport.checks.schema?.score || 0}%
-                        </div>
-                        <div className="text-xs text-slate-400">Schema</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">
-                          {draft.auditReport.checks.local_seo?.score || 0}%
-                        </div>
-                        <div className="text-xs text-slate-400">Local SEO</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 flex-wrap">
-                    <button
-                      onClick={() => setSelectedDraft(draft)}
-                      className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition"
-                    >
-                      👁️ Preview Article
-                    </button>
-
-                    <button
-                      onClick={() => approveArticle(draft.prNumber, draft.slug)}
-                      disabled={approving}
-                      className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition disabled:opacity-50"
-                    >
-                      {approving ? '⏳ Publishing...' : '✅ Approve & Publish'}
-                    </button>
-
-                    <button
-                      onClick={() => requestChanges(draft.prNumber)}
-                      className="px-6 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg font-medium transition"
-                    >
-                      🔄 Request Changes
-                    </button>
-
-                    <button
-                      onClick={() => rejectArticle(draft.prNumber)}
-                      className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition"
-                    >
-                      ❌ Reject
-                    </button>
-
-                    <a
-                      href={`https://github.com/yourorg/biznexus/pull/${draft.prNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 bg-slate-600 hover:bg-slate-700 text-white rounded-lg font-medium transition"
-                    >
-                      🔗 View PR
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )
+          ) : (
+            !loading && liveArticles.length === 0 ? (
+              <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-12 text-center">
+                <p className="text-slate-300 text-lg">✨ No live articles found</p>
+              </div>
+            ) : (
+              <div className="bg-slate-700/50 border border-slate-600 rounded-xl overflow-hidden">
+                <table className="w-full text-left text-slate-300">
+                  <thead className="bg-slate-800 text-white">
+                    <tr>
+                      <th className="p-4">Title</th>
+                      <th className="p-4">Slug</th>
+                      <th className="p-4">Date</th>
+                      <th className="p-4">SEO Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {liveArticles.map((article: any, i: number) => (
+                      <tr key={i} className="border-t border-slate-600">
+                        <td className="p-4">{article.title}</td>
+                        <td className="p-4 font-mono text-xs">{article.slug}</td>
+                        <td className="p-4">{article.date}</td>
+                        <td className="p-4 font-bold text-blue-400">{article.auditScore}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )
           )}
         </div>
       </div>
 
-      {/* Preview Modal */}
+      {/* Preview Modal for Drafts */}
       {selectedDraft && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-auto">
-          <div className="bg-slate-800 rounded-xl max-w-4xl w-full my-8">
-            <div className="sticky top-0 bg-slate-900 border-b border-slate-700 p-6 flex justify-between items-center">
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+          <div className="bg-slate-800 rounded-xl max-w-4xl w-full h-[80vh] flex flex-col">
+            <div className="p-6 border-b border-slate-700 flex justify-between">
               <h2 className="text-2xl font-bold text-white">{selectedDraft.title}</h2>
-              <button
-                onClick={() => setSelectedDraft(null)}
-                className="text-3xl text-slate-400 hover:text-white"
-              >
-                ✕
-              </button>
+              <button onClick={() => setSelectedDraft(null)} className="text-white">✕</button>
             </div>
-
-            <div className="p-8 overflow-auto max-h-[70vh]">
-              <div
-                className="prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{
-                  __html: marked(selectedDraft.content, { breaks: true })
-                }}
-              />
+            <div className="p-8 overflow-auto flex-1">
+              <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: marked(selectedDraft.content, { breaks: true }) }} />
             </div>
-
-            <div className="bg-slate-900 border-t border-slate-700 p-6 flex gap-3 justify-end">
-              <button
-                onClick={() => setSelectedDraft(null)}
-                className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg"
-              >
-                Close
-              </button>
-              <button
-                onClick={() => approveArticle(selectedDraft.prNumber, selectedDraft.slug)}
-                disabled={approving}
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg disabled:opacity-50"
-              >
-                {approving ? '⏳' : '✅'} Approve & Publish
-              </button>
+            <div className="p-6 border-t border-slate-700 flex justify-end gap-3">
+              <button onClick={() => setSelectedDraft(null)} className="px-4 py-2 bg-slate-700 text-white rounded">Close</button>
+              <button onClick={() => approveArticle(selectedDraft.prNumber, selectedDraft.slug)} className="px-4 py-2 bg-green-600 text-white rounded">Approve</button>
             </div>
           </div>
         </div>
