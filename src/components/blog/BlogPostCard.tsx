@@ -49,7 +49,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
         <CardDescription className="line-clamp-3">{post.excerpt}</CardDescription>
         {post.tags && post.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
+            {post.tags.slice(0, 3).map((tag) => (
               <Badge key={tag} variant="secondary">{tag}</Badge>
             ))}
           </div>
