@@ -87,8 +87,8 @@ readingTime: 10
     <li><strong>Permission but No Action:</strong> Homeowners often get their technical feasibility (TF) granted by CSPDCL, but the vendor fails to show up for the actual installation because they are "distracted" by managing new lead inquiries instead of finishing existing jobs.</li>
   </ul>
 
-  <h2 id="timeline">4. The Multi-Level Inspection & Documentation Timeline</h2>
-  <p>To get your subsidy, you must pass through multiple "gates." Each one takes time:</p>
+  <h2 id="timeline">4. The Multi-Level Inspection & Rooftop Solar Installation Process</h2>
+  <p>To get your subsidy, you must pass through the official <strong>rooftop solar installation process</strong> required by the PM Surya Ghar portal. In Raipur, the <strong>CSPDCL net metering process</strong> is the most critical stage:</p>
   <ol>
     <li><strong>Consumer Registration (3 days):</strong> Online on the PM Surya Ghar portal.</li>
     <li><strong>Technical Feasibility - TF (10-14 days):</strong> CSPDCL engineers visit to check if your local transformer can handle the extra power.</li>
@@ -96,6 +96,12 @@ readingTime: 10
     <li><strong>Installation (2-3 days):</strong> The actual physical work.</li>
     <li><strong>Net Metering & JCR (20-30 days):</strong> A Joint Commissioning Report (JCR) is filed. CSPDCL must inspect the system to ensure it meets DCR (Domestic Content Requirement) standards.</li>
   </ol>
+
+  <div class="related-guides bg-blue-50 p-6 rounded-xl border border-blue-100 my-8">
+    <h4 class="font-bold text-blue-900 mb-2">Need more power?</h4>
+    <p class="text-sm text-blue-800 mb-3">If 1kW isn't enough for your appliances, check our comprehensive guide for larger homes:</p>
+    <a href="/blog/3-kilowatt-solar-panel-price-raipur-2026" class="text-blue-600 font-bold hover:underline">→ 3kW Solar Panel Price in Raipur (2026 Master Guide)</a>
+  </div>
 
   <div class="alert alert-warning p-6 border-l-8 border-yellow-500 bg-yellow-50 my-10 not-prose">
     <h4 class="font-bold text-yellow-900 mb-2">Homeowner Alert:</h4>
