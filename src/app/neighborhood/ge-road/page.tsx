@@ -79,34 +79,63 @@ export default function GERoadPage() {
           </ul>
         </div>
       </section>
+<div class="grid md:grid-cols-2 gap-8">
+  <Card>
+    <CardHeader>
+      <Sun className="h-10 w-10 text-orange-600 mb-2" />
+      <CardTitle>Solar for GE Road Businesses</CardTitle>
+      <CardDescription>Optimize your energy costs with our commercial and residential solar installations on GE Road today.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Button asChild variant="outline" className="w-full">
+        <Link href="/solar/residential">Explore Solar Plans</Link>
+      </Button>
+    </CardContent>
+  </Card>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card>
-          <CardHeader>
-            <Sun className="h-10 w-10 text-orange-600 mb-2" />
-            <CardTitle>Solar for GE Road Businesses</CardTitle>
-            <CardDescription>Optimize your energy costs with our commercial and residential solar installations on GE Road today.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/solar/residential">Explore Solar Plans</Link>
-            </Button>
-          </CardContent>
-        </Card>
+  <Card>
+    <CardHeader>
+      <ShieldCheck className="h-10 w-10 text-blue-600 mb-2" />
+      <CardTitle>TATA AIG Insurance GE Road</CardTitle>
+      <CardDescription>Dedicated insurance support for international travel, health, and life protection on GE Road corridor.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Button asChild variant="outline" className="w-full">
+        <Link href="/insurance">View Insurance Plans</Link>
+      </Button>
+    </CardContent>
+</div>
 
-        <Card>
-          <CardHeader>
-            <ShieldCheck className="h-10 w-10 text-blue-600 mb-2" />
-            <CardTitle>TATA AIG Insurance GE Road</CardTitle>
-            <CardDescription>Dedicated insurance support for international travel, health, and life protection on GE Road corridor.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/insurance">View Insurance Plans</Link>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+<section className="space-y-6">
+  <h2 className="text-2xl font-bold text-slate-900">Local Raipur Solar Resources</h2>
+  <div className="grid sm:grid-cols-2 gap-4">
+    <Link href="/blog/solar-subsidy-raipur-chhattisgarh-guide" class="block p-4 border rounded-xl hover:bg-slate-50 transition">
+      <h4 className="font-bold text-blue-600">Solar Subsidy Guide 2026</h4>
+      <p className="text-sm text-slate-600">How to claim ₹1.08 Lakh for GE Road residents.</p>
+    </Link>
+    <Link href="/blog/3-kilowatt-solar-panel-price-raipur-2026" class="block p-4 border rounded-xl hover:bg-slate-50 transition">
+      <h4 className="font-bold text-blue-600">3kW Solar Price List</h4>
+      <p className="text-sm text-slate-600">Detailed cost breakdown for Raipur residents.</p>
+    </Link>
+  </div>
+</section>
+
+<section className="bg-slate-900 text-white p-8 rounded-3xl">
+  <h3 className="text-xl font-bold mb-4">Other Service Areas in Raipur</h3>
+  <div className="flex flex-wrap gap-3">
+    <Button asChild variant="secondary" size="sm">
+      <Link href="/neighborhood/telibandha">Telibandha / VIP Road</Link>
+    </Button>
+    <Button asChild variant="secondary" size="sm">
+      <Link href="/neighborhood/shankar-nagar">Shankar Nagar</Link>
+    </Button>
+    <Button asChild variant="secondary" size="sm">
+      <Link href="/neighborhood/samta-colony">Samta Colony</Link>
+    </Button>
+  </div>
+</section>
+
+<section id="inquiry">
 
       <section id="inquiry">
         <InquiryForm 

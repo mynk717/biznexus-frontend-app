@@ -528,4 +528,15 @@ schema: {
       <a href="tel:+917225991909" class="bg-white/10 text-white px-10 py-5 rounded-xl font-bold hover:bg-white/20 transition transform hover:scale-105 border border-white/20">Talk to Local Expert</a>
     </div>
   </div>
+
+  <div class="service-areas mt-16 pt-8 border-t border-slate-200">
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Service Availability for 3kW Systems in Raipur:</h3>
+    <p class="text-sm text-slate-600 mb-6">MDNetwork specializes in residential 3kW installations across these Raipur clusters. Select your area for local pricing and installation timelines:</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha / VIP Road</a>
+      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
+      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
+      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road / Tatibandh</a>
+    </div>
+  </div>
 </div>
