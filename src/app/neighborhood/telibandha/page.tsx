@@ -55,7 +55,7 @@ export default function TelibandhaPage() {
     </CardHeader>
     <CardContent>
       <Button asChild variant="outline" className="w-full">
-        <Link href="/insurance">Compare Insurance</Link>
+        <Link href="/blog/ultimate-guide-international-travel-insurance-raipur">Compare Insurance</Link>
       </Button>
     </CardContent>
   </div>

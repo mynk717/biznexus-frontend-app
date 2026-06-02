@@ -55,7 +55,7 @@ export default function ShankarNagarPage() {
     </CardHeader>
     <CardContent>
       <Button asChild variant="outline" className="w-full">
-        <Link href="/insurance">View Insurance Plans</Link>
+        <Link href="/blog/ultimate-guide-international-travel-insurance-raipur">View Insurance Plans</Link>
       </Button>
     </CardContent>
   </div>
