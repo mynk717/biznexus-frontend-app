@@ -21,8 +21,8 @@ readingTime: 12
   <h2 id="tech-comparison">1. The 2026 Technology Comparison</h2>
   <p>Here is how the three main technologies perform specifically in Raipur's climate. When you look at a **3kw solar system price**, the choice of panel tech can swing the cost by ₹40,000.</p>
   <div class="overflow-x-auto my-8">
-    <table class="w-full text-sm border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
           <th class="p-3 border">Type</th>
           <th class="p-3 border">Efficiency</th>
@@ -65,6 +65,6 @@ readingTime: 12
       Do I need a shade analysis before buying?
       <span class="transition-transform group-open:rotate-180">▼</span>
     </summary>
-    <p class="mt-2 text-slate-600 text-sm">Absolutely. Even a small shadow from a water tank or a nearby tree can cut a panel's output by 50%. We provide a free digital shade analysis for all Raipur installations.</p>
+    <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Absolutely. Even a small shadow from a water tank or a nearby tree can cut a panel's output by 50%. We provide a free digital shade analysis for all Raipur installations.</p>
   </details>
 </div>

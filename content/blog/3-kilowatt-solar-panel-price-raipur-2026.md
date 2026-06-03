@@ -184,8 +184,8 @@ schema: {
     <a href="/blog/1kw-solar-panel-price-raipur-2026" class="text-blue-600 font-bold hover:underline">→ 1kW Solar Panel Price in Raipur (Cost & Subsidy)</a>
   </div>
 
-  <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl mb-12 not-prose">
-    <p class="font-bold text-slate-900 mb-4">Table of Contents</p>
+  <div class="p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl mb-12 not-prose">
+    <p class="font-bold text-slate-900 dark:text-slate-100 mb-4">Table of Contents</p>
     <ul class="space-y-2 text-sm text-blue-600">
       <li><a href="#india-subsidy-rates" class="hover:underline">1. 3kW Solar System Price in India With Subsidy (2026)</a></li>
       <li><a href="#cost-breakdown" class="hover:underline">2. Detailed 3kW Cost Breakdown: Components & Labor</a></li>
@@ -200,8 +200,8 @@ schema: {
   </div>
 
   <div class="quick-answer p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl mb-10 not-prose">
-    <p class="text-sm text-slate-900 font-bold mb-2">Quick Answer (May 2026):</p>
-    <p class="text-slate-700">A 3kW on-grid solar system in Raipur costs between **₹1.8L and ₹2.1L** (Gross). However, after applying the **PM Surya Ghar subsidy of ₹78,000**, your net investment drops to **₹1.05L – ₹1.3L**. This system typically generates **13-15 units daily**, saving you ~₹3,500/month on CSPDCL bills.</p>
+    <p class="text-sm text-slate-900 dark:text-slate-100 font-bold mb-2">Quick Answer (May 2026):</p>
+    <p class="text-slate-700 dark:text-slate-300">A 3kW on-grid solar system in Raipur costs between **₹1.8L and ₹2.1L** (Gross). However, after applying the **PM Surya Ghar subsidy of ₹78,000**, your net investment drops to **₹1.05L – ₹1.3L**. This system typically generates **13-15 units daily**, saving you ~₹3,500/month on CSPDCL bills.</p>
   </div>
 
   <p class="lead text-xl"><strong>If you are investigating the cost of residential solar in Raipur for 2026, you've likely noticed a massive surge in installations across neighborhoods like Shankar Nagar and VIP Road.</strong> The reason is simple: the financial math for Chhattisgarh homeowners has never looked better. With rising electricity tariffs and record-high government incentives, switching to solar has become the most effective way to secure your family's future energy costs.</p>
@@ -223,15 +223,15 @@ schema: {
   <p>To avoid these stalls, we recommend homeowners explicitly ask for a <strong>21-day installation guarantee</strong> before releasing the initial 10% payment. At MDNetwork, we prioritize local Raipur logistics to ensure our 3kW clients aren't left waiting while vendors chase newer leads.</p>
 
   <div class="p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl my-10 not-prose">
-    <p class="text-sm text-slate-900 font-bold mb-2">Regional Comparison Note:</p>
-    <p class="text-xs text-slate-700">If you're comparing the **3kw solar panel price in gujarat with subsidy**, you'll find Raipur is now equally competitive. While Gujarat pioneered residential solar, Chhattisgarh's 2026 empanelment rules and the stabilization have leveled the playing field, making Raipur a top-5 city for solar savings.</p>
+    <p class="text-sm text-slate-900 dark:text-slate-100 font-bold mb-2">Regional Comparison Note:</p>
+    <p class="text-xs text-slate-700 dark:text-slate-300">If you're comparing the **3kw solar panel price in gujarat with subsidy**, you'll find Raipur is now equally competitive. While Gujarat pioneered residential solar, Chhattisgarh's 2026 empanelment rules and the stabilization have leveled the playing field, making Raipur a top-5 city for solar savings.</p>
   </div>
 
   <h2 id="india-subsidy-rates">1. 3kW Solar System Price in India With Subsidy (2026 Rates)</h2>
   
-  <div class="quick-answer p-4 bg-slate-50 border border-slate-200 rounded-xl mb-6 not-prose">
+  <div class="quick-answer p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-6 not-prose">
     <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-1">AIO Summary</p>
-    <p class="text-sm text-slate-800">For 3kW systems, the **PM Surya Ghar subsidy is ₹78,000**. In Raipur, the net cost after this central benefit ranges from **₹1.05L to ₹1.5L** depending on panel choice. On-grid systems are the only ones eligible for this incentive.</p>
+    <p class="text-sm text-slate-800 dark:text-slate-200">For 3kW systems, the **PM Surya Ghar subsidy is ₹78,000**. In Raipur, the net cost after this central benefit ranges from **₹1.05L to ₹1.5L** depending on panel choice. On-grid systems are the only ones eligible for this incentive.</p>
   </div>
 
   <p>The single most important factor determining your out-of-pocket expense is the government incentive. As of 2026, the cost for a 3kW setup is incredibly attractive because this capacity represents the "sweet spot" of the PM Surya Ghar Muft Bijli Yojana. For a deep dive into eligibility, check our <a href="/blog/solar-subsidy-raipur-chhattisgarh-guide" class="text-blue-600 underline">complete solar subsidy guide for Raipur</a>.</p>
@@ -239,7 +239,7 @@ schema: {
   <p>Under this national scheme, the subsidy is structured to encourage smaller residential systems. The current slab offers ₹30,000 per kW for the first 2 kW, and ₹18,000 for the 3rd kW. This means a 3kW system receives a flat **₹78,000 subsidy**, which is the maximum available for a standard residential on-grid setup. This significantly reduces the net investment for the end consumer. </p>
 
   <div class="overflow-x-auto my-8">
-    <table class="w-full text-sm border-collapse border border-slate-200 shadow-sm">
+    <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-700 shadow-sm">
       <thead class="bg-blue-600 text-white">
         <tr>
           <th class="p-4 border border-blue-700">Component / Stage</th>
@@ -272,11 +272,11 @@ schema: {
     </table>
   </div>
   
-  <div class="summary-box p-4 bg-slate-100 rounded-xl mb-10 not-prose">
+  <div class="summary-box p-4 bg-slate-100 dark:bg-slate-800 rounded-xl mb-10 not-prose">
     <p class="text-sm"><strong>Key Takeaway:</strong> Raipur residents enjoy one of India's fastest solar ROIs. By combining the national ₹78,000 subsidy with CSPDCL's reliable net-metering, most 3kW systems reach break-even in just 3.5 years.</p>
   </div>
 
-  <p class="text-sm text-slate-600"><em>*Note: State-specific incentives by <a href="https://creda.cgstate.gov.in" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">CREDA</a> (Chhattisgarh State Renewable Energy Development Agency) are subject to annual budget allocations and empanelment of specific vendors.</em></p>
+  <p class="text-sm text-slate-600 dark:text-slate-400"><em>*Note: State-specific incentives by <a href="https://creda.cgstate.gov.in" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">CREDA</a> (Chhattisgarh State Renewable Energy Development Agency) are subject to annual budget allocations and empanelment of specific vendors.</em></p>
 
   <p>To maximize your savings, you must ensure that your vendor is empanelled with CSPDCL. Many homeowners in Raipur have made the mistake of hiring unregistered local contractors, only to find out later that they cannot claim the ₹78,000 back because the commissioning report was never officially recognized. At MDNetwork, we have **installed 47+ systems in Telibandha and Samta Colony** since 2024, handling 100% of this liaison work to ensure your paperwork is submitted to the National Portal within 48 hours of installation.</p>
 
@@ -293,7 +293,7 @@ schema: {
 
   <h3 id="how-to-apply">How to Apply for 3kW Solar Subsidy in Raipur</h3>
   <p>To ensure you get your ₹78,000 back from the government, follow these specific steps on the National Portal. This is the only way to achieve the best ROI:</p>
-  <div class="p-6 bg-slate-100 rounded-2xl my-8">
+  <div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-2xl my-8">
     <ol class="space-y-4">
       <li><strong>Step 1: Portal Registration</strong> – Use your CSPDCL consumer number and mobile to register on the PM Surya Ghar portal at <a href="https://pmsuryaghar.gov.in" target="_blank" rel="noopener noreferrer">pmsuryaghar.gov.in</a>.</li>
       <li><strong>Step 2: Feasibility Approval</strong> – CSPDCL officials will check if your local transformer can handle the 3kW export. This usually takes 7-10 days in Raipur.</li>
@@ -322,8 +322,8 @@ schema: {
 
   <h2 id="tata-solar-3kw">3. Tata Solar 3kW Price in Raipur: Is it Worth the Premium?</h2>
   
-  <div class="quick-answer p-4 bg-slate-50 border border-slate-200 rounded-xl mb-6 not-prose">
-    <p class="text-sm text-slate-800">Tata Power Solar is the leading premium choice in Raipur, offering a 25-year generation guarantee. While a Tata 3kW system costs ~₹20k more than generic brands, the local service network in Chhattisgarh makes it the safest long-term investment.</p>
+  <div class="quick-answer p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-6 not-prose">
+    <p class="text-sm text-slate-800 dark:text-slate-200">Tata Power Solar is the leading premium choice in Raipur, offering a 25-year generation guarantee. While a Tata 3kW system costs ~₹20k more than generic brands, the local service network in Chhattisgarh makes it the safest long-term investment.</p>
   </div>
 
   <p>If you ask any neighbor in Telibandha who has gone solar, they will likely mention Tata Power Solar. There is a strong reason why Tata remains the most trusted brand in our region. They offer a "Peace of Mind" guarantee that local, unbranded assemblers simply cannot match.</p>
@@ -332,7 +332,7 @@ schema: {
 
   <h3 id="brand-comparison">Brand Comparison Matrix (3kW System)</h3>
   <div class="overflow-x-auto my-8">
-    <table class="w-full text-sm border-collapse border border-slate-200 shadow-sm">
+    <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-700 shadow-sm">
       <thead class="bg-slate-800 text-white">
         <tr>
           <th class="p-3 border">Feature</th>
@@ -384,14 +384,14 @@ schema: {
   <h4 class="font-bold mt-6 mb-2">Are Adani solar panels better than Tata?</h4>
   <p class="text-sm mb-4">Both are Tier-1 manufacturers. Adani panels are highly competitive in price and are widely used in large-scale solar parks in Chhattisgarh, while Tata is often preferred for residential rooftops due to their superior local EPC (installation) support.</p>
 
-  <div class="summary-box p-4 bg-slate-100 rounded-xl mb-10 not-prose">
+  <div class="summary-box p-4 bg-slate-100 dark:bg-slate-800 rounded-xl mb-10 not-prose">
     <p class="text-sm"><strong>Key Takeaway:</strong> Don't just buy the cheapest panels. In Raipur's heat, the difference in generation between a "Value" brand and a "Premium" brand can be as high as 10%, which translates to thousands of rupees in lost savings over 25 years.</p>
   </div>
 
   <h2 id="inverter-types">4. 3 Kilowatt Solar Inverter – Types & Price Analysis</h2>
   
-  <div class="quick-answer p-4 bg-slate-50 border border-slate-200 rounded-xl mb-6 not-prose">
-    <p class="text-sm text-slate-800">The inverter is the "brain" of your solar system. For 3kW systems in Raipur, we recommend a **String Inverter with Wi-Fi monitoring** (₹28k-₹38k). If your roof has shading from nearby buildings, Micro-inverters (₹45k+) are the better choice to maximize yield.</p>
+  <div class="quick-answer p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-6 not-prose">
+    <p class="text-sm text-slate-800 dark:text-slate-200">The inverter is the "brain" of your solar system. For 3kW systems in Raipur, we recommend a **String Inverter with Wi-Fi monitoring** (₹28k-₹38k). If your roof has shading from nearby buildings, Micro-inverters (₹45k+) are the better choice to maximize yield.</p>
   </div>
 
   <p>Many homeowners ignore the inverter, focusing only on panels. This is a mistake. In Raipur, where voltage fluctuations are common, your inverter choice determines your system's uptime. There are three main types available in the Chhattisgarh market:</p>
@@ -408,7 +408,7 @@ schema: {
   <h2 id="on-grid-best">5. 3kW On-Grid Solar – The Best Choice for Raipur Residents</h2>
   <p>Unless you live in a very remote farmhouse, an **On-Grid system** is your best bet. Because of Raipur's reliable grid and CSPDCL's net-metering policy, it allows you to achieve a near-zero bill without the massive cost of batteries.</p>
   
-  <div class="summary-box p-4 bg-slate-100 rounded-xl mb-10 not-prose">
+  <div class="summary-box p-4 bg-slate-100 dark:bg-slate-800 rounded-xl mb-10 not-prose">
     <p class="text-sm"><strong>Key Takeaway:</strong> On-grid solar uses the grid as a virtual battery. You export excess solar during the day and import it back at night for free. This is the only system eligible for the ₹78,000 subsidy.</p>
   </div>
 
@@ -426,8 +426,8 @@ schema: {
 
   <h2 id="roi-calculator">8. ROI & Savings: 25-Year Financial Projection</h2>
   
-  <div class="quick-answer p-4 bg-slate-50 border border-slate-200 rounded-xl mb-6 not-prose">
-    <p class="text-sm text-slate-800">A 3kW system saves approximately **₹1,050 per month** on electricity bills in Raipur (at ₹7.50/unit). With a subsidy-adjusted cost of ₹1.1L, your **payback period is roughly 3.5 years**, after which your electricity is essentially free for 20+ years.</p>
+  <div class="quick-answer p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-6 not-prose">
+    <p class="text-sm text-slate-800 dark:text-slate-200">A 3kW system saves approximately **₹1,050 per month** on electricity bills in Raipur (at ₹7.50/unit). With a subsidy-adjusted cost of ₹1.1L, your **payback period is roughly 3.5 years**, after which your electricity is essentially free for 20+ years.</p>
   </div>
 
   <div class="p-6 bg-slate-900 text-white rounded-3xl my-10 overflow-x-auto not-prose">
@@ -473,8 +473,8 @@ schema: {
   <p>One of the most common questions we get at MDNetwork is about the space needed. Let's look at the actual data:</p>
 
   <div class="overflow-x-auto my-8">
-    <table class="w-full text-sm border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
           <th class="p-3 border">Module Type</th>
           <th class="p-3 border">Quantity</th>
@@ -506,42 +506,42 @@ schema: {
         Is 3kW solar enough for a home in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, if your monthly consumption is under 400-450 units. It covers 2 ACs (1.5 ton) used during the day, plus all lights, fans, and a refrigerator. It's the ideal system size for a standard Raipur family.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, if your monthly consumption is under 400-450 units. It covers 2 ACs (1.5 ton) used during the day, plus all lights, fans, and a refrigerator. It's the ideal system size for a standard Raipur family.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Can I get a loan for 3kW solar in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Absolutely. SBI and PNB offer specialized "Surya Ghar" loans with interest rates as low as 7-8% for Raipur residents. We assist with all bank documentation. </p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Absolutely. SBI and PNB offer specialized "Surya Ghar" loans with interest rates as low as 7-8% for Raipur residents. We assist with all bank documentation. </p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         What is the lifespan of a 3kW solar system?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Solar panels last 25-30 years. Modern on-grid inverters typically last 10-12 years. At MDNetwork, we choose components with the longest possible Raipur-based service network.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Solar panels last 25-30 years. Modern on-grid inverters typically last 10-12 years. At MDNetwork, we choose components with the longest possible Raipur-based service network.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         How much roof area is needed for 3kW solar panels?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">You need roughly 200 to 250 square feet of shadow-free area. If you have shadows, we can use higher wattage panels (540Wp) to reduce the space required.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">You need roughly 200 to 250 square feet of shadow-free area. If you have shadows, we can use higher wattage panels (540Wp) to reduce the space required.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         What is the difference between 3kW on-grid and off-grid solar?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">On-grid is connected to CSPDCL and is eligible for subsidy. Off-grid is a battery system for backup. For Raipur homes, On-grid is usually the better financial investment.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">On-grid is connected to CSPDCL and is eligible for subsidy. Off-grid is a battery system for backup. For Raipur homes, On-grid is usually the better financial investment.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         How much electricity does a 3kW solar system produce per day in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Raipur gets roughly 5.2 peak sun hours per day. A well-maintained 3kW system will produce 13-15 units per day on average, saving you thousands every month.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Raipur gets roughly 5.2 peak sun hours per day. A well-maintained 3kW system will produce 13-15 units per day on average, saving you thousands every month.</p>
     </details>
   </div>
 
@@ -554,14 +554,14 @@ schema: {
     </div>
   </div>
 
-  <div class="service-areas mt-16 pt-8 border-t border-slate-200">
-    <h3 class="text-xl font-bold text-slate-900 mb-4">Service Availability for 3kW Systems in Raipur:</h3>
-    <p class="text-sm text-slate-600 mb-6">MDNetwork specializes in residential 3kW installations across these Raipur clusters. Select your area for local pricing and installation timelines:</p>
+  <div class="service-areas mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Service Availability for 3kW Systems in Raipur:</h3>
+    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">MDNetwork specializes in residential 3kW installations across these Raipur clusters. Select your area for local pricing and installation timelines:</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha / VIP Road</a>
-      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
-      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
-      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road / Tatibandh</a>
+      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha / VIP Road</a>
+      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
+      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
+      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road / Tatibandh</a>
     </div>
   </div>
 </div>

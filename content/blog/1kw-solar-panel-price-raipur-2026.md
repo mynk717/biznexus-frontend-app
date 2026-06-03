@@ -29,8 +29,8 @@ readingTime: 10
 <div class="blog-content">
   <p class="lead text-xl"><strong>For many Raipur homeowners, the 1kW solar system is the "Gateway to Free Electricity."</strong> It is affordable, requires minimal roof space, and in 2026, the government incentives make it almost a zero-risk investment. however, the biggest hurdle isn't the price—it's the <strong>installation timeline.</strong></p>
 
-  <div class="table-of-contents p-6 bg-slate-50 border border-slate-200 rounded-xl mb-10 not-prose">
-    <h4 class="font-bold text-slate-900 mb-3">Guide Overview</h4>
+  <div class="table-of-contents p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-10 not-prose">
+    <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Guide Overview</h4>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
       <li><a href="#price-breakdown" class="text-blue-600 hover:underline">1. 1kW Price & Subsidy Breakdown</a></li>
       <li><a href="#why-1kw" class="text-blue-600 hover:underline">2. Is 1kW Right for Your Home?</a></li>
@@ -43,29 +43,29 @@ readingTime: 10
   <h2 id="price-breakdown">1. 1kW Solar Price & Subsidy in Raipur (2026)</h2>
   <p>Unlike the larger 3kW systems, the 1kW setup is incredibly compact. Here is the financial math for a standard installation in Chhattisgarh:</p>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Item</th>
-          <th class="p-3 border border-slate-200">Estimated Cost</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Item</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Estimated Cost</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">Market Price (System + Structure)</td>
-          <td class="p-3 border border-slate-200">₹75,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">Market Price (System + Structure)</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹75,000</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium text-blue-600">PM Surya Ghar Subsidy (Central)</td>
-          <td class="p-3 border border-slate-200 text-blue-600">-₹30,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium text-blue-600">PM Surya Ghar Subsidy (Central)</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-blue-600">-₹30,000</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium text-blue-600">Chhattisgarh State Subsidy</td>
-          <td class="p-3 border border-slate-200 text-blue-600">-₹15,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium text-blue-600">Chhattisgarh State Subsidy</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-blue-600">-₹15,000</td>
         </tr>
         <tr class="bg-green-50">
-          <td class="p-3 border border-slate-200 font-bold">Your Net Investment</td>
-          <td class="p-3 border border-slate-200 font-bold text-green-700">₹30,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-bold">Your Net Investment</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-bold text-green-700">₹30,000</td>
         </tr>
       </tbody>
     </table>
@@ -125,14 +125,14 @@ readingTime: 10
     </div>
   </div>
 
-  <div class="service-areas mt-16 pt-8 border-t border-slate-200">
-    <h3 class="text-xl font-bold text-slate-900 mb-4">1kW Solar Support Areas in Raipur:</h3>
-    <p class="text-sm text-slate-600 mb-6">We provide dedicated timeline monitoring for homeowners in:</p>
+  <div class="service-areas mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">1kW Solar Support Areas in Raipur:</h3>
+    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">We provide dedicated timeline monitoring for homeowners in:</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha</a>
-      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
-      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
-      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road</a>
+      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha</a>
+      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
+      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
+      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road</a>
     </div>
   </div>
 </div>

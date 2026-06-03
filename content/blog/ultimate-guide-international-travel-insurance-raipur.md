@@ -34,8 +34,8 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   <p class="lead text-xl"><strong>For many families in Raipur, an international trip is a lifelong dream come true.</strong> Whether you're visiting the dazzling skyscrapers of Dubai, the historic streets of London, or the scenic beauty of Thailand, the last thing you want is a medical emergency or lost luggage to ruin your vacation. In 2026, with the opening of more international flight connections from Raipur, the need for robust global protection has never been higher.</p>
 
   <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl my-8 not-prose">
-    <p class="text-sm text-slate-900 font-semibold mb-2">The Raipur Traveler's Risk Factor:</p>
-    <p class="text-xs text-slate-700">A single day in a US or European hospital can cost more than your entire Raipur-to-Paris flight tickets. International travel insurance isn't just for the visa—it's for your financial survival abroad. Most travelers from Chhattisgarh are now opting for TATA AIG specifically for their worldwide cashless network.</p>
+    <p class="text-sm text-slate-900 dark:text-slate-100 font-semibold mb-2">The Raipur Traveler's Risk Factor:</p>
+    <p class="text-xs text-slate-700 dark:text-slate-300">A single day in a US or European hospital can cost more than your entire Raipur-to-Paris flight tickets. International travel insurance isn't just for the visa—it's for your financial survival abroad. Most travelers from Chhattisgarh are now opting for TATA AIG specifically for their worldwide cashless network.</p>
   </div>
 
   <h2 id="schengen-rules">1. The €30,000 Schengen Rule: Compliance for Raipur VFS</h2>
@@ -53,19 +53,19 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
 
   <h2 id="coverage-types">3. Specialized Plans for Every Raipur Traveler</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 not-prose">
-    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">Student Guard</h4>
-      <p class="text-xs text-slate-600">Specifically for Raipur students heading to universities in USA, UK, or Australia. Meets F1/J1 visa waivers and covers tuition interruptions.</p>
+      <p class="text-xs text-slate-600 dark:text-slate-400">Specifically for Raipur students heading to universities in USA, UK, or Australia. Meets F1/J1 visa waivers and covers tuition interruptions.</p>
       <a href="/insurance/travel/student" class="text-blue-600 text-xs font-bold hover:underline mt-3 block">View Student Plans →</a>
     </div>
-    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">Senior Citizen</h4>
-      <p class="text-xs text-slate-600">Tailored for parents/grandparents traveling from Raipur. Covers medical emergencies and offers 24/7 family assistance back in India.</p>
+      <p class="text-xs text-slate-600 dark:text-slate-400">Tailored for parents/grandparents traveling from Raipur. Covers medical emergencies and offers 24/7 family assistance back in India.</p>
       <a href="/insurance/travel/senior-citizen" class="text-blue-600 text-xs font-bold hover:underline mt-3 block">View Senior Plans →</a>
     </div>
-    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">Annual Multi-Trip</h4>
-      <p class="text-xs text-slate-600">Perfect for Raipur entrepreneurs who frequent trade shows in Dubai, China, or Germany. One policy for the entire year.</p>
+      <p class="text-xs text-slate-600 dark:text-slate-400">Perfect for Raipur entrepreneurs who frequent trade shows in Dubai, China, or Germany. One policy for the entire year.</p>
       <a href="/insurance/travel/multi-trip" class="text-blue-600 text-xs font-bold hover:underline mt-3 block">View Business Plans →</a>
     </div>
   </div>
@@ -103,21 +103,21 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
         Is pre-medical check-up required for senior citizens in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">For TATA AIG plans, a medical check-up is usually **not required** for travelers up to age 70, even for trips to the USA. For those above 70, it depends on the plan and duration.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">For TATA AIG plans, a medical check-up is usually **not required** for travelers up to age 70, even for trips to the USA. For those above 70, it depends on the plan and duration.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Can I get a refund if my Schengen visa is rejected in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, if your visa is rejected, you can cancel the policy and get a full refund (minus a nominal ₹200-₹300 service fee) by providing proof of rejection from the embassy.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, if your visa is rejected, you can cancel the policy and get a full refund (minus a nominal ₹200-₹300 service fee) by providing proof of rejection from the embassy.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Does the policy cover loss of passport and checked-in baggage?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, all our TATA AIG International plans include coverage for the cost of getting a new passport and compensation for lost or delayed checked-in baggage.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, all our TATA AIG International plans include coverage for the cost of getting a new passport and compensation for lost or delayed checked-in baggage.</p>
     </details>
   </div>
 </div>

@@ -19,8 +19,8 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
 <div class="blog-content">
   <p class="lead"><strong>Planning a trip from Raipur to Paris, Swiss Alps, or Rome?</strong> Your Schengen visa application will be flatly rejected if your travel insurance doesn't meet the strict mandates set by the European Union.</p>
 
-  <div class="table-of-contents p-6 bg-slate-50 border border-slate-200 rounded-xl mb-10 not-prose">
-    <h4 class="font-bold text-slate-900 mb-3">Key Coverage Requirements</h4>
+  <div class="table-of-contents p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-10 not-prose">
+    <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Key Coverage Requirements</h4>
     <ul class="list-disc pl-5 space-y-2 text-sm">
       <li>Minimum medical coverage of <strong>€30,000 (approx. ₹27 Lakhs)</strong>.</li>
       <li>Validity in <strong>all 27 Schengen countries</strong>.</li>

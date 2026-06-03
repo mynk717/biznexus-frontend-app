@@ -19,8 +19,8 @@ readingTime: 10
   <p class="lead text-xl"><strong>Buying a used car in Raipur is exciting, but it can also be a bit scary.</strong> Whether you're looking for a family car in Shankar Nagar or a sturdy SUV for GE Road, the shiny exterior doesn't always tell the whole story. At MDNetwork, we've seen many buyers get stuck with hidden bank loans or unpaid traffic fines at the CG-04 RTO.</p>
 
   <div class="p-6 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl my-8 not-prose">
-    <p class="font-bold text-slate-900 mb-2">Our Goal:</p>
-    <p class="text-sm text-slate-700">We want you to drive your new gaddi with peace of mind. This guide simplifies the technical jargon so you can make the right decision without any stress.</p>
+    <p class="font-bold text-slate-900 dark:text-slate-100 mb-2">Our Goal:</p>
+    <p class="text-sm text-slate-700 dark:text-slate-300">We want you to drive your new gaddi with peace of mind. This guide simplifies the technical jargon so you can make the right decision without any stress.</p>
   </div>
 
   <h2 id="paperwork">1. The Paperwork: More Than Just a Smart Card</h2>
@@ -37,13 +37,13 @@ readingTime: 10
   [USED_CAR_CALCULATOR]
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
-    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">The Cooling System</h4>
-      <p class="text-sm text-slate-600">Check the AC and radiator. In Raipur's extreme summers, a weak cooling system will lead to engine overheating very quickly.</p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Check the AC and radiator. In Raipur's extreme summers, a weak cooling system will lead to engine overheating very quickly.</p>
     </div>
-    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-5 border border-slate-200 dark:border-slate-700 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
       <h4 class="font-bold text-blue-700 mb-2">Air Filter & Dust</h4>
-      <p class="text-sm text-slate-600">If the car was driven primarily in Raipur's industrial areas, the air filter might be choked with fine dust. This affects fuel mileage and engine life.</p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">If the car was driven primarily in Raipur's industrial areas, the air filter might be choked with fine dust. This affects fuel mileage and engine life.</p>
     </div>
   </div>
 
@@ -76,7 +76,7 @@ readingTime: 10
         Can I buy a car with a Bhilai (CG-07) number in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, but you will need an 'Inter-RTO NOC' from the Bhilai RTO to register it under CG-04. This takes about 2 weeks. Our team can help manage this coordination for you.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, but you will need an 'Inter-RTO NOC' from the Bhilai RTO to register it under CG-04. This takes about 2 weeks. Our team can help manage this coordination for you.</p>
     </details>
   </div>
 </div>

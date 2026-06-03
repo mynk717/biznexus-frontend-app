@@ -35,8 +35,8 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
 <div class="blog-content">
   <p class="lead"><strong>Raipur is now one of the most affordable cities in India to go solar, thanks to the 'Double Subsidy' advantage.</strong> While most states only offer the Central PM Surya Ghar subsidy, Chhattisgarh residents can stack an additional State subsidy, bringing the total savings to ₹1,08,000 for a standard 3kW system.</p>
 
-  <div class="table-of-contents p-6 bg-slate-50 border border-slate-200 rounded-xl mb-10 not-prose">
-    <h4 class="font-bold text-slate-900 mb-3">Table of Contents</h4>
+  <div class="table-of-contents p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-10 not-prose">
+    <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-3">Table of Contents</h4>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
       <li><a href="#subsidy-slabs" class="text-blue-600 hover:underline">1. 2026 Subsidy Slabs Breakdown</a></li>
       <li><a href="#double-advantage" class="text-blue-600 hover:underline">2. The Chhattisgarh Double-Subsidy</a></li>
@@ -50,33 +50,33 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   <h2 id="subsidy-slabs">1. 2026 Solar Subsidy Slabs in Chhattisgarh</h2>
   <p>Under the <strong>PM Surya Ghar: Muft Bijli Yojana</strong>, the subsidy is calculated based on the capacity of the solar plant installed. Here are the 2026 slabs for Raipur:</p>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Capacity</th>
-          <th class="p-3 border border-slate-200">Central Subsidy</th>
-          <th class="p-3 border border-slate-200">State Subsidy (CG)</th>
-          <th class="p-3 border border-slate-200">Total Savings</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Capacity</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Central Subsidy</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">State Subsidy (CG)</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Total Savings</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">1 kW</td>
-          <td class="p-3 border border-slate-200">₹30,000</td>
-          <td class="p-3 border border-slate-200">₹15,000</td>
-          <td class="p-3 border border-slate-200 font-bold text-green-600">₹45,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">1 kW</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹30,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹15,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-bold text-green-600">₹45,000</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">2 kW</td>
-          <td class="p-3 border border-slate-200">₹60,000</td>
-          <td class="p-3 border border-slate-200">₹20,000</td>
-          <td class="p-3 border border-slate-200 font-bold text-green-600">₹80,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">2 kW</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹60,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹20,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-bold text-green-600">₹80,000</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">3 kW+</td>
-          <td class="p-3 border border-slate-200">₹78,000</td>
-          <td class="p-3 border border-slate-200">₹30,000</td>
-          <td class="p-3 border border-slate-200 font-bold text-green-600">₹1,08,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">3 kW+</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹78,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">₹30,000</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-bold text-green-600">₹1,08,000</td>
         </tr>
       </tbody>
     </table>
@@ -118,20 +118,20 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   <h2 id="faq">6. Frequently Asked Questions (Helpful FAQ)</h2>
   <div class="faq-accordion space-y-4">
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: Does solar work during Raipur's monsoon season?</h4>
-      <p class="text-slate-600">A: Yes, solar panels still generate electricity on cloudy days, though the output may drop by 20-30%. With Net Metering, the excess energy you generated during Raipur's 300+ sunny days is adjusted against your monsoon usage.</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: Does solar work during Raipur's monsoon season?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: Yes, solar panels still generate electricity on cloudy days, though the output may drop by 20-30%. With Net Metering, the excess energy you generated during Raipur's 300+ sunny days is adjusted against your monsoon usage.</p>
     </div>
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: Can I install solar on a rented house in Raipur?</h4>
-      <p class="text-slate-600">A: You need an NOC (No Objection Certificate) from the landlord. However, the subsidy will be credited to the account associated with the electricity bill (the landlord's account).</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: Can I install solar on a rented house in Raipur?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: You need an NOC (No Objection Certificate) from the landlord. However, the subsidy will be credited to the account associated with the electricity bill (the landlord's account).</p>
     </div>
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: Is maintenance difficult?</h4>
-      <p class="text-slate-600">A: Not at all. For Raipur's dusty environment, we recommend cleaning the panels with water once every 15 days to maintain maximum efficiency.</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: Is maintenance difficult?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: Not at all. For Raipur's dusty environment, we recommend cleaning the panels with water once every 15 days to maintain maximum efficiency.</p>
     </div>
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: What happens if my solar panels are damaged by hail or monkeys?</h4>
-      <p class="text-slate-600">A: Most standard solar installations in CG include a 5-year AMC, but for physical damage, we recommend getting <strong>Solar Insurance</strong>. <a href="/insurance/vehicle" class="text-blue-600 hover:underline">Explore our protective insurance bundles for solar here.</a></p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: What happens if my solar panels are damaged by hail or monkeys?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: Most standard solar installations in CG include a 5-year AMC, but for physical damage, we recommend getting <strong>Solar Insurance</strong>. <a href="/insurance/vehicle" class="text-blue-600 hover:underline">Explore our protective insurance bundles for solar here.</a></p>
     </div>
   </div>
 
@@ -144,14 +144,14 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
     </div>
   </div>
 
-  <div class="service-areas mt-16 pt-8 border-t border-slate-200">
-    <h3 class="text-xl font-bold text-slate-900 mb-4">Verified Solar Installation Service Areas in Raipur:</h3>
-    <p class="text-sm text-slate-600 mb-6">MDNetwork provides doorstep solar audits and subsidy assistance across all major Raipur clusters. Check local availability for your neighborhood:</p>
+  <div class="service-areas mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Verified Solar Installation Service Areas in Raipur:</h3>
+    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">MDNetwork provides doorstep solar audits and subsidy assistance across all major Raipur clusters. Check local availability for your neighborhood:</p>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha / VIP Road</a>
-      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
-      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
-      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road / Tatibandh</a>
+      <a href="/neighborhood/telibandha" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Telibandha / VIP Road</a>
+      <a href="/neighborhood/shankar-nagar" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Shankar Nagar</a>
+      <a href="/neighborhood/samta-colony" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">Samta Colony</a>
+      <a href="/neighborhood/ge-road" class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-blue-600 hover:bg-blue-50 transition text-center">GE Road / Tatibandh</a>
     </div>
   </div>
 </div>

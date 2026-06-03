@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 export default function TelibandhaPage() {
   return (
     <div className="flex flex-col gap-12">
-      <section className="bg-slate-50 rounded-3xl p-8 md:p-16 border border-slate-200">
+      <section className="bg-slate-50 dark:bg-slate-800 rounded-3xl p-8 md:p-16 border border-slate-200 dark:border-slate-700">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <Badge variant="secondary" className="bg-blue-100 text-blue-700">
             <MapPin className="mr-2 h-4 w-4" />
             Serving Telibandha & VIP Road
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100">
             Trusted Insurance & Solar Advisor in Telibandha
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-slate-600 dark:text-slate-400">
             MDNetwork provides specialized TATA AIG travel insurance and high-efficiency solar solutions for residents and businesses around Telibandha Marine Drive and VIP Road.
           </p>
           <div className="flex justify-center gap-4">
@@ -63,15 +63,15 @@ export default function TelibandhaPage() {
       </div>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-bold text-slate-900">Local Raipur Solar Resources</h2>
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Local Raipur Solar Resources</h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          <Link href="/blog/solar-subsidy-raipur-chhattisgarh-guide" className="block p-4 border rounded-xl hover:bg-slate-50 transition">
+          <Link href="/blog/solar-subsidy-raipur-chhattisgarh-guide" className="block p-4 border rounded-xl hover:bg-slate-50 dark:bg-slate-800 transition">
             <h4 className="font-bold text-blue-600">Solar Subsidy Guide 2026</h4>
-            <p className="text-sm text-slate-600">How to claim ₹1.08 Lakh for Telibandha homes.</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">How to claim ₹1.08 Lakh for Telibandha homes.</p>
           </Link>
-          <Link href="/blog/3-kilowatt-solar-panel-price-raipur-2026" className="block p-4 border rounded-xl hover:bg-slate-50 transition">
+          <Link href="/blog/3-kilowatt-solar-panel-price-raipur-2026" className="block p-4 border rounded-xl hover:bg-slate-50 dark:bg-slate-800 transition">
             <h4 className="font-bold text-blue-600">3kW Solar Price List</h4>
-            <p className="text-sm text-slate-600">Detailed cost breakdown for Raipur residents.</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Detailed cost breakdown for Raipur residents.</p>
           </Link>
         </div>
       </section>

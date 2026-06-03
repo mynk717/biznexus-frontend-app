@@ -20,8 +20,8 @@ readingTime: 15
   <p class="lead text-xl"><strong>As our parents age, their health becomes our top priority.</strong> In a city like Raipur, where medical costs at top-tier hospitals like Ramkrishna Care or MMI Narayana are rising, having a specialized senior citizen health insurance plan is no longer a luxury—it's a necessity.</p>
 
   <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl my-8 not-prose">
-    <p class="text-sm text-slate-900 font-semibold mb-2">Why Raipur Families Choose Specialized Plans:</p>
-    <p class="text-xs text-slate-700 italic">"Standard health plans often have long waiting periods for pre-existing diseases (PED) like Diabetes or BP. TATA AIG's Senior Citizen plans are designed to provide faster relief and specialized care for the elderly in Chhattisgarh."</p>
+    <p class="text-sm text-slate-900 dark:text-slate-100 font-semibold mb-2">Why Raipur Families Choose Specialized Plans:</p>
+    <p class="text-xs text-slate-700 dark:text-slate-300 italic">"Standard health plans often have long waiting periods for pre-existing diseases (PED) like Diabetes or BP. TATA AIG's Senior Citizen plans are designed to provide faster relief and specialized care for the elderly in Chhattisgarh."</p>
   </div>
 
   <h2 id="key-benefits">1. Key Benefits of TATA AIG Senior Citizen Insurance</h2>
@@ -35,16 +35,16 @@ readingTime: 15
   <h2 id="raipur-hospitals">2. Local Cashless Hospitals in Raipur</h2>
   <p>One of the biggest advantages of TATA AIG in Raipur is the local network. Whether you live in <strong>Samta Colony, Shankar Nagar, or Tatibandh</strong>, a cashless facility is always nearby:</p>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
-    <div class="p-4 border border-slate-200 rounded-lg">
-      <p class="font-bold text-slate-900">Ramkrishna Care Hospital</p>
+    <div class="p-4 border border-slate-200 dark:border-slate-700 rounded-lg">
+      <p class="font-bold text-slate-900 dark:text-slate-100">Ramkrishna Care Hospital</p>
       <p class="text-xs text-slate-500">Aurobindo Enclave, Pachpedi Naka</p>
     </div>
-    <div class="p-4 border border-slate-200 rounded-lg">
-      <p class="font-bold text-slate-900">MMI Narayana Superspeciality</p>
+    <div class="p-4 border border-slate-200 dark:border-slate-700 rounded-lg">
+      <p class="font-bold text-slate-900 dark:text-slate-100">MMI Narayana Superspeciality</p>
       <p class="text-xs text-slate-500">Dhamtari Road, Lalpur</p>
     </div>
-    <div class="p-4 border border-slate-200 rounded-lg">
-      <p class="font-bold text-slate-900">NH MMI Health City</p>
+    <div class="p-4 border border-slate-200 dark:border-slate-700 rounded-lg">
+      <p class="font-bold text-slate-900 dark:text-slate-100">NH MMI Health City</p>
       <p class="text-xs text-slate-500">Near Vidhan Sabha Road</p>
     </div>
   </div>
@@ -69,14 +69,14 @@ readingTime: 15
         Is Diabetes covered from Day 1?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Most plans have a waiting period of 2-4 years for pre-existing diseases, but some specialized plans offer 'Day 1' cover with an additional premium. Contact us to find the right fit.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Most plans have a waiting period of 2-4 years for pre-existing diseases, but some specialized plans offer 'Day 1' cover with an additional premium. Contact us to find the right fit.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Do we get home-care coverage in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, many TATA AIG plans cover 'Domiciliary Hospitalization' if the patient cannot be moved to a hospital in Raipur or if hospital beds are unavailable.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, many TATA AIG plans cover 'Domiciliary Hospitalization' if the patient cannot be moved to a hospital in Raipur or if hospital beds are unavailable.</p>
     </details>
   </div>
 </div>

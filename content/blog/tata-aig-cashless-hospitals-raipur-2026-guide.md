@@ -20,97 +20,97 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   <p class="lead text-xl"><strong>If you or a loved one needs medical care in Raipur, the last thing you want to worry about is arranging lakhs of rupees in cash.</strong> TATA AIG has a strong network of hospitals in Chhattisgarh, but knowing exactly which one is closest to your home in Shankar Nagar or Mowa can save vital time during an emergency.</p>
 
   <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-xl my-8 not-prose">
-    <p class="text-sm text-slate-700"><strong>Note for 2026:</strong> Hospital networks can change. We recommend checking the <a href="https://www.tataaig.com/hospital-locator" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-bold hover:underline">Official TATA AIG Locator</a> or calling us at +91 72259 91909 before admission for the most current status.</p>
+    <p class="text-sm text-slate-700 dark:text-slate-300"><strong>Note for 2026:</strong> Hospital networks can change. We recommend checking the <a href="https://www.tataaig.com/hospital-locator" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-bold hover:underline">Official TATA AIG Locator</a> or calling us at +91 72259 91909 before admission for the most current status.</p>
   </div>
 
   <h2 id="neighborhoods">Raipur Cashless Hospitals Sorted by Area</h2>
   <p>To make it easy for you, we've grouped the top cashless centers by their location in Raipur. This helps you find a hospital within 10-15 minutes of your neighborhood.</p>
 
-  <h3 class="font-bold text-lg text-slate-900 mt-8 mb-4">1. Pachpedi Naka & Dhamtari Road Area</h3>
+  <h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 mt-8 mb-4">1. Pachpedi Naka & Dhamtari Road Area</h3>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Hospital Name</th>
-          <th class="p-3 border border-slate-200">Best For</th>
-          <th class="p-3 border border-slate-200">Status</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Hospital Name</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Best For</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">Ramkrishna CARE Hospital</td>
-          <td class="p-3 border border-slate-200">Cardiology, Multi-specialty</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">Ramkrishna CARE Hospital</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">Cardiology, Multi-specialty</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">Sanjeevani CBCC Cancer Hospital</td>
-          <td class="p-3 border border-slate-200">Oncology (Cancer Care)</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">Sanjeevani CBCC Cancer Hospital</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">Oncology (Cancer Care)</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3 class="font-bold text-lg text-slate-900 mt-8 mb-4">2. Lalpur & Civil Lines Area</h3>
+  <h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 mt-8 mb-4">2. Lalpur & Civil Lines Area</h3>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Hospital Name</th>
-          <th class="p-3 border border-slate-200">Best For</th>
-          <th class="p-3 border border-slate-200">Status</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Hospital Name</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Best For</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">MMI Narayana Multispeciality</td>
-          <td class="p-3 border border-slate-200">Heart, Ortho, Neurology</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">MMI Narayana Multispeciality</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">Heart, Ortho, Neurology</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3 class="font-bold text-lg text-slate-900 mt-8 mb-4">3. Mowa & Vidhan Sabha Road Area</h3>
+  <h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 mt-8 mb-4">3. Mowa & Vidhan Sabha Road Area</h3>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Hospital Name</th>
-          <th class="p-3 border border-slate-200">Best For</th>
-          <th class="p-3 border border-slate-200">Status</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Hospital Name</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Best For</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">Shri Balaji Institute (SBIMS)</td>
-          <td class="p-3 border border-slate-200">Trauma, General Surgery</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">Shri Balaji Institute (SBIMS)</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">Trauma, General Surgery</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3 class="font-bold text-lg text-slate-900 mt-8 mb-4">4. Shankar Nagar & Devendra Nagar</h3>
+  <h3 class="font-bold text-lg text-slate-900 dark:text-slate-100 mt-8 mb-4">4. Shankar Nagar & Devendra Nagar</h3>
   <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left border-collapse border border-slate-200">
-      <thead class="bg-slate-100">
+    <table class="w-full text-sm text-left border-collapse border border-slate-200 dark:border-slate-700">
+      <thead class="bg-slate-100 dark:bg-slate-800">
         <tr>
-          <th class="p-3 border border-slate-200">Hospital Name</th>
-          <th class="p-3 border border-slate-200">Best For</th>
-          <th class="p-3 border border-slate-200">Status</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Hospital Name</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Best For</th>
+          <th class="p-3 border border-slate-200 dark:border-slate-700">Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">ASG Eye Hospital</td>
-          <td class="p-3 border border-slate-200">Cataract, LASIK, Retina</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">ASG Eye Hospital</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">Cataract, LASIK, Retina</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
         <tr>
-          <td class="p-3 border border-slate-200 font-medium">Shree Narayana Hospital</td>
-          <td class="p-3 border border-slate-200">General Surgery, ICU</td>
-          <td class="p-3 border border-slate-200 text-green-600 font-bold">Verified Cashless</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 font-medium">Shree Narayana Hospital</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700">General Surgery, ICU</td>
+          <td class="p-3 border border-slate-200 dark:border-slate-700 text-green-600 font-bold">Verified Cashless</td>
         </tr>
       </tbody>
     </table>
@@ -140,14 +140,14 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
         Is Ramkrishna CARE Hospital Raipur cashless for TATA AIG?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, Ramkrishna CARE is a primary network hospital for TATA AIG in Raipur. It covers a wide range of super-specialty treatments under the cashless facility.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, Ramkrishna CARE is a primary network hospital for TATA AIG in Raipur. It covers a wide range of super-specialty treatments under the cashless facility.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Does TATA AIG cover ASG Eye Hospital in Shankar Nagar?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes, TATA AIG covers specialized treatments at ASG Eye Hospital. However, check your policy document for specific waiting periods related to cataract or vision correction surgeries.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes, TATA AIG covers specialized treatments at ASG Eye Hospital. However, check your policy document for specific waiting periods related to cataract or vision correction surgeries.</p>
     </details>
   </div>
 </div>

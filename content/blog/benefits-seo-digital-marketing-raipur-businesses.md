@@ -18,8 +18,8 @@ readingTime: 7
 <div class="blog-content">
   <p class="lead"><strong>Raipur's business landscape is shifting from hoardings on GE Road to Google Search.</strong> If your business isn't appearing when someone searches for 'Best [Service] in Raipur', you are losing 70% of your potential revenue to competitors who are.</p>
 
-  <div class="table-of-contents p-6 bg-slate-50 border border-slate-200 rounded-xl mb-10 not-prose">
-    <h4 class="font-bold text-slate-900 mb-3">In this growth guide:</h4>
+  <div class="table-of-contents p-6 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl mb-10 not-prose">
+    <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-3">In this growth guide:</h4>
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
       <li><a href="#local-seo" class="text-blue-600 hover:underline">1. The Power of Local SEO</a></li>
       <li><a href="#gmb" class="text-blue-600 hover:underline">2. Mastering Google My Business</a></li>
@@ -51,12 +51,12 @@ readingTime: 7
   <h2 id="faq">4. Frequently Asked Questions</h2>
   <div class="faq-accordion space-y-4">
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: How long does SEO take to show results in Raipur?</h4>
-      <p class="text-slate-600">A: For local Raipur keywords, you can start seeing a jump in Map Pack rankings within 45-60 days. Organic national ranking takes longer (4-6 months).</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: How long does SEO take to show results in Raipur?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: For local Raipur keywords, you can start seeing a jump in Map Pack rankings within 45-60 days. Organic national ranking takes longer (4-6 months).</p>
     </div>
     <div class="faq-item border-b pb-4">
-      <h4 class="font-bold text-slate-900">Q: Do I need a website if I have a strong Instagram page?</h4>
-      <p class="text-slate-600">A: Yes. While Instagram is great for branding, a website is your "digital office" where you own the data and the conversion funnel. Most serious buyers in Raipur still check Google for reviews and authority.</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100">Q: Do I need a website if I have a strong Instagram page?</h4>
+      <p class="text-slate-600 dark:text-slate-400">A: Yes. While Instagram is great for branding, a website is your "digital office" where you own the data and the conversion funnel. Most serious buyers in Raipur still check Google for reviews and authority.</p>
     </div>
   </div>
 </div>

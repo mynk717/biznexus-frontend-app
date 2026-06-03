@@ -19,8 +19,8 @@ readingTime: 12
   <p class="lead text-xl"><strong>Raipur's real estate is booming, especially towards Naya Raipur and Vidhan Sabha Road.</strong> But with so many new colonies coming up, how do you know which one is safe to invest in? Many buyers get attracted by low prices and forget to check the most important legal papers.</p>
 
   <div class="p-6 bg-green-50 border-l-4 border-green-600 rounded-r-xl my-8 not-prose">
-    <p class="font-bold text-slate-900 mb-2">Expert Tip:</p>
-    <p class="text-sm text-slate-700">A plot is only a good investment if it is "Bebaak"—meaning it has a clear title and no legal issues. Never buy land without a RERA number.</p>
+    <p class="font-bold text-slate-900 dark:text-slate-100 mb-2">Expert Tip:</p>
+    <p class="text-sm text-slate-700 dark:text-slate-300">A plot is only a good investment if it is "Bebaak"—meaning it has a clear title and no legal issues. Never buy land without a RERA number.</p>
   </div>
 
   <h2 id="legal">1. The 3 Things You Must Check (Simplified)</h2>
@@ -43,15 +43,15 @@ readingTime: 12
 
   <h2 id="areas">2. Where Should You Buy in 2026?</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
-    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-6 bg-white border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
       <Badge className="mb-3 bg-blue-100 text-blue-700 hover:bg-blue-100">Best for Investment</Badge>
-      <h4 class="font-bold text-slate-900 mb-2">Vidhan Sabha Road</h4>
-      <p class="text-sm text-slate-600">The growth here is incredible. Proximity to the new capital and premium schools makes it ideal for building a high-value home or villa.</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Vidhan Sabha Road</h4>
+      <p class="text-sm text-slate-600 dark:text-slate-400">The growth here is incredible. Proximity to the new capital and premium schools makes it ideal for building a high-value home or villa.</p>
     </div>
-    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+    <div class="p-6 bg-white border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
       <Badge className="mb-3 bg-orange-100 text-orange-700 hover:bg-orange-100">Best for Living</Badge>
-      <h4 class="font-bold text-slate-900 mb-2">Naya Raipur (Atal Nagar)</h4>
-      <p class="text-sm text-slate-600">If you want wide roads, lots of trees, and zero pollution, Naya Raipur is the place. It's a fully planned city with modern utilities.</p>
+      <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Naya Raipur (Atal Nagar)</h4>
+      <p class="text-sm text-slate-600 dark:text-slate-400">If you want wide roads, lots of trees, and zero pollution, Naya Raipur is the place. It's a fully planned city with modern utilities.</p>
     </div>
   </div>
 
@@ -74,7 +74,7 @@ readingTime: 12
         Is it safe to buy "Abadi" land?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Abadi land can be tricky. Unless you are very familiar with the local village records, it's much safer to stick with RERA-approved colonies where the titles are already verified.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Abadi land can be tricky. Unless you are very familiar with the local village records, it's much safer to stick with RERA-approved colonies where the titles are already verified.</p>
     </details>
   </div>
 </div>

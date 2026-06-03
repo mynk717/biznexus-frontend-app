@@ -20,8 +20,8 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   <p class="lead text-xl"><strong>Your employees are the heartbeat of your business, whether you're running a major showroom in Sadar Bazaar or a manufacturing unit in Siltara.</strong> In 2026, providing health insurance isn't just a "corporate" thing—it's a smart strategy for small businesses in Raipur to retain talent and save on taxes.</p>
 
   <div class="p-6 bg-green-50 border-l-4 border-green-600 rounded-r-xl my-8 not-prose">
-    <p class="text-sm text-slate-900 font-semibold mb-2">Did You Know?</p>
-    <p class="text-xs text-slate-700">Health insurance premiums paid by a business owner for their employees are considered a **100% tax-deductible business expense**. This can significantly lower your taxable income at the end of the financial year!</p>
+    <p class="text-sm text-slate-900 dark:text-slate-100 font-semibold mb-2">Did You Know?</p>
+    <p class="text-xs text-slate-700 dark:text-slate-300">Health insurance premiums paid by a business owner for their employees are considered a **100% tax-deductible business expense**. This can significantly lower your taxable income at the end of the financial year!</p>
   </div>
 
   <h2 id="why-group-insurance">1. Why Group Insurance is Cheaper Than Individual Plans</h2>
@@ -58,14 +58,14 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
         Can I cover my temporary or seasonal workers in Raipur?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">Yes! Modern group plans allow you to add or remove members throughout the year, making it ideal for industries with seasonal staff changes.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">Yes! Modern group plans allow you to add or remove members throughout the year, making it ideal for industries with seasonal staff changes.</p>
     </details>
     <details class="group border-b pb-4">
       <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600">
         Is there a minimum number of employees required?
         <span class="transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <p class="mt-2 text-slate-600 text-sm">While standard group plans start at 10-20 people, we have TATA AIG micro-schemes for Raipur shop owners with as few as 5-7 employees.</p>
+      <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm">While standard group plans start at 10-20 people, we have TATA AIG micro-schemes for Raipur shop owners with as few as 5-7 employees.</p>
     </details>
   </div>
 </div>
