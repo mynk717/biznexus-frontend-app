@@ -412,10 +412,66 @@ schema: {
     <p class="text-sm"><strong>Key Takeaway:</strong> On-grid solar uses the grid as a virtual battery. You export excess solar during the day and import it back at night for free. This is the only system eligible for the ₹78,000 subsidy.</p>
   </div>
 
+  <!-- CONVERSION WIDGET: QUICK SAVINGS CALCULATOR -->
+  <div class="calculator-widget bg-gradient-to-br from-blue-700 to-indigo-900 text-white p-8 rounded-3xl my-12 shadow-xl not-prose border border-blue-600/50">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="p-2 bg-yellow-400 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-black">Quick 3kW Savings Calculator</h3>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <p class="text-blue-100">Estimated Monthly Bill: **₹3,500 - ₹4,500**</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span>Current Annual Cost</span>
+            <span class="font-bold">₹48,000</span>
+          </div>
+          <div class="flex justify-between text-sm text-green-300">
+            <span>Solar Annual Savings</span>
+            <span class="font-bold">(-) ₹41,000</span>
+          </div>
+          <div class="h-1 bg-blue-800 rounded-full overflow-hidden">
+            <div class="h-full bg-green-400 w-[85%]"></div>
+          </div>
+        </div>
+        <p class="text-xs text-blue-200">*Based on Raipur's average 5.2 peak sun hours and current CSPDCL tariffs.</p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-2xl border border-white/10 text-center">
+        <p class="text-sm uppercase tracking-widest text-blue-200 mb-1">Your Net Investment</p>
+        <p class="text-4xl font-black text-yellow-300 mb-4">₹1,05,000*</p>
+        <a href="/contact" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 rounded-xl transition transform hover:scale-105">Get This ROI Plan</a>
+      </div>
+    </div>
+  </div>
+
   <h2 id="battery-price">6. 3kW Solar With Battery: Hybrid vs Off-Grid Options</h2>
   
   <h4 class="font-bold mt-6 mb-2">Is 3kW solar enough to run a 1.5-ton AC?</h4>
   <p class="text-sm mb-4">Yes. A 3kW system can comfortably run one **1.5-ton inverter AC** along with standard household loads like fans and lights during peak sunny hours. For running AC at night, you will either draw from the grid (On-grid) or from a battery bank (Hybrid).</p>
+
+  <!-- CONVERSION WIDGET: AC USAGE CONSULTATION -->
+  <div class="ac-usage-widget bg-orange-50 border-2 border-orange-200 p-8 rounded-3xl my-12 not-prose relative overflow-hidden">
+    <div class="absolute -right-8 -top-8 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl"></div>
+    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-2/3">
+        <h3 class="text-2xl font-bold text-orange-900 mb-2">Running an AC in Raipur's 45°C Heat?</h3>
+        <p class="text-orange-800 mb-4">Most 3kW systems in Samta Colony fail to deliver because vendors use standard panels. We use high-wattage **Bifacial Modules** that generate 15% more power from reflected heat—perfect for running your AC during peak hours.</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1 bg-white border border-orange-200 rounded-full text-xs font-bold text-orange-700">1.5 Ton Inverter AC: Supported</span>
+          <span class="px-3 py-1 bg-white border border-orange-200 rounded-full text-xs font-bold text-orange-700">24x7 Inverter Monitoring</span>
+        </div>
+      </div>
+      <div class="md:w-1/3 w-full">
+        <a href="tel:+917225991909" class="block w-full bg-orange-600 hover:bg-orange-700 text-white text-center font-bold py-4 rounded-xl shadow-lg transition transform hover:scale-105">
+          Ask for 'AC-Ready' Setup
+        </a>
+      </div>
+    </div>
+  </div>
 
   <p>For those who want total independence, the costs are significantly higher:</p>
 

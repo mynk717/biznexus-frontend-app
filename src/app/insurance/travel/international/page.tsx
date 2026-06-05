@@ -92,6 +92,37 @@ export default function InternationalTravelInsurancePage() {
 
       {/* Coverage Overview */}
       <section className="container mx-auto">
+        {/* CONVERSION HARDENING: Competitive Advantages */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="bg-emerald-50 border-2 border-emerald-200 p-8 rounded-3xl relative overflow-hidden group">
+            <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+              <FileText className="h-32 w-32 text-emerald-900" />
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-emerald-600 mb-4">Schengen Approved</Badge>
+              <h3 className="text-2xl font-bold text-emerald-900 mb-2">€30,000 Zero-Rejection Guarantee</h3>
+              <p className="text-emerald-800 mb-6">Our TATA AIG plans are 100% compliant with the European Schengen visa requirements. Avoid visa rejection risks at the VFS Raipur center with our instant, pre-approved policy certificates.</p>
+              <div className="flex items-center gap-2 text-emerald-700 font-bold text-sm">
+                <CheckCircle2 className="h-5 w-5" /> Accepted by all 29 Schengen Countries
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border-2 border-blue-200 p-8 rounded-3xl relative overflow-hidden group">
+            <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+              <Globe className="h-32 w-32 text-blue-900" />
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-blue-600 mb-4">USA Specialized</Badge>
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">USA Cashless: UHC Network Access</h3>
+              <p className="text-blue-800 mb-6">Traveling to the USA? Get exclusive access to the **UnitedHealth Group (UHC)** network—America's largest healthcare system. No upfront payments at thousands of US hospitals.</p>
+              <div className="flex items-center gap-2 text-blue-700 font-bold text-sm">
+                <CheckCircle2 className="h-5 w-5" /> Direct Cashless Settlement in USD
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What's Covered?

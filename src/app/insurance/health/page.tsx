@@ -116,6 +116,42 @@ export default function HealthInsurancePage() {
 
       {/* Key Benefits */}
       <section>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white relative overflow-hidden group">
+            <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+              <Hospital className="h-32 w-32" />
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-blue-500 mb-4 text-white border-blue-400">Raipur Local Network</Badge>
+              <h3 className="text-2xl font-bold mb-2">9+ Cashless Hospitals in Raipur</h3>
+              <p className="text-blue-100 mb-6">We've verified the TATA AIG network for 2026. From Ramkrishna CARE to MMI Narayana, see which hospitals are closest to your home.</p>
+              <Button asChild className="bg-white text-blue-700 hover:bg-blue-50">
+                <Link href="/insurance/health/cashless-hospitals">
+                  View Hospital List
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-3xl p-8 relative overflow-hidden group">
+            <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
+              <Shield className="h-32 w-32" />
+            </div>
+            <div className="relative z-10">
+              <Badge variant="outline" className="mb-4 border-blue-200 text-blue-700">Admission Support</Badge>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Dedicated Raipur Claim Desk</h3>
+              <p className="text-slate-600 mb-6">Don't struggle with hospital paperwork. MDNetwork provides on-ground assistance for planned surgeries and emergency admissions in Raipur.</p>
+              <Button asChild variant="outline" className="border-blue-600 text-blue-700 hover:bg-blue-50">
+                <Link href="/contact">
+                  Talk to Claim Expert
+                  <Phone className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-3xl font-bold text-center mb-8">Why Choose Our Health Insurance?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (

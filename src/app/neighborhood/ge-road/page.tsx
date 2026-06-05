@@ -81,6 +81,27 @@ export default function GERoadPage() {
         </Card>
       </div>
 
+      <div className="bg-blue-50 border border-blue-100 rounded-3xl p-8 relative overflow-hidden">
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+          <div className="md:w-2/3">
+            <h3 className="text-2xl font-bold text-blue-900 mb-2">Cashless Healthcare Near GE Road</h3>
+            <p className="text-blue-800 mb-4">Living or working on GE Road? You have quick access to **Ramkrishna CARE** and **Shri Balaji Institute**. MDNetwork provides prioritized TATA AIG cashless admission support for the GE Road business community.</p>
+            <div className="flex gap-4">
+              <Button asChild size="sm" className="bg-blue-600">
+                <Link href="/insurance/health/cashless-hospitals">View Local Network</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="border-blue-600 text-blue-700 hover:bg-blue-100">
+                <Link href="/insurance/health">Health Plans</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="md:w-1/3 text-center border-l md:border-blue-200 pl-8 hidden md:block">
+            <p className="text-xs uppercase tracking-widest text-blue-500 font-bold mb-2">GE Road Hotline</p>
+            <p className="text-xl font-black text-blue-900">+91 72259 91909</p>
+          </div>
+        </div>
+      </div>
+
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Local Raipur Solar Resources</h2>
         <div className="grid sm:grid-cols-2 gap-4">

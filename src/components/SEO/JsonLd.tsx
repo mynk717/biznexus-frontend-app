@@ -6,8 +6,18 @@ export default function JsonLd() {
     '@type': 'Organization',
     name: 'MDNetwork',
     alternateName: 'MKTDM Media and Marketing',
+    description: 'MDNetwork is a specialized division of Marketing Dime, providing authorized TATA AIG Insurance advisory and Solar Energy consultancy in Raipur, Chhattisgarh.',
     url: 'https://mdn.mktgdime.com',
     logo: 'https://mdn.mktgdime.com/images/branding/logo.svg',
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'MKTDM Media and Marketing OPC Pvt Ltd',
+      url: 'https://mktgdime.com',
+    },
+    brand: {
+      '@type': 'Brand',
+      name: 'MDNetwork',
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+91-72259-91909',
