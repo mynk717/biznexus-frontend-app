@@ -1,17 +1,16 @@
 const { google } = require('googleapis');
-const key = require('./.gemini/creds/indexing-api.json');
 
-const jwtClient = new google.auth.JWT(
-  key.client_email,
-  null,
-  key.private_key,
-  ['https://www.googleapis.com/auth/indexing'],
-  null
-);
+const keyPath = '/home/mynk/.gemini/creds/indexing-api.json';
+
+const jwtClient = new google.auth.JWT({
+  keyFile: keyPath,
+  scopes: ['https://www.googleapis.com/auth/indexing'],
+  // Ensure the project ID is explicitly passed
+  projectId: 'mktdm-outh'
+});
 
 async function indexPage(url) {
   try {
-    const tokens = await jwtClient.authorize();
     const indexing = google.indexing('v3');
     const result = await indexing.urlNotifications.publish({
       auth: jwtClient,
