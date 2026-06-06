@@ -7,6 +7,7 @@ metaDescription: "Check the 3kW solar system price in Raipur with subsidy. Detai
 excerpt: "Planning to switch to solar in Raipur? Get the complete breakdown of 3 kilowatt solar panel prices, PM Surya Ghar subsidies, and expected ROI for Chhattisgarh homes."
 category: "solar"
 publicationDate: "2026-05-27"
+lastUpdated: "2026-06-06"
 authorName: "MDNetwork Solar Advisory"
 authorCredentials: "Senior Solar Consultant"
 authorBio: "Specialized in residential solar ROI planning and CSPDCL net metering coordination for Raipur residents."
