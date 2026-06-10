@@ -14,7 +14,9 @@ imageAlt: "A young Indian student from Raipur holding an insurance certificate a
 tags: ["Student Insurance", "Study Abroad", "Raipur", "University Waiver", "Overseas Education"]
 readingTime: 10
 ---
-
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_ids=[ChIJhWY8NnI7W20RZjfPOVIl7FQ, ChIJtWfWnLPdKDoRPQn9LqhSgHE], version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_id=ChIJhWY8NnI7W20RZjfPOVIl7FQ, audience=Raipur_Business_Owners, version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, audience=Raipur_Business_Owners, version=2026 -->
 <div class="blog-content">
   <p class="lead"><strong>Getting your admission letter from a university in New York, London, or Melbourne is a proud moment for any Raipur student.</strong> But once you start the visa process, you'll encounter a big hurdle: the mandatory health insurance requirement.</p>
 

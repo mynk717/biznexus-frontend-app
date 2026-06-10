@@ -14,7 +14,9 @@ imageAlt: "An elderly Indian couple standing safely and happily in front of a Eu
 tags: ["Senior Travel", "PED Cover", "Raipur", "Global Medical Care", "Parents Abroad"]
 readingTime: 10
 ---
-
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_ids=[ChIJhWY8NnI7W20RZjfPOVIl7FQ, ChIJtWfWnLPdKDoRPQn9LqhSgHE], version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_id=ChIJhWY8NnI7W20RZjfPOVIl7FQ, audience=Raipur_Business_Owners, version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, audience=Raipur_Business_Owners, version=2026 -->
 <div class="blog-content">
   <p class="lead"><strong>Sending your parents from Raipur to visit siblings or enjoy a well-deserved vacation in the US or Europe is a beautiful gesture.</strong> However, the stress of "What if they fall ill abroad?" can be overwhelming, especially if they have existing conditions like Diabetes or Hypertension.</p>
 

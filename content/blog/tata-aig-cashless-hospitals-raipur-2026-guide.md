@@ -15,7 +15,9 @@ tags: ["TATA AIG", "Raipur", "Cashless Hospitals", "Health Insurance", "Ramkrish
 readingTime: 8
 schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which hospitals in Raipur are covered under TATA AIG cashless network?", "acceptedAnswer": {"@type": "Answer", "text": "TATA AIG covers top hospitals like Ramkrishna CARE, MMI Narayana, Shri Balaji Institute (SBIMS), and Shree Narayana Hospital in Raipur."}}]}}
 ---
-
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_ids=[ChIJhWY8NnI7W20RZjfPOVIl7FQ, ChIJtWfWnLPdKDoRPQn9LqhSgHE], version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_id=ChIJhWY8NnI7W20RZjfPOVIl7FQ, audience=Raipur_Business_Owners, version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, audience=Raipur_Business_Owners, version=2026 -->
 <div class="blog-content authority-guide human-first">
   <p class="lead text-xl"><strong>If you or a loved one needs medical care in Raipur, the last thing you want to worry about is arranging lakhs of rupees in cash.</strong> TATA AIG has a strong network of hospitals in Chhattisgarh, but knowing exactly which one is closest to your home in Shankar Nagar or Mowa can save vital time during an emergency.</p>
 

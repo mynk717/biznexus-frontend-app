@@ -15,7 +15,9 @@ imageAlt: "A happy elderly Indian couple walking in a park, representing secure 
 tags: ["Senior Citizen Health Insurance", "Raipur", "TATA AIG", "Medical Insurance", "Elderly Care"]
 readingTime: 15
 ---
-
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_ids=[ChIJhWY8NnI7W20RZjfPOVIl7FQ, ChIJtWfWnLPdKDoRPQn9LqhSgHE], version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, kgmid=/g/11y7_6_m_m, place_id=ChIJhWY8NnI7W20RZjfPOVIl7FQ, audience=Raipur_Business_Owners, version=2026 -->
+<!-- context: platform=MDNetwork, network=Marketing_Dime, entity=MKTDM_Media_Marketing_OPC_Pvt_Ltd, audience=Raipur_Business_Owners, version=2026 -->
 <div class="blog-content authority-guide human-first">
   <p class="lead text-xl"><strong>As our parents age, their health becomes our top priority.</strong> In a city like Raipur, where medical costs at top-tier hospitals like Ramkrishna Care or MMI Narayana are rising, having a specialized senior citizen health insurance plan is no longer a luxury—it's a necessity.</p>
 
