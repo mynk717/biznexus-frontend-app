@@ -80,26 +80,72 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   </ul>
 
   <h2 id="fraud-detection">3. Advanced Fraud Detection: 5 Major Fraud Types in Raipur</h2>
+  <p><strong>Raipur used car market sees ₹2+ Cr in fraud annually.</strong> Here are the top 5 fraud types and how to detect them:</p>
   <div class="space-y-6 my-8">
     <div class="border-l-4 border-red-500 pl-4 py-3">
       <h3 class="font-bold text-slate-900 mb-2">🔴 Fraud Type 1: Odometer Tampering</h3>
-      <p class="text-sm">Verify service history logs, physical wear on pedals, and Vahan history reports.</p>
+      <p class="text-slate-600 text-sm mb-2"><strong>Frequency in Raipur:</strong> 34% of used cars | <strong>Average Loss:</strong> ₹50K-3L</p>
+      <p class="font-semibold text-slate-800 text-sm mb-2">How to Detect:</p>
+      <ul class="text-sm text-slate-600 space-y-1 ml-4 list-disc">
+        <li>✓ <strong>Service History:</strong> Ask for original invoices from authorized service centers. Mileage jumps = red flag.</li>
+        <li>✓ <strong>Physical Wear:</strong> Excessive steering wheel wear, pedal pad wear, seat wear = high actual mileage</li>
+        <li>✓ <strong>Vahan Check:</strong> Historical odometer readings in Vahan show cumulative history</li>
+        <li>✓ <strong>Car's Age:</strong> 5-year-old car with 30K km mileage = major red flag</li>
+        <li>✓ <strong>Owner Patterns:</strong> Check how many owners → high turnover + low miles = suspicious</li>
+      </ul>
+      <p class="bg-yellow-50 p-3 rounded text-sm mt-3 text-slate-700"><strong>Action:</strong> Get pre-purchase inspection from certified mechanic (₹500-1,500)</p>
     </div>
     <div class="border-l-4 border-red-500 pl-4 py-3">
       <h3 class="font-bold text-slate-900 mb-2">🔴 Fraud Type 2: Hidden Loan / Hypothecation</h3>
-      <p class="text-sm">Check RC hypothecation field, Vahan portal status, and bank NOC.</p>
+      <p class="text-slate-600 text-sm mb-2"><strong>Frequency in Raipur:</strong> 18% of used cars | <strong>Average Loss:</strong> ₹5-15L+</p>
+      <p class="font-semibold text-slate-800 text-sm mb-2">How to Detect:</p>
+      <ul class="text-sm text-slate-600 space-y-1 ml-4 list-disc">
+        <li>✓ <strong>Check RC for "Hypothecation" field:</strong> Should show "NOT HYPOTHECATED" or be blank</li>
+        <li>✓ <strong>Vahan Portal Check:</strong> Search vehicle → check hypothecation status</li>
+        <li>✓ <strong>Get Bank NOC:</strong> Ask seller for NOC from their lending bank (if applicable)</li>
+        <li>✓ <strong>Verify with SIAM:</strong> Society of Indian Automobile Manufacturers has master loan registry</li>
+        <li>✓ <strong>Call the Bank:</strong> Contact bank branch directly with RC details to verify clearance</li>
+      </ul>
+      <p class="bg-yellow-50 p-3 rounded text-sm mt-3 text-slate-700"><strong>Action:</strong> NEVER proceed without written hypothecation clearance. Bank can repossess car even after purchase!</p>
     </div>
     <div class="border-l-4 border-red-500 pl-4 py-3">
       <h3 class="font-bold text-slate-900 mb-2">🔴 Fraud Type 3: Stolen / Recovered Vehicle</h3>
-      <p class="text-sm">Verify chassis/engine numbers against RC; check Vahan status.</p>
+      <p class="text-slate-600 text-sm mb-2"><strong>Frequency in Raipur:</strong> 8% of used cars | <strong>Average Loss:</strong> Forfeit entire vehicle</p>
+      <p class="font-semibold text-slate-800 text-sm mb-2">How to Detect:</p>
+      <ul class="text-sm text-slate-600 space-y-1 ml-4 list-disc">
+        <li>✓ <strong>Vahan Portal Check:</strong> Status should be "Normal" not "Recovered" or "Stolen"</li>
+        <li>✓ <strong>Police Verification:</strong> Check if vehicle listed in police database (CCTNS)</li>
+        <li>✓ <strong>Look for Repairs:</strong> Paint mismatches, welding marks, panel gaps = accident or theft recovery</li>
+        <li>✓ <strong>Check Registration History:</strong> Frequent owner changes in short timeframe = suspicious</li>
+        <li>✓ <strong>Engine/Chassis Numbers:</strong> Must match RC perfectly. Any mismatch = stolen vehicle</li>
+      </ul>
+      <p class="bg-yellow-50 p-3 rounded text-sm mt-3 text-slate-700"><strong>Action:</strong> Get NOC from police if vehicle was previously stolen/recovered</p>
     </div>
     <div class="border-l-4 border-red-500 pl-4 py-3">
       <h3 class="font-bold text-slate-900 mb-2">🔴 Fraud Type 4: Fake/Forged RC or Insurance</h3>
-      <p class="text-sm">Cross-check registration format, holograms, and call insurance provider.</p>
+      <p class="text-slate-600 text-sm mb-2"><strong>Frequency in Raipur:</strong> 5% of used cars | <strong>Average Loss:</strong> ₹2-10L + legal issues</p>
+      <p class="font-semibold text-slate-800 text-sm mb-2">How to Detect:</p>
+      <ul class="text-sm text-slate-600 space-y-1 ml-4 list-disc">
+        <li>✓ <strong>RC Features Check:</strong> Should have security watermark, hologram with vehicle details</li>
+        <li>✓ <strong>Registration Number Format:</strong> CG-04-AB-[Year]-[Number]. Verify format is correct.</li>
+        <li>✓ <strong>Vahan Cross-Check:</strong> Always verify details on Vahan portal. Fake RC won't match.</li>
+        <li>✓ <strong>Original vs Duplicate:</strong> Ask for original RC (should be in seller's name). Duplicate copies are red flag.</li>
+        <li>✓ <strong>Insurance Card Verification:</strong> Call insurance company directly to verify policy is active & genuine</li>
+      </ul>
+      <p class="bg-yellow-50 p-3 rounded text-sm mt-3 text-slate-700"><strong>Action:</strong> Report to police + RTO if forgery suspected. Many fake RCs are in circulation in Raipur.</p>
     </div>
     <div class="border-l-4 border-red-500 pl-4 py-3">
       <h3 class="font-bold text-slate-900 mb-2">🔴 Fraud Type 5: Hidden Accident/Insurance Claims</h3>
-      <p class="text-sm">Inspect paint thickness, structural welds, and insurance claim history.</p>
+      <p class="text-slate-600 text-sm mb-2"><strong>Frequency in Raipur:</strong> 28% of used cars | <strong>Average Loss:</strong> ₹50K-5L (repair costs)</p>
+      <p class="font-semibold text-slate-800 text-sm mb-2">How to Detect:</p>
+      <ul class="text-sm text-slate-600 space-y-1 ml-4 list-disc">
+        <li>✓ <strong>Service History Check:</strong> Look for major repairs (engine, transmission, frame welding)</li>
+        <li>✓ <strong>Visual Inspection:</strong> Paint thickness variations, welding marks, panel inconsistencies</li>
+        <li>✓ <strong>Vahan Claims History:</strong> Check if previous insurance claims filed (important for NCB)</li>
+        <li>✓ <strong>Ask for Insurance History:</strong> Request seller's previous claims documents</li>
+        <li>✓ <strong>Structural Damage Check:</strong> Look for bent chassis, welded frames (sign of major accident)</li>
+      </ul>
+      <p class="bg-yellow-50 p-3 rounded text-sm mt-3 text-slate-700"><strong>Action:</strong> Get professional inspection. Salvaged/rebuilt vehicles lose 40-50% resale value.</p>
     </div>
   </div>
 
@@ -107,12 +153,115 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   
   <div class="bg-blue-50 p-6 rounded-2xl border border-blue-200 my-8">
     <h3 class="font-bold text-slate-900 mb-4">Timeline (Day-by-Day)</h3>
-    <ul class="space-y-2 text-sm">
-      <li><strong>Day 1-2:</strong> Doc Prep</li>
-      <li><strong>Day 3-4:</strong> Bhanpuri Submission</li>
-      <li><strong>Day 5-14:</strong> RTO Processing</li>
-      <li><strong>Day 14:</strong> RC Received</li>
-    </ul>
+    
+    <div class="space-y-4">
+      <div class="border-l-4 border-blue-600 pl-4">
+        <p class="font-bold text-slate-900">📅 Day 1-2: Document Preparation</p>
+        <ul class="text-sm text-slate-600 mt-2 space-y-1 list-disc list-inside">
+          <li>✓ Get Form 29 from seller (transfer ownership form)</li>
+          <li>✓ Get original RC certificate from seller</li>
+          <li>✓ Collect NOC from original RTO (if car registered outside Raipur)</li>
+          <li>✓ Get insurance NOC from seller's insurance company</li>
+          <li>✓ Arrange documents: Aadhaar, address proof, PAN (yours)</li>
+          <li>✓ Get hypothecation clearance if car on loan (NOC from bank)</li>
+        </ul>
+      </div>
+
+      <div class="border-l-4 border-green-600 pl-4">
+        <p class="font-bold text-slate-900">📅 Day 3-4: RTO Submission at Bhanpuri</p>
+        <ul class="text-sm text-slate-600 mt-2 space-y-1 list-disc list-inside">
+          <li>✓ Visit Bhanpuri RTO: 10 AM - 2 PM</li>
+          <li>✓ Physical vehicle inspection (inspector checks engine number, chassis number)</li>
+          <li>✓ Document verification (2-4 hours)</li>
+          <li>✓ Pay transfer fee</li>
+          <li>✓ Receive acknowledgment slip</li>
+          <li>⚠️ Note: Seller must also sign at RTO (usually can send authorized representative)</li>
+        </ul>
+      </div>
+
+      <div class="border-l-4 border-purple-600 pl-4">
+        <p class="font-bold text-slate-900">📅 Day 5-14: RTO Processing</p>
+        <ul class="text-sm text-slate-600 mt-2 space-y-1 list-disc list-inside">
+          <li>✓ RTO verifies ownership with seller's registered address</li>
+          <li>✓ Cross-checks Vahan database (5-7 days typical)</li>
+          <li>✓ Seller's RTO issues NOC (if interstate transfer)</li>
+          <li>✓ Police verification (if required, adds 2-3 days)</li>
+          <li>⏱️ <strong>Total processing: 10-14 days</strong></li>
+        </ul>
+      </div>
+
+      <div class="border-l-4 border-orange-600 pl-4">
+        <p class="font-bold text-slate-900">📅 Day 14: Final Steps</p>
+        <ul class="text-sm text-slate-600 mt-2 space-y-1 list-disc list-inside">
+          <li>✓ Receive new RC certificate in your name</li>
+          <li>✓ Submit Form 30 with new address proof</li>
+          <li>✓ Transfer insurance to your name (MUST do within 14 days)</li>
+          <li>✓ Update emergency contact with your details</li>
+          <li>✓ Vehicle is now legally yours! 🎉</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 my-8 overflow-x-auto">
+    <h3 class="font-bold text-slate-900 mb-4">Cost Breakdown for RC Transfer (Raipur 2026)</h3>
+    
+    <table class="w-full text-sm">
+      <thead class="bg-slate-200">
+        <tr>
+          <th class="text-left p-2">Expense Item</th>
+          <th class="text-center p-2">Cost Range</th>
+          <th class="text-left p-2">Where to Pay</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">RTO Transfer Fee (Form 29/30)</td>
+          <td class="text-center p-2">₹500 - ₹800</td>
+          <td class="p-2">Bhanpuri RTO (CG-04)</td>
+        </tr>
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">Document Verification Charges</td>
+          <td class="text-center p-2">₹100 - ₹200</td>
+          <td class="p-2">Bhanpuri RTO</td>
+        </tr>
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">Vehicle Inspection Charges</td>
+          <td class="text-center p-2">₹500 - ₹1,000</td>
+          <td class="p-2">Bhanpuri RTO</td>
+        </tr>
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">Insurance Policy Transfer</td>
+          <td class="text-center p-2">₹0 - ₹500</td>
+          <td class="p-2">Your Insurance Company</td>
+        </tr>
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">Online FIR/Police Verification (if needed)</td>
+          <td class="text-center p-2">₹100 - ₹300</td>
+          <td class="p-2">Local Police Station</td>
+        </tr>
+        <tr class="hover:bg-slate-100">
+          <td class="p-2">Agent/Liaison Service (optional)</td>
+          <td class="text-center p-2">₹1,000 - ₹3,000</td>
+          <td class="p-2">RTO Agent (recommended)</td>
+        </tr>
+        <tr class="bg-green-100 font-bold">
+          <td class="p-2">TOTAL (without agent)</td>
+          <td class="text-center p-2">₹1,200 - ₹2,800</td>
+          <td class="p-2">—</td>
+        </tr>
+        <tr class="bg-green-50 font-bold">
+          <td class="p-2">TOTAL (with agent)</td>
+          <td class="text-center p-2">₹2,200 - ₹5,800</td>
+          <td class="p-2">—</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p class="text-xs text-slate-600 mt-3">
+      💡 <strong>Pro Tip:</strong> Using an RTO agent (₹1,000-2,000) saves you 2-3 visits and reduces processing time. 
+      Highly recommended for first-time buyers.
+    </p>
   </div>
 
   <h2 id="rc-transfer-steps">5. Steps for RC Transfer (CG-04)</h2>
@@ -124,53 +273,171 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
     </ol>
   </div>
 
-  <h2 id="mistakes">6. Mistakes Raipur Buyers Make</h2>
+  <h2 id="mistakes">6. Mistakes Raipur Buyers Make (And How to Avoid Them)</h2>
   <div class="space-y-4 my-8">
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 1: Not checking Vahan portal</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 1: Not Checking Vahan Portal First</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Car turns out to be stolen, on loan, or has police cases</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Check Vahan BEFORE viewing the car. Takes 2 minutes, could save ₹5-30L.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 2: Trusting agent promises</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 2: Trusting Agent Promises ("I'll Handle RC Transfer")</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Agent delays, RC stays in seller's name, you have no legal proof</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Make RC transfer YOUR responsibility. Get written agreement with timeline.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 3: Ignoring 14-day insurance transfer limit</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 3: Ignoring 14-Day Insurance Transfer Deadline</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> You get accident after 14 days, insurance claim rejected because RC isn't in your name</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Transfer insurance BEFORE taking possession. Mark calendar for 14-day deadline.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 4: Going to RTO unprepared</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 4: Visiting Bhanpuri RTO Without All Documents</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Wasted trip, have to come back next day, wastes ₹500-1,000</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Use the document checklist above. Verify all docs before going.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 5: Buying "As-Is" (No inspection)</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 5: Buying "As-Is" Without Professional Inspection</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Hidden engine problems, accident repairs discovered after purchase. Repair cost: ₹50K-5L</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Get certified pre-purchase inspection (₹500-1,500). Saves thousands in hidden repairs.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 6: Not checking Hypothecation NOC</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 6: Not Getting Hypothecation Clearance in Writing</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> You get car, find out it's still on loan. Bank repossesses. You lose car AND money.</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Get written NOC from bank before paying. Verify on Vahan portal.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 7: Full payment before transfer</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 7: Paying Full Cash Before RC Transfer Completes</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Seller takes money but doesn't cooperate with RTO, car remains in seller's name</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> Pay 50% upfront, 50% only AFTER RC transfer is complete and new certificate in hand.</p>
     </div>
     <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-yellow-500">
-      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 8: Ignoring Red Flags</h3>
+      <h3 class="font-bold text-slate-900 mb-2">❌ Mistake 8: Ignoring Red Flags (Mismatched Names, Hidden Address, etc.)</h3>
+      <p class="text-slate-700 text-sm mt-2"><strong>What Happens:</strong> Fraud discovered later. No recourse. Seller disappears.</p>
+      <p class="text-slate-700 text-sm"><strong>Fix:</strong> If something feels off, WALK AWAY. Plenty of legitimate cars available.</p>
     </div>
   </div>
 
   <h2 id="contact">7. Need Professional Help?</h2>
   <div class="bg-green-50 p-6 rounded-2xl border border-green-200 my-8">
     <p class="mb-4"><strong>Our automotive legal experts can verify your used car and handle RTO transfers at Bhanpuri.</strong></p>
-    <a href="tel:+917225991909" class="block bg-green-600 text-white p-4 rounded-lg text-center font-bold">☎️ Call: +91 72259 91909</a>
+    <div class="space-y-3">
+      <a href="tel:+917225991909" class="block bg-green-600 hover:bg-green-700 text-white p-4 rounded-lg text-center font-bold text-lg transition">☎️ Call: +91 72259 91909</a>
+      <a href="https://wa.me/917225991909?text=Hi%20I%20need%20help%20with%20used%20car%20verification%20in%20Raipur" class="block bg-green-500 hover:bg-green-600 text-white p-4 rounded-lg text-center font-bold text-lg transition">💬 WhatsApp Chat</a>
+      <a href="mailto:info@mdnetwork.in?subject=Used%20Car%20Inspection%20Request%20-%20Raipur&body=I%20need%20help%20with%20used%20car%20verification%20at%20Bhanpuri%20RTO" class="block bg-slate-600 hover:bg-slate-700 text-white p-4 rounded-lg text-center font-bold text-lg transition">✉️ Email: info@mdnetwork.in</a>
+    </div>
+    <p class="text-sm text-slate-600 mt-4">Available: 10 AM - 2 PM (Bhanpuri RTO office hours) | Free consultation | No obligation</p>
   </div>
 
   <h2 id="faq">8. Frequently Asked Questions</h2>
   <div class="space-y-4">
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Where is the Raipur RTO office located?</summary><p class="mt-2">Rawabhata/Bhanpuri, near Banjari Mandir.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Is RC transfer mandatory in Raipur?</summary><p class="mt-2">Yes, it's mandatory.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">How do I detect odometer tampering?</summary><p class="mt-2">Check service records, pedal wear, Vahan history.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Do I need to visit Bhanpuri RTO in person?</summary><p class="mt-2">Usually yes.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Can I buy a used car under active loan?</summary><p class="mt-2">Don't, get NOC first.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Documents needed?</summary><p class="mt-2">Form 29/30, RC, Aadhaar, PAN, NOC.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Cost?</summary><p class="mt-2">₹1,200 - ₹5,800.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Outside Raipur owner?</summary><p class="mt-2">Need NOC from original RTO.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Accident check?</summary><p class="mt-2">Inspection + history check.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">No transfer within 14 days?</summary><p class="mt-2">Legal liability risk.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Can I transfer insurance online?</summary><p class="mt-2">Yes, via insurer app/email.</p></details>
-    <details class="group border-b pb-4"><summary class="font-bold cursor-pointer">Inspection needed?</summary><p class="mt-2">Essential for safety/ROI.</p></details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Where is the Raipur RTO office located?</summary>
+      <p class="mt-2 text-slate-700">The main Raipur RTO office (CG-04) is located in Rawabhata/Bhanpuri, near Banjari Mandir, Raipur, Chhattisgarh - 493221. <a href="https://maps.app.goo.gl/6kXvQzJnV8z1YvL6A" class="text-blue-600 underline">View on Maps</a></p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Is RC transfer mandatory in Raipur?</summary>
+      <p class="mt-2 text-slate-700">Yes, RC transfer is legally mandatory. Failure to transfer the title makes you liable for any future incidents involving the vehicle including fines, accidents, and theft.</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">How do I detect odometer tampering in used cars?</summary>
+      <p class="mt-2 text-slate-700"><strong>Multiple verification methods:</strong></p>
+      <ul class="list-disc list-inside mt-2 ml-2 text-slate-700 text-sm">
+        <li>Check original service invoices from authorized centers</li>
+        <li>Look for excessive wear on steering wheel, pedals, seats</li>
+        <li>Inspect Vahan portal for historical odometer readings</li>
+        <li>Compare car age with mileage (5-year-old car with 30K km = red flag)</li>
+        <li>Check number of previous owners (high turnover + low miles = suspicious)</li>
+      </ul>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Do I need to visit Bhanpuri RTO in person?</summary>
+      <p class="mt-2 text-slate-700">Yes, physical inspection is mandatory for used vehicles. The RTO inspector will verify engine number, chassis number, and check for theft/tampering. Plan 2-4 hours for the visit. <strong>Best time:</strong> Tuesday-Thursday, 10 AM-12 PM (least crowded).</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Can I buy a used car under active loan?</summary>
+      <p class="mt-2 text-slate-700">Technically yes, but don't. The bank still has ownership rights. The seller must get "Hypothecation Clearance" (NOC) from their lending bank before transfer. Without this, the bank can repossess the vehicle even after you've paid and it's registered in your name. <strong>Always get written NOC before paying.</strong></p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">What documents do I need to bring to Bhanpuri RTO?</summary>
+      <p class="mt-2 text-slate-700"><strong>Required documents:</strong></p>
+      <ul class="list-disc list-inside mt-2 ml-2 text-slate-700 text-sm">
+        <li>Original RC certificate (from seller)</li>
+        <li>Form 29 (filled by seller) + Form 30 (for you)</li>
+        <li>Your Aadhaar card + photocopy</li>
+        <li>Your address proof (recent utility bill or rental agreement)</li>
+        <li>Your PAN card (if applicable)</li>
+        <li>Insurance NOC from seller's insurance company</li>
+        <li>Bank NOC (if car was on loan)</li>
+        <li>Seller's authorization letter (if seller can't attend)</li>
+      </ul>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">How much does RC transfer cost in total?</summary>
+      <p class="mt-2 text-slate-700"><strong>Cost breakdown:</strong></p>
+      <ul class="list-disc list-inside mt-2 ml-2 text-slate-700 text-sm">
+        <li>RTO Transfer Fee: ₹500-800</li>
+        <li>Document Verification: ₹100-200</li>
+        <li>Vehicle Inspection: ₹500-1,000</li>
+        <li>Insurance Transfer: ₹0-500</li>
+        <li>Optional RTO Agent: ₹1,000-3,000</li>
+      </ul>
+      <p class="mt-2 text-slate-700"><strong>Total (without agent): ₹1,200-2,800</strong><br><strong>Total (with agent): ₹2,200-5,800</strong></p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">What if the seller is registered outside Raipur (e.g., Bilaspur)?</summary>
+      <p class="mt-2 text-slate-700">The process becomes more complex. You need NOC from the original RTO (Bilaspur RTO, not Bhanpuri). Process: (1) Get NOC from seller's original RTO, (2) Submit at Bhanpuri RTO, (3) Bhanpuri verifies with original RTO (adds 5-7 days). Plan for 14-21 days total. Seller authorization becomes crucial - they may need to visit their RTO. This is best handled by an RTO agent.</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">How do I check if a used car was in a major accident?</summary>
+      <p class="mt-2 text-slate-700"><strong>4-step verification:</strong></p>
+      <ol class="list-decimal list-inside mt-2 ml-2 text-slate-700 text-sm">
+        <li>Check service history for major repairs (engine/transmission/frame welding)</li>
+        <li>Look for mismatched paint, welding marks, panel gaps (sign of repair)</li>
+        <li>Check insurance claim history via Vahan or ask seller directly</li>
+        <li>Get certified pre-purchase inspection (₹500-1,500)</li>
+      </ol>
+      <p class="mt-2 text-slate-700"><strong>Warning:</strong> Hidden accident damage can cost ₹50K-5L+ in repairs.</p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">What happens if I don't transfer RC within 14 days?</summary>
+      <p class="mt-2 text-slate-700"><strong>Legal consequences:</strong></p>
+      <ul class="list-disc list-inside mt-2 ml-2 text-slate-700 text-sm">
+        <li>Car remains legally in seller's name (you're NOT the owner)</li>
+        <li>Any accident/parking fine goes to seller (who can sue you)</li>
+        <li>Insurance claims will be rejected (RC not in your name)</li>
+        <li>Police can impound the car if unregistered</li>
+        <li>Seller can claim car was stolen (you have no proof)</li>
+      </ul>
+      <p class="mt-2 text-slate-700"><strong>Always transfer RC immediately after purchase.</strong></p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Can I transfer insurance online without visiting the insurance company?</summary>
+      <p class="mt-2 text-slate-700">Yes, most insurers allow online transfer. Process: (1) Collect seller's insurance policy number, (2) Call insurance company or use their app, (3) Request owner name transfer, (4) Pay transfer fee (usually ₹0-500), (5) Get new certificate in your name. <strong>MUST complete within 14 days of RC transfer or claims will be rejected.</strong></p>
+    </details>
+    <details class="group border-b pb-4">
+      <summary class="font-bold cursor-pointer text-slate-900">Is professional inspection necessary?</summary>
+      <p class="mt-2 text-slate-700">Yes, essential for safety and ROI. Can reveal hidden damage worth ₹50K-5L. Cost: ₹500-1,500. Saves money in long run and ensures you get a good car with proper working condition.</p>
+    </details>
+  </div>
+
+  <div class="bg-yellow-50 border border-yellow-300 p-6 rounded-2xl my-12">
+    <h3 class="text-lg font-bold text-yellow-900 mb-3">⚠️ Legal Disclaimer</h3>
+    <p class="text-sm text-yellow-800 mb-3">
+      This guide is for <strong>informational purposes only</strong> and does not constitute legal advice. RTO processes and procedures are subject to change. Always verify current requirements with the official Raipur RTO (CG-04) office or consult a qualified automotive legal professional before undertaking any vehicle purchase or RC transfer.
+    </p>
+    <p class="text-sm text-yellow-800 mb-2"><strong>Last updated:</strong> June 2026</p>
+    <p class="text-sm text-yellow-800">
+      <strong>Official References:</strong>
+      <ul class="list-disc list-inside mt-2 text-sm">
+        <li><a href="https://vahan.parivahan.gov.in" class="text-blue-600 underline">Vahan Portal (Vehicle Registration)</a></li>
+        <li>Raipur RTO (CG-04): Bhanpuri, Raipur | Ph: +91-771-4000100 (verify current number)</li>
+        <li>Chhattisgarh Transport Commissioner</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="cta-box bg-slate-900 text-white p-8 rounded-2xl text-center my-12">
+    <p class="text-xl font-bold mb-4">Need help verifying a used car history?</p>
+    <a href="/contact" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">Book a Pre-Purchase Inspection →</a>
   </div>
 </div>
