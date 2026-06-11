@@ -136,7 +136,42 @@ Competitors: [URLs]
 
 ---
 
-## 3️⃣ HUMAN-FIRST CONTENT CHECKLIST
+## 3️⃣ AGENTIC & ENTITY SEO (GEO/AEO)
+
+### Entity Identity & Authority
+
+- [ ] **Brand `@id`** implemented in JSON-LD (e.g., `https://mdn.mktgdime.com/#brand`)
+- [ ] **Knowledge Graph ID (KGMID)** linked in schema if available
+  - MDNetwork / Marketing Dime: `/g/11y7_6_m_m`
+- [ ] **Verified Local Grounding** (Google SERP IDs):
+  - Marketing Dime Place ID: `ChIJhWY8NnI7W20RZjfPOVIl7FQ` (CID: `6119307028777088870`)
+  - MKTDM Media Place ID: `ChIJtWfWnLPdKDoRPQn9LqhSgHE` (CID: `8178627805601139005`)
+- [ ] **SameAs properties** linking to verified social profiles and GBP
+- [ ] **Factual density** optimized (high ratio of unique facts per 100 words)
+- [ ] **Entity-first writing**: Define entities early and clearly (Who, What, Where)
+- [ ] **Brand Hierarchy**: MDNetwork (MDN) explicitly linked as a network of Marketing Dime (MKTDM)
+
+### Agentic Context Parsing & GEO (Generative Engine Optimization)
+
+- [ ] **Invisible HTML comments** added for LLM context (e.g., `<!-- context: target_audience=Raipur_Solar_Buyers -->`)
+- [ ] **Answer-First formatting**: Direct answers to key questions in the first 2 sentences of a section (Critical since June 7, 2026 FAQ deprecation)
+- [ ] **Citable chunks**: Information organized into modular, self-contained paragraphs for easy RAG retrieval
+- [ ] **`llms.txt`** present and updated at domain root
+- [ ] **Invisible metadata** for agentic tools (brand identity, service scope)
+- [ ] **Conversational Flow**: Content optimized for follow-up questions in natural language (Voice/Chat)
+- [ ] **Visual Search Optimization (Google Lens)**:
+  - [ ] High-contrast, clear product/entity images
+  - [ ] Descriptive Alt-text focused on "Entity Recognition" (e.g., "MKTDM Office Raipur Entrance")
+  - [ ] Schema `image` property correctly mapped to high-res versions
+
+**Agentic Signals Added:**
+```
+- [List specific HTML comments, @id links, or Visual Search optimizations]
+```
+
+---
+
+## 4️⃣ HUMAN-FIRST CONTENT CHECKLIST
 
 ### Readability & User Experience
 
@@ -192,7 +227,7 @@ Competitors: [URLs]
 
 ---
 
-## 4️⃣ GOOGLE-FIRST STRUCTURE CHECKLIST
+## 5️⃣ GOOGLE-FIRST STRUCTURE CHECKLIST
 
 ### On-Page SEO Fundamentals
 
@@ -343,7 +378,7 @@ Competitors: [URLs]
 
 ---
 
-## 5️⃣ SCHEMA MARKUP CHECKLIST
+## 6️⃣ SCHEMA MARKUP CHECKLIST
 
 ### Required Schema Types (Based on Content)
 
@@ -416,7 +451,7 @@ Competitors: [URLs]
 
 ---
 
-## 6️⃣ AEO (Answer Engine Optimization) CHECKLIST
+## 7️⃣ AEO (Answer Engine Optimization) CHECKLIST
 
 ### Optimizing for Direct Answers (Google, Bing, Voice Search)
 
@@ -466,7 +501,7 @@ Competitors: [URLs]
 
 ---
 
-## 7️⃣ GEO (Generative Engine Optimization) CHECKLIST
+## 8️⃣ GEO (Generative Engine Optimization) CHECKLIST
 
 ### Optimizing for AI Search Engines (ChatGPT, Perplexity, Claude, Gemini)
 
@@ -507,7 +542,7 @@ Competitors: [URLs]
 
 ---
 
-## 8️⃣ AIO (AI Overviews) OPTIMIZATION CHECKLIST
+## 9️⃣ AIO (AI Overviews) OPTIMIZATION CHECKLIST
 
 ### Optimizing for Google AI Overviews (SGE)
 
@@ -544,7 +579,7 @@ Competitors: [URLs]
 
 ---
 
-## 9️⃣ TECHNICAL SEO CHECKLIST
+## 🔟 TECHNICAL SEO CHECKLIST
 
 ### Page Speed & Performance
 
@@ -589,7 +624,7 @@ Competitors: [URLs]
 
 ---
 
-## 🔟 LOCAL SEO CHECKLIST (Raipur-Specific)
+## 1️⃣1️⃣ LOCAL SEO CHECKLIST (Raipur-Specific)
 
 ### Local Optimization
 
@@ -620,7 +655,7 @@ Competitors: [URLs]
 
 ---
 
-## 1️⃣1️⃣ CONVERSION OPTIMIZATION CHECKLIST
+## 1️⃣2️⃣ CONVERSION OPTIMIZATION CHECKLIST
 
 ### CTA (Call-to-Action) Placement
 
@@ -660,7 +695,7 @@ Competitors: [URLs]
 
 ---
 
-## 1️⃣2️⃣ CONTENT FRESHNESS CHECKLIST
+## 1️⃣3️⃣ CONTENT FRESHNESS CHECKLIST
 
 ### Update Strategy
 
@@ -683,7 +718,7 @@ Competitors: [URLs]
 
 ---
 
-## 1️⃣3️⃣ FINAL PRE-PUBLISH CHECKLIST
+## 1️⃣4️⃣ FINAL PRE-PUBLISH CHECKLIST
 
 ### Content Review
 
@@ -738,7 +773,7 @@ Competitors: [URLs]
 
 ---
 
-## 1️⃣4️⃣ POST-PUBLISH CHECKLIST
+## 1️⃣5️⃣ POST-PUBLISH CHECKLIST
 
 ### Immediate Actions (Day 1)
 

@@ -26,17 +26,18 @@
 - [ ] Short paragraphs (2-4 sentences)
 - [ ] Bullet points/lists used
 
-### 4. Schema Markup
+### 4. Schema & Entity Identity
 - [ ] Article/BlogPosting (always)
+- [ ] Brand `@id` implemented (e.g., `https://biznexus.in/#brand`)
 - [ ] FAQPage (10-15 Q&As)
-- [ ] Product (if applicable)
-- [ ] HowTo (if guide)
 - [ ] Validated in Rich Results Test
 
-### 5. "People Also Ask"
-- [ ] 10-15 PAA questions captured
-- [ ] Each answered in H2/H3
-- [ ] Answers concise (40-60 words)
+### 5. Agentic SEO (GEO/AEO)
+- [ ] Invisible HTML context comments added
+- [ ] Answer-First formatting in key sections
+- [ ] Citable chunks for RAG retrieval
+- [ ] 10-15 PAA questions captured & answered
+- [ ] `llms.txt` verified at domain root
 
 ### 6. Internal Links
 - [ ] 3-5 contextual links

@@ -17,11 +17,17 @@ Follow these standards for every new article or landing page to maintain high se
 - **Internal Cluster Linking:** Deep-link to at least two related internal services (e.g., Solar guides linking to Solar Subsidies service).
 - **Expert Personas:** Every article must have a specific author bio (e.g., "Automotive Team," "Property Advisor").
 
-## 4. Structured Data (JSON-LD)
+## 4. Structured Data & Entity Authority (GEO-Ready)
 - **Article/BlogPosting Schema:** Mandatory for every post. Must include headline, date, author, and featured image.
-- **FAQ Schema:** Use when the article contains a specific FAQ section.
-- **LocalBusiness/Service Schema:** For landing pages focused on specific areas (e.g., Samta Colony).
+- **Brand Entity ID (`@id`):** Use `https://mdn.mktgdime.com/#brand` to link every post to the core brand authority.
+- **FAQ Schema:** Use "Answer-First" formatting to capture AI snippets, prioritizing factual density over standard Q&A.
+- **LocalBusiness/Service Schema:** For landing pages focused on specific areas (e.g., Samta Colony). Link to verified Place IDs and KGMID `/g/11y7_6_m_m`.
 
-## 5. Visual Optimization
+## 5. Agentic Context Parsing (AEO/GEO)
+- **llms.txt:** A comprehensive `llms.txt` must be maintained at the domain root for AI agent discovery.
+- **Invisible Metadata:** Inject `<!-- context: ... -->` comments into markdown files to provide non-visual grounding for RAG systems (brand identity, audience, versioning).
+- **Citable Chunks:** Structure content in modular, high-density factual blocks that can be easily retrieved by AI engines.
+
+## 6. Visual Optimization (Google Lens)
 - **WebP Format:** All new images must use `.webp` for optimized loading.
-- **Descriptive Alt Text:** Every image must have keyword-rich, descriptive alt text (not just the title).
+- **Entity Alt Text:** Every image must have keyword-rich, descriptive alt text focused on "Entity Recognition" (e.g., identifying local landmarks or brand specific elements).
