@@ -42,32 +42,32 @@ export default function CalculatorClient() {
         </p>
       </section>
 
-      <section className="grid lg:grid-cols-2 gap-8">
+      <section className="grid lg:grid-cols-2 gap-12">
         {/* Inputs */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Input Your Details</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="bill">Current Monthly Electricity Bill (₹)</Label>
+        <div className="nm-flat p-8 rounded-[40px] space-y-8">
+          <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Configure Your System</h2>
+          
+          <div className="space-y-4">
+            <Label htmlFor="bill" className="text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-xs">Current Monthly Bill (₹)</Label>
+            <div className="nm-inset p-1 rounded-2xl">
               <Input
                 id="bill"
                 type="number"
-                min={500}
-                max={50000}
+                className="border-none bg-transparent shadow-none focus-visible:ring-0 text-lg font-bold"
                 value={monthlyBill}
                 onChange={(e) => setMonthlyBill(Number(e.target.value) || 0)}
               />
             </div>
+          </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <Label>Desired System Size (kW)</Label>
-                <span className="text-sm text-gray-600">
-                  {systemSize.toFixed(1)} kW
-                </span>
-              </div>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <Label className="text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-xs">Desired System Size</Label>
+              <span className="nm-flat px-4 py-1 rounded-full text-blue-600 font-black">
+                {systemSize.toFixed(1)} kW
+              </span>
+            </div>
+            <div className="nm-inset p-6 rounded-2xl">
               <Slider
                 min={1}
                 max={15}
@@ -75,115 +75,84 @@ export default function CalculatorClient() {
                 value={[systemSize]}
                 onValueChange={([v]) => setSystemSize(v)}
               />
-              <p className="text-xs text-gray-500">
-                1–3 kW: small homes, 3–7 kW: typical homes, 7 kW+ : large homes / commercial.
-              </p>
             </div>
+          </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="tariff">
-                Electricity Tariff (₹/unit){' '}
-                <span className="text-xs text-gray-500">(Default: 8)</span>
-              </Label>
+          <div className="space-y-4">
+            <Label htmlFor="tariff" className="text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-xs">Electricity Tariff (₹/unit)</Label>
+            <div className="nm-inset p-1 rounded-2xl">
               <Input
                 id="tariff"
                 type="number"
-                min={4}
-                max={15}
-                step={0.5}
+                className="border-none bg-transparent shadow-none focus-visible:ring-0 text-lg font-bold"
                 value={tariff}
                 onChange={(e) => setTariff(Number(e.target.value) || 0)}
               />
-              <p className="text-xs text-gray-500">
-                Check your electricity bill for exact per-unit rate.
-              </p>
             </div>
+          </div>
 
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => {
-                setMonthlyBill(3000);
-                setSystemSize(3);
-                setTariff(DEFAULT_UNITS_PER_KW);
-              }}
-            >
-              Reset to Defaults
-            </Button>
-          </CardContent>
-        </Card>
+          <button
+            type="button"
+            className="nm-button w-full py-4 rounded-2xl font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 transition-colors"
+            onClick={() => {
+              setMonthlyBill(3000);
+              setSystemSize(3);
+              setTariff(DEFAULT_TARIFF);
+            }}
+          >
+            Reset to Defaults
+          </button>
+        </div>
 
         {/* Results */}
-        <Card className="bg-gradient-to-br from-blue-50 to-purple-50">
-          <CardHeader>
-            <CardTitle>Estimated Savings</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white rounded-lg border flex items-start gap-3">
-                <Sun className="h-6 w-6 text-yellow-500 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-500">
-                    Estimated Solar Generation
-                  </div>
-                  <div className="text-2xl font-bold">
-                    {monthlyUnits.toFixed(0)} kWh/month
-                  </div>
-                  <div className="text-xs text-gray-500">
-                    ~{dailyUnits.toFixed(1)} units per day
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-white rounded-lg border flex items-start gap-3">
-                <IndianRupee className="h-6 w-6 text-green-600 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-500">Monthly Savings</div>
-                  <div className="text-2xl font-bold text-green-700">
-                    ₹{monthlySavings.toFixed(0)}
-                  </div>
-                  <div className="text-xs text-gray-500">
-                    Capped at your current bill amount.
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-white rounded-lg border flex items-start gap-3">
-                <Zap className="h-6 w-6 text-blue-600 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-500">Yearly Savings</div>
-                  <div className="text-2xl font-bold text-blue-700">
-                    ₹{yearlySavings.toFixed(0)}
-                  </div>
-                  <div className="text-xs text-gray-500">
-                    Assumes similar usage through the year.
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 bg-white rounded-lg border flex items-start gap-3">
-                <CalcIcon className="h-6 w-6 text-purple-600 mt-1" />
-                <div>
-                  <div className="text-sm text-gray-500">Estimated System Cost</div>
-                  <div className="text-2xl font-bold text-purple-700">
-                    ₹{systemCost.toLocaleString('en-IN')}
-                  </div>
-                  {paybackYears && (
-                    <div className="text-xs text-gray-500">
-                      Approx. payback in {paybackYears} years
-                    </div>
-                  )}
-                </div>
+        <div className="nm-flat p-8 rounded-[40px] bg-slate-50/50">
+          <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8">Estimated Impact</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="nm-flat p-6 rounded-3xl bg-white/50 border border-white/20">
+              <Sun className="h-8 w-8 text-yellow-500 mb-4" />
+              <div className="text-sm text-slate-500 font-bold uppercase tracking-tighter">Generation</div>
+              <div className="text-3xl font-black text-slate-900 dark:text-white">
+                {monthlyUnits.toFixed(0)} <span className="text-sm font-normal text-slate-500">kWh/mo</span>
               </div>
             </div>
 
-            <p className="text-xs text-gray-500">
-              This is an approximate calculator using typical Indian solar generation
-              of 4–5 units per kW per day and average tariffs. Actual values depend on
-              your roof, location, DISCOM policy and system design.
+            <div className="nm-flat p-6 rounded-3xl bg-green-50/30 border border-green-100/20">
+              <IndianRupee className="h-8 w-8 text-green-600 mb-4" />
+              <div className="text-sm text-green-600 font-bold uppercase tracking-tighter">Monthly Savings</div>
+              <div className="text-3xl font-black text-green-700">
+                ₹{monthlySavings.toFixed(0)}
+              </div>
+            </div>
+
+            <div className="nm-flat p-6 rounded-3xl bg-blue-50/30 border border-blue-100/20">
+              <Zap className="h-8 w-8 text-blue-600 mb-4" />
+              <div className="text-sm text-blue-600 font-bold uppercase tracking-tighter">Yearly Savings</div>
+              <div className="text-3xl font-black text-blue-700">
+                ₹{yearlySavings.toFixed(0)}
+              </div>
+            </div>
+
+            <div className="nm-flat p-6 rounded-3xl bg-purple-50/30 border border-purple-100/20">
+              <CalcIcon className="h-8 w-8 text-purple-600 mb-4" />
+              <div className="text-sm text-purple-600 font-bold uppercase tracking-tighter">System Cost</div>
+              <div className="text-3xl font-black text-purple-700">
+                ₹{(systemCost / 100000).toFixed(2)}L
+              </div>
+              {paybackYears && (
+                <div className="text-xs font-bold text-purple-500 mt-2">
+                  ROI in {paybackYears} years
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-12 nm-inset p-6 rounded-2xl bg-slate-100/50">
+            <p className="text-xs text-slate-500 leading-relaxed italic">
+              *Approximate calculation for Raipur. Actual savings depend on rooftop orientation, shading (e.g. from nearby Shankar Nagar buildings), and current CSPDCL net-metering policies.
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </section>
     </div>
   );

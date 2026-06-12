@@ -220,6 +220,39 @@
   @apply bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg my-6;
 }
 
+/* Neumorphic Utility Classes */
+
+.nm-flat {
+  background: hsl(var(--background));
+  box-shadow: 20px 20px 60px #d9dae0, -20px -20px 60px #ffffff;
+}
+
+.nm-inset {
+  background: hsl(var(--background));
+  box-shadow: inset 20px 20px 60px #d9dae0, inset -20px -20px 60px #ffffff;
+}
+
+.dark .nm-flat {
+  background: #0f172a;
+  box-shadow: 20px 20px 60px #060a12, -20px -20px 60px #182442;
+}
+
+.dark .nm-inset {
+  background: #0f172a;
+  box-shadow: inset 20px 20px 60px #060a12, inset -20px -20px 60px #182442;
+}
+
+.nm-button {
+  background: hsl(var(--background));
+  box-shadow: 6px 6px 12px #d9dae0, -6px -6px 12px #ffffff;
+  @apply transition-all active:shadow-inner;
+}
+
+.dark .nm-button {
+  background: #0f172a;
+  box-shadow: 6px 6px 12px #060a12, -6px -6px 12px #182442;
+}
+
 /* Ensure tables are responsive */
 @media (max-width: 768px) {
   .blog-content table.comparison-table {
