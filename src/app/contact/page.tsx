@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
   title: 'Contact MDNetwork Raipur | TATA AIG & Solar Solutions',
-  description: 'Connect with Raipur\'s trusted hub for TATA AIG Insurance and Solar Subsidies. Visit our Bhanpuri office or call +91 72259 91909.',
+  description: 'Connect with Raipur\'s trusted hub for TATA AIG Insurance and Solar Subsidies. Visit our office or call +91 72259 91909.',
 };
 
 export default function ContactPage() {
@@ -85,12 +85,12 @@ export default function ContactPage() {
           <div className="nm-inset p-8 rounded-[40px] bg-slate-50/50 space-y-4">
             <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
               <Clock className="h-5 w-5 text-blue-600" />
-              <h4 className="font-bold">Bhanpuri Office Hours</h4>
+              <h4 className="font-bold">Raipur Office Hours</h4>
             </div>
             <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex justify-between">
                 <span>Monday - Saturday</span>
-                <span className="font-bold text-slate-800 dark:text-slate-100">10:00 - 19:00</span>
+                <span className="font-bold text-slate-800 dark:text-slate-100">09:00 - 19:00</span>
               </div>
               <div className="flex justify-between text-red-500">
                 <span>Sunday</span>
