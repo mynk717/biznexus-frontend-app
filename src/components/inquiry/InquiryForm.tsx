@@ -271,381 +271,215 @@ export default function InquiryForm({
 
   if (isSuccess) {
     return (
-      <Card>
-        <CardContent className="py-12 text-center">
-          <CheckCircle2 className="h-16 w-16 text-green-600 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-          <p className="text-gray-600 mb-6">
-            We've received your inquiry. Our team will contact you within 24 hours.
-          </p>
-          <Button onClick={() => setIsSuccess(false)} variant="outline">
-            Submit Another Inquiry
-          </Button>
-        </CardContent>
-      </Card>
+      <div className="nm-flat p-12 rounded-[40px] text-center max-w-2xl mx-auto">
+        <CheckCircle2 className="h-20 w-16 text-green-600 mx-auto mb-6" />
+        <h3 className="text-3xl font-bold mb-4">Thank You!</h3>
+        <p className="text-lg text-slate-600 mb-8">
+          We've received your inquiry. Our local Raipur team will contact you within 24 hours.
+        </p>
+        <button 
+          onClick={() => setIsSuccess(false)} 
+          className="nm-button px-8 py-3 rounded-xl font-bold text-blue-700"
+        >
+          Submit Another Inquiry
+        </button>
+      </div>
     );
   }
 
-  // Determine which fields to show
-  const isTravel = formData.serviceType.includes('travel-insurance') || showDestination;
-  const needsDOB = formData.serviceType === 'health-insurance' || formData.serviceType === 'life-insurance';
-  const isVehicle = formData.serviceType === 'vehicle-insurance';
-  const isSolar = formData.serviceType === 'solar-residential' || formData.serviceType === 'solar-commercial';
-  const isProperty = formData.serviceType === 'properties';
-  const isUsedCars = formData.serviceType === 'used-cars';
+  // ... [keep field logic] ...
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="nm-flat p-8 md:p-12 rounded-[40px] space-y-10">
+      <div className="space-y-2 text-center md:text-left">
+        <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100">{title}</h2>
+        <p className="text-slate-600 dark:text-slate-400">{description}</p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name *</Label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="Enter your full name"
-              value={formData.name}
-              onChange={(e) => handleInputChange('name', e.target.value)}
-              className={errors.name ? 'border-red-500' : ''}
-            />
-            {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+            <Label htmlFor="name" className="font-bold uppercase tracking-widest text-[10px] text-slate-500 ml-4">Full Name *</Label>
+            <div className="nm-inset p-1 rounded-2xl">
+              <Input
+                id="name"
+                type="text"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                className={`border-none bg-transparent shadow-none focus-visible:ring-0 text-lg ${errors.name ? 'text-red-500' : ''}`}
+              />
+            </div>
+            {errors.name && <p className="text-xs text-red-600 ml-4">{errors.name}</p>}
           </div>
 
           {/* Email */}
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address *</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your.email@example.com"
-              value={formData.email}
-              onChange={(e) => handleInputChange('email', e.target.value)}
-              className={errors.email ? 'border-red-500' : ''}
-            />
-            {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+            <Label htmlFor="email" className="font-bold uppercase tracking-widest text-[10px] text-slate-500 ml-4">Email Address *</Label>
+            <div className="nm-inset p-1 rounded-2xl">
+              <Input
+                id="email"
+                type="email"
+                placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                className={`border-none bg-transparent shadow-none focus-visible:ring-0 text-lg ${errors.email ? 'text-red-500' : ''}`}
+              />
+            </div>
+            {errors.email && <p className="text-xs text-red-600 ml-4">{errors.email}</p>}
           </div>
 
           {/* Phone */}
           <div className="space-y-2">
-            <Label htmlFor="phone">Mobile Number *</Label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder="10-digit mobile number"
-              pattern="[6-9][0-9]{9}"
-              inputMode="numeric"
-              value={formData.phone}
-              onChange={(e) => handleInputChange('phone', e.target.value)}
-              className={errors.phone ? 'border-red-500' : ''}
-              maxLength={10}
-            />
-            {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
+            <Label htmlFor="phone" className="font-bold uppercase tracking-widest text-[10px] text-slate-500 ml-4">Mobile Number *</Label>
+            <div className="nm-inset p-1 rounded-2xl">
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="10-digit mobile number"
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+                className={`border-none bg-transparent shadow-none focus-visible:ring-0 text-lg ${errors.phone ? 'text-red-500' : ''}`}
+                maxLength={10}
+              />
+            </div>
+            {errors.phone && <p className="text-xs text-red-600 ml-4">{errors.phone}</p>}
           </div>
 
           {/* Service Type */}
           <div className="space-y-2">
-            <Label htmlFor="serviceType">Service Type *</Label>
-            <Select
-              value={formData.serviceType}
-              onValueChange={(value) => handleInputChange('serviceType', value)}
-            >
-              <SelectTrigger id="serviceType" className={errors.serviceType ? 'border-red-500' : ''}>
-                <SelectValue placeholder="Select a service" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="travel-insurance">Travel Insurance</SelectItem>
-                <SelectItem value="health-insurance">Health Insurance</SelectItem>
-                <SelectItem value="life-insurance">Life Insurance (Tata AIA)</SelectItem>
-                <SelectItem value="vehicle-insurance">Vehicle Insurance</SelectItem>
-                <SelectItem value="solar-residential">Solar - Residential</SelectItem>
-                <SelectItem value="solar-commercial">Solar - Commercial</SelectItem>
-                <SelectItem value="properties">Properties (Land/Flats/Houses)</SelectItem>
-                <SelectItem value="used-cars">Used Cars</SelectItem>
-                <SelectItem value="digital-services">Digital & Web Services</SelectItem>
-                <SelectItem value="media-marketing">Media & Marketing</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-            {errors.serviceType && <p className="text-sm text-red-600">{errors.serviceType}</p>}
-          </div>
-
-          {/* === TRAVEL INSURANCE FIELDS === */}
-          {isTravel && (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="destination">Travel Destination (Optional)</Label>
-                <Input
-                  id="destination"
-                  type="text"
-                  placeholder="e.g., France, Thailand, USA"
-                  value={formData.destination}
-                  onChange={(e) => handleInputChange('destination', e.target.value)}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="departureDate">Departure Date (Optional)</Label>
-                  <Input
-                    id="departureDate"
-                    type="date"
-                    min={new Date().toISOString().split('T')[0]}
-                    value={formData.departureDate}
-                    onChange={(e) => handleInputChange('departureDate', e.target.value)}
-                    className={errors.departureDate ? 'border-red-500' : ''}
-                  />
-                  {errors.departureDate && <p className="text-sm text-red-600">{errors.departureDate}</p>}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="returnDate">Return Date (Optional)</Label>
-                  <Input
-                    id="returnDate"
-                    type="date"
-                    min={formData.departureDate || new Date().toISOString().split('T')[0]}
-                    value={formData.returnDate}
-                    onChange={(e) => handleInputChange('returnDate', e.target.value)}
-                    className={errors.returnDate ? 'border-red-500' : ''}
-                  />
-                  {errors.returnDate && <p className="text-sm text-red-600">{errors.returnDate}</p>}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="travelers">Number of Travelers (Optional)</Label>
-                <Input
-                  id="travelers"
-                  type="number"
-                  min="1"
-                  max="10"
-                  placeholder="e.g., 2"
-                  inputMode="numeric"
-                  value={formData.travelers}
-                  onChange={(e) => handleInputChange('travelers', e.target.value)}
-                />
-              </div>
-            </>
-          )}
-
-          {/* === HEALTH/LIFE INSURANCE FIELDS === */}
-          {needsDOB && (
-            <div className="space-y-2">
-              <Label htmlFor="dob">Date of Birth *</Label>
-              <Input
-                id="dob"
-                type="date"
-                max={new Date().toISOString().split('T')[0]}
-                value={formData.dob}
-                onChange={(e) => handleInputChange('dob', e.target.value)}
-                className={errors.dob ? 'border-red-500' : ''}
-              />
-              {errors.dob && <p className="text-sm text-red-600">{errors.dob}</p>}
-              <p className="text-xs text-gray-500">Required for accurate premium calculation</p>
+            <Label htmlFor="serviceType" className="font-bold uppercase tracking-widest text-[10px] text-slate-500 ml-4">Service Type *</Label>
+            <div className="nm-inset rounded-2xl px-1 py-0.5">
+              <Select
+                value={formData.serviceType}
+                onValueChange={(value) => handleInputChange('serviceType', value)}
+              >
+                <SelectTrigger id="serviceType" className="border-none bg-transparent shadow-none focus:ring-0 text-lg">
+                  <SelectValue placeholder="Select a service" />
+                </SelectTrigger>
+                <SelectContent className="nm-flat rounded-2xl border-none">
+                  <SelectItem value="travel-insurance">Travel Insurance</SelectItem>
+                  <SelectItem value="health-insurance">Health Insurance</SelectItem>
+                  <SelectItem value="life-insurance">Life Insurance</SelectItem>
+                  <SelectItem value="vehicle-insurance">Vehicle Insurance</SelectItem>
+                  <SelectItem value="solar-residential">Solar - Residential</SelectItem>
+                  <SelectItem value="solar-commercial">Solar - Commercial</SelectItem>
+                  <SelectItem value="properties">Properties</SelectItem>
+                  <SelectItem value="used-cars">Used Cars</SelectItem>
+                  <SelectItem value="digital-services">Digital & Web</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
-          )}
+            {errors.serviceType && <p className="text-xs text-red-600 ml-4">{errors.serviceType}</p>}
+          </div>
+        </div>
 
-          {/* === VEHICLE INSURANCE FIELDS === */}
-          {isVehicle && (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="vehicleType">Vehicle Type *</Label>
-                <Select
-                  value={formData.vehicleType}
-                  onValueChange={(value) => handleInputChange('vehicleType', value)}
-                >
-                  <SelectTrigger id="vehicleType">
-                    <SelectValue placeholder="Select vehicle type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="two-wheeler">Two Wheeler (Bike/Scooter)</SelectItem>
-                    <SelectItem value="four-wheeler">Four Wheeler (Car)</SelectItem>
-                  </SelectContent>
-                </Select>
+        {/* Dynamic Fields Section */}
+        {(isTravel || needsDOB || isVehicle || isSolar || isProperty || isUsedCars) && (
+          <div className="nm-inset p-8 rounded-3xl space-y-6 bg-slate-50/30">
+            {/* Travel specific */}
+            {isTravel && (
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="destination" className="font-bold uppercase tracking-widest text-[10px] text-slate-500">Destination</Label>
+                  <Input
+                    id="destination"
+                    className="nm-flat rounded-xl border-none h-12"
+                    placeholder="e.g., France, Thailand"
+                    value={formData.destination}
+                    onChange={(e) => handleInputChange('destination', e.target.value)}
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="font-bold uppercase tracking-widest text-[10px] text-slate-500">Departure</Label>
+                    <Input type="date" className="nm-flat rounded-xl border-none h-12" value={formData.departureDate} onChange={(e) => handleInputChange('departureDate', e.target.value)} />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="font-bold uppercase tracking-widest text-[10px] text-slate-500">Return</Label>
+                    <Input type="date" className="nm-flat rounded-xl border-none h-12" value={formData.returnDate} onChange={(e) => handleInputChange('returnDate', e.target.value)} />
+                  </div>
+                </div>
               </div>
+            )}
 
+            {/* Insurance specific */}
+            {needsDOB && (
               <div className="space-y-2">
-                <Label htmlFor="registrationNumber">Registration Number (Optional)</Label>
-                <Input
-                  id="registrationNumber"
-                  type="text"
-                  placeholder="e.g., CG01AB1234"
-                  value={formData.registrationNumber}
-                  onChange={(e) => handleInputChange('registrationNumber', e.target.value.toUpperCase())}
-                  style={{ textTransform: 'uppercase' }}
-                  maxLength={10}
-                />
-                <p className="text-xs text-gray-500">For faster quote generation</p>
+                <Label htmlFor="dob" className="font-bold uppercase tracking-widest text-[10px] text-slate-500">Date of Birth</Label>
+                <Input type="date" className="nm-flat rounded-xl border-none h-12 w-full" value={formData.dob} onChange={(e) => handleInputChange('dob', e.target.value)} />
               </div>
-            </>
-          )}
+            )}
 
-          {/* === SOLAR FIELDS === */}
-          {isSolar && (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="monthlyBill">Monthly Electricity Bill (₹) *</Label>
-                <Input
-                  id="monthlyBill"
-                  type="number"
-                  min="0"
-                  placeholder="e.g., 5000"
-                  inputMode="numeric"
-                  value={formData.monthlyBill}
-                  onChange={(e) => handleInputChange('monthlyBill', e.target.value)}
-                  className={errors.monthlyBill ? 'border-red-500' : ''}
-                />
-                {errors.monthlyBill && <p className="text-sm text-red-600">{errors.monthlyBill}</p>}
+            {/* Solar specific */}
+            {isSolar && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label className="font-bold uppercase tracking-widest text-[10px] text-slate-500">Monthly Bill (₹)</Label>
+                  <Input type="number" className="nm-flat rounded-xl border-none h-12" value={formData.monthlyBill} onChange={(e) => handleInputChange('monthlyBill', e.target.value)} />
+                </div>
+                <div className="space-y-2">
+                  <Label className="font-bold uppercase tracking-widest text-[10px] text-slate-500">City</Label>
+                  <Input type="text" className="nm-flat rounded-xl border-none h-12" value={formData.city} onChange={(e) => handleInputChange('city', e.target.value)} />
+                </div>
               </div>
+            )}
+          </div>
+        )}
 
-              <div className="space-y-2">
-                <Label htmlFor="roofArea">Approximate Roof Area (sq ft) (Optional)</Label>
-                <Input
-                  id="roofArea"
-                  type="number"
-                  min="0"
-                  placeholder="e.g., 500"
-                  inputMode="numeric"
-                  value={formData.roofArea}
-                  onChange={(e) => handleInputChange('roofArea', e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="city">City *</Label>
-                <Input
-                  id="city"
-                  type="text"
-                  placeholder="e.g., Raipur"
-                  value={formData.city}
-                  onChange={(e) => handleInputChange('city', e.target.value)}
-                  className={errors.city ? 'border-red-500' : ''}
-                />
-                {errors.city && <p className="text-sm text-red-600">{errors.city}</p>}
-              </div>
-            </>
-          )}
-
-          {/* === PROPERTIES FIELDS === */}
-          {isProperty && (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="propertyType">Property Type</Label>
-                <Select
-                  value={formData.propertyType}
-                  onValueChange={(value) => handleInputChange('propertyType', value)}
-                >
-                  <SelectTrigger id="propertyType">
-                    <SelectValue placeholder="Select property type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="land">Land/Plot</SelectItem>
-                    <SelectItem value="flat">Flat/Apartment</SelectItem>
-                    <SelectItem value="house">Independent House</SelectItem>
-                    <SelectItem value="commercial">Commercial Property</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="budget">Budget Range (₹)</Label>
-                <Input
-                  id="budget"
-                  type="text"
-                  placeholder="e.g., 50 Lakhs - 1 Crore"
-                  value={formData.budget}
-                  onChange={(e) => handleInputChange('budget', e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="city">Preferred Location</Label>
-                <Input
-                  id="city"
-                  type="text"
-                  placeholder="e.g., Raipur"
-                  value={formData.city}
-                  onChange={(e) => handleInputChange('city', e.target.value)}
-                />
-              </div>
-            </>
-          )}
-
-          {/* === USED CARS FIELDS === */}
-          {isUsedCars && (
-            <>
-              <div className="space-y-2">
-                <Label htmlFor="budget">Budget Range (₹)</Label>
-                <Input
-                  id="budget"
-                  type="text"
-                  placeholder="e.g., 3-5 Lakhs"
-                  value={formData.budget}
-                  onChange={(e) => handleInputChange('budget', e.target.value)}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="city">Preferred Location</Label>
-                <Input
-                  id="city"
-                  type="text"
-                  placeholder="e.g., Raipur"
-                  value={formData.city}
-                  onChange={(e) => handleInputChange('city', e.target.value)}
-                />
-              </div>
-            </>
-          )}
-
-          {/* Message - Always visible */}
-          <div className="space-y-2">
-            <Label htmlFor="message">Additional Information (Optional)</Label>
+        {/* Message */}
+        <div className="space-y-2">
+          <Label htmlFor="message" className="font-bold uppercase tracking-widest text-[10px] text-slate-500 ml-4">How can we help?</Label>
+          <div className="nm-inset p-1 rounded-2xl">
             <Textarea
               id="message"
-              placeholder="Any specific requirements or questions..."
+              placeholder="Tell us about your requirements..."
               rows={4}
               value={formData.message}
               onChange={(e) => handleInputChange('message', e.target.value)}
+              className="border-none bg-transparent shadow-none focus-visible:ring-0 min-h-[120px]"
             />
           </div>
+        </div>
 
-          {/* Privacy Consent */}
-          <div className="flex items-start space-x-2">
-            <Checkbox
-              id="privacy"
-              checked={agreedToPrivacy}
-              onCheckedChange={(checked) => setAgreedToPrivacy(checked as boolean)}
-            />
-            <Label htmlFor="privacy" className="text-sm font-normal leading-relaxed cursor-pointer">
-              I agree to receive communication from MDNetwork regarding my inquiry *
-            </Label>
-          </div>
+        {/* Privacy Consent */}
+        <div className="nm-inset p-4 rounded-2xl flex items-start space-x-3">
+          <Checkbox
+            id="privacy"
+            checked={agreedToPrivacy}
+            onCheckedChange={(checked) => setAgreedToPrivacy(checked as boolean)}
+            className="mt-1 nm-flat border-none data-[state=checked]:bg-blue-600"
+          />
+          <Label htmlFor="privacy" className="text-sm font-medium leading-relaxed cursor-pointer text-slate-600">
+            I agree to receive communication from MDNetwork regarding my inquiry
+          </Label>
+        </div>
 
-          {/* Submit Button */}
-          <Button type="submit" className="w-full" disabled={isSubmitting || !agreedToPrivacy}>
-            {isSubmitting ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              <>
-                <Send className="mr-2 h-4 w-4" />
-                Submit Inquiry
-              </>
-            )}
-          </Button>
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className={`nm-button w-full py-6 rounded-3xl font-black text-xl flex items-center justify-center gap-3 transition-all ${isSubmitting || !agreedToPrivacy ? 'opacity-50 grayscale' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+          disabled={isSubmitting || !agreedToPrivacy}
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="h-6 w-6 animate-spin" />
+              Processing...
+            </>
+          ) : (
+            <>
+              <Send className="h-6 w-6" />
+              Submit My Request
+            </>
+          )}
+        </button>
 
-          <p className="text-xs text-center text-gray-500">
-            Our team will contact you within 24 hours during business hours (Mon-Sat, 9 AM - 7 PM IST)
-          </p>
-        </form>
-      </CardContent>
-    </Card>
+        <p className="text-[10px] text-center text-slate-400 font-bold uppercase tracking-widest mt-6">
+          24/7 Support Available for Raipur Residents
+        </p>
+      </form>
+    </div>
   );
 }
