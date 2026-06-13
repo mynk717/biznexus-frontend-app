@@ -272,12 +272,12 @@
 
 /* Blog Content Hardening */
 .blog-content .cta-box {
-  @apply nm-flat p-8 rounded-[32px] text-center my-12 not-prose;
+  @apply nm-flat p-8 rounded-[32px] text-center my-12;
   background: hsl(var(--primary) / 0.05);
 }
 
 .blog-content .summary-box {
-  @apply nm-inset p-6 rounded-2xl mb-10 not-prose border-none;
+  @apply nm-inset p-6 rounded-2xl mb-10 border-none;
 }
 
 .blog-content .calculator-widget {
