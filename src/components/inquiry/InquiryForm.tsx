@@ -269,6 +269,14 @@ export default function InquiryForm({
     }
   };
 
+  // Determine which fields to show
+  const isTravel = formData.serviceType.includes('travel-insurance') || showDestination;
+  const needsDOB = formData.serviceType === 'health-insurance' || formData.serviceType === 'life-insurance';
+  const isVehicle = formData.serviceType === 'vehicle-insurance';
+  const isSolar = formData.serviceType === 'solar-residential' || formData.serviceType === 'solar-commercial';
+  const isProperty = formData.serviceType === 'properties';
+  const isUsedCars = formData.serviceType === 'used-cars';
+
   if (isSuccess) {
     return (
       <div className="nm-flat p-12 rounded-[40px] text-center max-w-2xl mx-auto">
