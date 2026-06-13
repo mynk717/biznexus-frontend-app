@@ -83,14 +83,14 @@ export default function ContactPage() {
 
           {/* Office Hours */}
           <div className="nm-inset p-8 rounded-[40px] bg-slate-50/50 space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 text-slate-700 dark:text-slate-200">
               <Clock className="h-5 w-5 text-blue-600" />
-              <h4 className="font-bold text-slate-800 dark:text-slate-200">Bhanpuri Office Hours</h4>
+              <h4 className="font-bold">Bhanpuri Office Hours</h4>
             </div>
-            <div className="space-y-2 text-sm text-slate-600">
+            <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex justify-between">
                 <span>Monday - Saturday</span>
-                <span className="font-bold">10:00 - 19:00</span>
+                <span className="font-bold text-slate-800 dark:text-slate-100">10:00 - 19:00</span>
               </div>
               <div className="flex justify-between text-red-500">
                 <span>Sunday</span>
@@ -105,7 +105,7 @@ export default function ContactPage() {
       <section className="nm-flat p-8 md:p-12 rounded-[50px] overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <Badge className="bg-orange-100 text-orange-700 nm-flat-sm border-none">Raipur HQ</Badge>
+            <Badge className="bg-orange-100 text-orange-700 nm-flat-sm border-none font-bold">Raipur HQ</Badge>
             <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100">Visit Our Command Center</h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               Located at the intersection of business and technology in Raipur. Join us for a face-to-face consultation regarding your portfolio.
@@ -115,15 +115,15 @@ export default function ContactPage() {
                 <MapPin className="h-6 w-6 text-red-500 flex-shrink-0" />
                 <div>
                   <p className="font-black text-slate-800 dark:text-slate-200">Marketing Dime (MKTDM)</p>
-                  <p className="text-sm text-slate-500">Raipur, Chhattisgarh, India</p>
+                  <p className="text-sm text-slate-500">Shop No 01, Bhatagaon Chok, Near Sapna Petrol Pump, Raipur, Chhattisgarh 492001</p>
                 </div>
               </div>
             </div>
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Marketing+Dime+Raipur" 
+              href="https://www.google.com/maps/place/?q=place_id:ChIJffjBqUivEmsRRruygYugQnU" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="nm-button inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold"
+              className="nm-button inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700"
             >
               Open in Google Maps <ArrowRight className="h-5 w-5" />
             </a>
@@ -131,7 +131,7 @@ export default function ContactPage() {
           
           <div className="nm-inset rounded-[40px] p-2 h-[450px] relative">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118983.24278484435!2d81.54581566412615!3d21.26252932375878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28de48a9c1f87d%3A0x7542a0bb81b2bb46!2sMarketing%20Dime!5e0!3m2!1sen!2sin!4v1718200000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.448283456789!2d81.6299!3d21.2127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd46b088b907%3A0x7542a0bb81b2bb46!2sMarketing%20Dime!5e0!3m2!1sen!2sin!4v1718280000000!5m2!1sen!2sin"
               width="100%" 
               height="100%" 
               style={{ border: 0, borderRadius: '36px' }} 
