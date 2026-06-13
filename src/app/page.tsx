@@ -150,166 +150,126 @@ export default function HomePage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Travel Insurance */}
-          <Card className="hover:shadow-lg transition-shadow border-2 hover:border-blue-500">
-            <CardHeader>
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Plane className="h-6 w-6 text-blue-600" />
-              </div>
-              <CardTitle>Travel Insurance</CardTitle>
-              <CardDescription>
-                Don't risk Schengen visa rejection — get compliant coverage from Raipur
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Schengen visa compliant</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Medical emergency coverage up to $1M</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Trip cancellation & baggage loss</span>
-                </li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button asChild className="w-full">
-                <Link href="/insurance/travel/international">
-                  Explore Plans
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <div className="nm-flat p-6 rounded-[32px] transition-all hover:scale-[1.02] border-none flex flex-col">
+            <div className="nm-flat-sm w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+              <Plane className="h-6 w-6 text-blue-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Travel Insurance</h3>
+            <p className="text-sm text-slate-600 mb-6 flex-grow">
+              Don't risk Schengen visa rejection — get compliant coverage from Raipur
+            </p>
+            <ul className="space-y-2 text-xs mb-8">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Schengen visa compliant</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Medical emergency up to $1M</span>
+              </li>
+            </ul>
+            <Button asChild className="nm-button bg-transparent border-none text-blue-700 hover:bg-blue-50 font-bold">
+              <Link href="/insurance/travel/international">
+                Explore Plans
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
 
           {/* Health Insurance */}
-          <Card className="hover:shadow-lg transition-shadow border-2 hover:border-red-500">
-            <CardHeader>
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                <Heart className="h-6 w-6 text-red-600" />
-              </div>
-              <CardTitle>Health Insurance</CardTitle>
-              <CardDescription>
-                Comprehensive medical coverage with Raipur's top cashless hospitals
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Cashless hospitalization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>No room rent capping</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Pre & post hospitalization</span>
-                </li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/insurance/health">
-                  View Details
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <div className="nm-flat p-6 rounded-[32px] transition-all hover:scale-[1.02] border-none flex flex-col">
+            <div className="nm-flat-sm w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+              <Heart className="h-6 w-6 text-red-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Health Insurance</h3>
+            <p className="text-sm text-slate-600 mb-6 flex-grow">
+              Comprehensive medical coverage with Raipur's top cashless hospitals
+            </p>
+            <ul className="space-y-2 text-xs mb-8">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Cashless hospitalization</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>No room rent capping</span>
+              </li>
+            </ul>
+            <Button asChild variant="outline" className="nm-button bg-transparent border-none text-slate-700 font-bold">
+              <Link href="/insurance/health">
+                View Details
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
 
           {/* Life Insurance */}
-          <Card className="hover:shadow-lg transition-shadow border-2 hover:border-green-500">
-            <CardHeader>
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-green-600" />
-              </div>
-              <CardTitle>Life Insurance</CardTitle>
-              <CardDescription>
-                Secure your family's financial future with Tata AIA plans
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Term & investment plans</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Tax benefits under 80C</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Flexible premium options</span>
-                </li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/insurance/life">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <div className="nm-flat p-6 rounded-[32px] transition-all hover:scale-[1.02] border-none flex flex-col">
+            <div className="nm-flat-sm w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+              <Shield className="h-6 w-6 text-green-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Life Insurance</h3>
+            <p className="text-sm text-slate-600 mb-6 flex-grow">
+              Secure your family's financial future with Tata AIA plans
+            </p>
+            <ul className="space-y-2 text-xs mb-8">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Term & investment plans</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Tax benefits under 80C</span>
+              </li>
+            </ul>
+            <Button asChild variant="outline" className="nm-button bg-transparent border-none text-slate-700 font-bold">
+              <Link href="/insurance/life">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
 
           {/* Vehicle Insurance */}
-          <Card className="hover:shadow-lg transition-shadow border-2 hover:border-purple-500">
-            <CardHeader>
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Car className="h-6 w-6 text-purple-600" />
-              </div>
-              <CardTitle>Vehicle Insurance</CardTitle>
-              <CardDescription>
-                Quick claim settlement and 24/7 roadside assistance in CG
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Comprehensive & third-party</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>Quick claim settlement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span>24/7 roadside assistance</span>
-                </li>
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/insurance/vehicle">
-                  Get Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <div className="nm-flat p-6 rounded-[32px] transition-all hover:scale-[1.02] border-none flex flex-col">
+            <div className="nm-flat-sm w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+              <Car className="h-6 w-6 text-purple-600" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">Vehicle Insurance</h3>
+            <p className="text-sm text-slate-600 mb-6 flex-grow">
+              Quick claim settlement and 24/7 roadside assistance in CG
+            </p>
+            <ul className="space-y-2 text-xs mb-8">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>Quick claim settlement</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                <span>24/7 roadside assistance</span>
+              </li>
+            </ul>
+            <Button asChild variant="outline" className="nm-button bg-transparent border-none text-slate-700 font-bold">
+              <Link href="/insurance/vehicle">
+                Get Quote
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Solar Solutions Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-yellow-50 -mx-4 px-4 py-16 scroll-mt-20" id="solar">
+      <section className="bg-transparent -mx-4 px-4 py-16 scroll-mt-20" id="solar">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <Badge
               variant="outline"
-              className="mb-4 border-orange-500 text-orange-700"
+              className="mb-4 border-orange-500 text-orange-700 nm-flat-sm px-4"
             >
               Solar Energy
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
               Raipur's Electricity Bills Are Rising — Cut Them by 90%
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -317,92 +277,64 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="border-2 border-orange-200 hover:border-orange-500 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Sun className="h-6 w-6 text-orange-600" />
-                </div>
-                <CardTitle>Residential Solar</CardTitle>
-                <CardDescription>
-                  Get up to ₹1,08,000 subsidy on 3kW systems in Chhattisgarh (Central + State stack)
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>₹78,000 Central + ₹30,000 State Subsidy</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>5-year warranty on panels</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Net metering support via CSPDCL</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>3-4 year payback period</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  asChild
-                  className="w-full bg-orange-600 hover:bg-orange-700"
-                >
-                  <Link href="/solar/residential">
-                    Explore Residential Solar
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="nm-flat p-8 rounded-[40px] border-none group transition-all hover:scale-[1.02]">
+              <div className="nm-flat-sm w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                <Sun className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Residential Solar</h3>
+              <p className="text-slate-600 mb-6">
+                Get up to ₹1,08,000 subsidy on 3kW systems in Chhattisgarh (Central + State stack)
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-2 text-sm">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <span>₹78,000 Central + ₹30,000 State Subsidy</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <span>Net metering support via CSPDCL</span>
+                </li>
+              </ul>
+              <Button
+                asChild
+                className="nm-button w-full bg-orange-600 text-white hover:bg-orange-700 border-none font-bold py-6 rounded-2xl"
+              >
+                <Link href="/solar/residential">
+                  Explore Residential Solar
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
 
-            <Card className="border-2 border-yellow-200 hover:border-yellow-500 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-yellow-600" />
-                </div>
-                <CardTitle>Commercial Solar</CardTitle>
-                <CardDescription>
-                  Industrial solar solutions for Raipur businesses
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Reduce operational costs by 80%</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Scalable systems 10kW to 1MW+</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Tax benefits & depreciation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Complete installation & AMC</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  asChild
-                  className="w-full bg-yellow-600 hover:bg-yellow-700"
-                >
-                  <Link href="/solar/commercial">
-                    Explore Commercial Solar
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+            <div className="nm-flat p-8 rounded-[40px] border-none group transition-all hover:scale-[1.02]">
+              <div className="nm-flat-sm w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6">
+                <Zap className="h-8 w-8 text-yellow-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Commercial Solar</h3>
+              <p className="text-slate-600 mb-6">
+                Industrial solar solutions for Raipur businesses
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-2 text-sm">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <span>Reduce operational costs by 80%</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <span>Scalable systems 10kW to 1MW+</span>
+                </li>
+              </ul>
+              <Button
+                asChild
+                className="nm-button w-full bg-yellow-500 text-slate-900 hover:bg-yellow-600 border-none font-bold py-6 rounded-2xl"
+              >
+                <Link href="/solar/commercial">
+                  Explore Commercial Solar
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

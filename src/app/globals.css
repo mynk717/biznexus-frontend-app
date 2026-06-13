@@ -220,37 +220,54 @@
   @apply bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg my-6;
 }
 
-/* Neumorphic Utility Classes */
+@layer base {
+  :root {
+    /* ... existing variables ... */
+    --nm-shadow-dark: #d1d5db;
+    --nm-shadow-light: #ffffff;
+  }
 
+  .dark {
+    /* ... existing variables ... */
+    --nm-shadow-dark: #020617;
+    --nm-shadow-light: #1e293b;
+  }
+}
+
+/* Neumorphic Utility Engine */
 .nm-flat {
   background: hsl(var(--background));
-  box-shadow: 20px 20px 60px #d9dae0, -20px -20px 60px #ffffff;
+  box-shadow: 10px 10px 20px var(--nm-shadow-dark), -10px -10px 20px var(--nm-shadow-light);
+  @apply transition-all duration-300;
+}
+
+.nm-flat-lg {
+  background: hsl(var(--background));
+  box-shadow: 20px 20px 60px var(--nm-shadow-dark), -20px -20px 60px var(--nm-shadow-light);
+}
+
+.nm-flat-sm {
+  background: hsl(var(--background));
+  box-shadow: 4px 4px 8px var(--nm-shadow-dark), -4px -4px 8px var(--nm-shadow-light);
 }
 
 .nm-inset {
   background: hsl(var(--background));
-  box-shadow: inset 20px 20px 60px #d9dae0, inset -20px -20px 60px #ffffff;
-}
-
-.dark .nm-flat {
-  background: #0f172a;
-  box-shadow: 20px 20px 60px #060a12, -20px -20px 60px #182442;
-}
-
-.dark .nm-inset {
-  background: #0f172a;
-  box-shadow: inset 20px 20px 60px #060a12, inset -20px -20px 60px #182442;
+  box-shadow: inset 6px 6px 12px var(--nm-shadow-dark), inset -6px -6px 12px var(--nm-shadow-light);
 }
 
 .nm-button {
   background: hsl(var(--background));
-  box-shadow: 6px 6px 12px #d9dae0, -6px -6px 12px #ffffff;
-  @apply transition-all active:shadow-inner;
+  box-shadow: 6px 6px 12px var(--nm-shadow-dark), -6px -6px 12px var(--nm-shadow-light);
+  @apply transition-all active:shadow-inner hover:scale-[1.02];
 }
 
-.dark .nm-button {
-  background: #0f172a;
-  box-shadow: 6px 6px 12px #060a12, -6px -6px 12px #182442;
+.nm-concave {
+  background: linear-gradient(145deg, var(--nm-shadow-dark), var(--nm-shadow-light));
+}
+
+.nm-convex {
+  background: linear-gradient(145deg, var(--nm-shadow-light), var(--nm-shadow-dark));
 }
 
 /* Ensure tables are responsive */
