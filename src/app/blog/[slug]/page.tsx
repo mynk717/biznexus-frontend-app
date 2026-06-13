@@ -1,4 +1,4 @@
-// src/app/blog/[slug]/page.tsx - FINAL FIX (No onError)
+// src/app/blog/[slug]/page.tsx - NEUMORPHIC UPGRADE
 
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -77,47 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      {/* Schema Markup - Article Schema */}
-      {post.schema?.articleSchema ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ 
-            __html: JSON.stringify(post.schema.articleSchema) 
-          }}
-        />
-      ) : (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ 
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BlogPosting',
-              headline: post.title,
-              description: post.excerpt,
-              image: post.imageUrl ? [`https://mdn.mktgdime.com${post.imageUrl}`] : [],
-              datePublished: post.publicationDate,
-              author: {
-                '@type': 'Person',
-                name: post.author.name,
-              },
-              publisher: {
-                '@type': 'Organization',
-                name: 'MDNetwork',
-                logo: {
-                  '@type': 'ImageObject',
-                  url: 'https://mdn.mktgdime.com/images/branding/logo.svg',
-                },
-              },
-              mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': `https://mdn.mktgdime.com/blog/${slug}`,
-              },
-            }) 
-          }}
-        />
-      )}
-
-      {/* Schema Markup - FAQ Schema */}
+      {/* Schema Markup for GSC Authority */}
       {post.schema?.faqSchema && (
         <script
           type="application/ld+json"
@@ -127,195 +87,151 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       )}
 
-      {/* Schema Markup - HowTo Schema */}
-      {post.schema?.howToSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ 
-            __html: JSON.stringify(post.schema.howToSchema) 
-          }}
-        />
-      )}
-
-      <article className="max-w-3xl mx-auto py-8 space-y-8">
-        <Link href="/blog" className="inline-flex items-center text-sm text-primary hover:underline mb-4">
+      <div className="flex flex-col gap-12 py-12">
+        <Link href="/blog" className="nm-button inline-flex items-center w-max px-6 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-blue-600 mb-4 ml-auto mr-auto md:ml-0 md:mr-auto">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Blog
+          Back to Knowledge Hub
         </Link>
 
-        <header className="space-y-4">
-          {/* Category Badge */}
-          {post.category && (
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className="capitalize">
-                {post.category}
-              </Badge>
-              {post.featured && (
-                <Badge className="bg-yellow-500">Featured</Badge>
-              )}
+        <article className="nm-flat-lg rounded-[60px] overflow-hidden bg-white dark:bg-slate-900 border-none">
+          {/* Featured Image Header */}
+          {post.imageUrl && (
+            <div className="relative aspect-[21/9] w-full nm-inset p-2">
+              <div className="relative w-full h-full overflow-hidden rounded-[50px]">
+                <Image
+                  src={post.imageUrl}
+                  alt={post.imageAlt || post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           )}
 
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            {post.title}
-          </h1>
-
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Avatar className="h-8 w-8">
-                {post.author.avatarUrl ? (
-                  <AvatarImage src={post.author.avatarUrl} alt={post.author.name} />
-                ) : (
-                  <UserCircle className="h-full w-full p-1" />
-                )}
-                <AvatarFallback>{authorInitials}</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-foreground">
-                  {post.author.name}
-                </span>
-                {post.author.credentials && (
-                  <span className="text-xs text-muted-foreground">
-                    {post.author.credentials}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-1 text-sm">
-              <CalendarDays className="h-4 w-4" />
-              <time dateTime={new Date(post.publicationDate).toISOString()}>
-                {formattedDate}
-              </time>
-            </div>
-
-            {post.readingTime && (
-              <div className="flex items-center gap-1 text-sm">
-                <Clock className="h-4 w-4" />
-                <span>{post.readingTime} min read</span>
-              </div>
-            )}
-          </div>
-
-          {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map(tag => (
-                <Badge key={tag} variant="secondary">{tag}</Badge>
-              ))}
-            </div>
-          )}
-        </header>
-
-        {/* Featured Image - Only show if URL exists */}
-        {post.imageUrl && (
-          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md bg-gray-100">
-            <Image
-              src={post.imageUrl}
-              alt={post.imageAlt || post.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
-
-        {/* Blog Content */}
-        <div className="blog-content prose prose-lg dark:prose-invert max-w-none">
-          {post.content.includes('[USED_CAR_CALCULATOR]') ? (
-            <>
-              <div 
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content.split('[USED_CAR_CALCULATOR]')[0] 
-                }} 
-              />
-              <div className="not-prose my-12">
-                <UsedCarCalculator />
-              </div>
-              <div 
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content.split('[USED_CAR_CALCULATOR]')[1] 
-                }} 
-              />
-            </>
-          ) : (
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          )}
-        </div>
-
-        <hr />
-
-        {/* Author Bio (if available) */}
-        {post.author.bio && (
-          <div className="author-box bg-muted/50 p-6 rounded-lg">
-            <div className="flex items-start gap-4">
-              <Avatar className="h-16 w-16">
-                {post.author.avatarUrl ? (
-                  <AvatarImage src={post.author.avatarUrl} alt={post.author.name} />
-                ) : (
-                  <UserCircle className="h-full w-full p-2" />
-                )}
-                <AvatarFallback className="text-xl">{authorInitials}</AvatarFallback>
-              </Avatar>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">About {post.author.name}</h3>
-                {post.author.credentials && (
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {post.author.credentials}
-                  </p>
-                )}
-                <p className="text-sm">{post.author.bio}</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <footer className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <SocialShareButtons title={post.title} excerpt={post.excerpt} />
-          <Link href="/blog" className="inline-flex items-center text-sm text-primary hover:underline">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
-          </Link>
-        </footer>
-      </article>
-
-      {/* Related Posts Section */}
-      {relatedPosts.length > 0 && (
-        <section className="max-w-5xl mx-auto py-12 border-t mt-12">
-          <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedPosts.map((relatedPost) => (
-              <Link 
-                key={relatedPost.id} 
-                href={`/blog/${relatedPost.slug}`}
-                className="group flex flex-col gap-4"
-              >
-                {relatedPost.imageUrl && (
-                  <div className="relative aspect-video overflow-hidden rounded-xl">
-                    <Image
-                      src={relatedPost.imageUrl}
-                      alt={relatedPost.imageAlt || relatedPost.title}
-                      fill
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                    />
+          <div className="max-w-4xl mx-auto px-8 md:px-16 py-16 space-y-12">
+            <header className="space-y-6">
+              <div className="flex flex-wrap items-center gap-4">
+                <Badge variant="outline" className="nm-flat-sm border-none bg-blue-50 text-blue-700 px-4 py-1 font-black uppercase tracking-widest text-[10px]">
+                  {post.category}
+                </Badge>
+                <div className="flex items-center gap-1 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                  <CalendarDays className="h-4 w-4" />
+                  {formattedDate}
+                </div>
+                {post.readingTime && (
+                  <div className="flex items-center gap-1 text-xs font-bold text-slate-400 uppercase tracking-widest border-l pl-4 border-slate-200">
+                    <Clock className="h-4 w-4" />
+                    <span>{post.readingTime} min read</span>
                   </div>
                 )}
-                <div className="space-y-2">
-                  <Badge variant="outline" className="capitalize text-[10px]">
-                    {relatedPost.category}
-                  </Badge>
-                  <h3 className="font-bold leading-tight group-hover:text-primary transition-colors">
-                    {relatedPost.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {relatedPost.excerpt}
-                  </p>
+              </div>
+
+              <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-slate-800 dark:text-white leading-[1.1]">
+                {post.title}
+              </h1>
+
+              <div className="nm-inset p-6 rounded-3xl flex items-center gap-4 bg-slate-50/50">
+                <Avatar className="h-12 w-12 nm-flat-sm border-none bg-white">
+                  {post.author.avatarUrl ? (
+                    <AvatarImage src={post.author.avatarUrl} alt={post.author.name} />
+                  ) : (
+                    <UserCircle className="h-full w-full p-1 text-blue-500" />
+                  )}
+                  <AvatarFallback>{authorInitials}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                  <span className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight">
+                    {post.author.name}
+                  </span>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                    {post.author.credentials || 'Technical Advisory'}
+                  </span>
                 </div>
+              </div>
+            </header>
+
+            {/* Blog Content */}
+            <div className="blog-content prose prose-lg dark:prose-invert max-w-none prose-headings:font-black prose-headings:tracking-tighter prose-p:leading-relaxed prose-a:text-blue-600 prose-a:font-bold prose-strong:text-slate-900 dark:prose-strong:text-white">
+              {post.content.includes('[USED_CAR_CALCULATOR]') ? (
+                <>
+                  <div dangerouslySetInnerHTML={{ __html: post.content.split('[USED_CAR_CALCULATOR]')[0] }} />
+                  <div className="not-prose my-16 nm-flat p-8 rounded-[40px]">
+                    <UsedCarCalculator />
+                  </div>
+                  <div dangerouslySetInnerHTML={{ __html: post.content.split('[USED_CAR_CALCULATOR]')[1] }} />
+                </>
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              )}
+            </div>
+
+            <hr className="border-slate-100" />
+
+            {/* Author Box Hardened */}
+            {post.author.bio && (
+              <div className="nm-inset p-8 md:p-12 rounded-[40px] bg-slate-50/30">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-8 text-center md:text-left">
+                  <div className="nm-flat w-24 h-24 rounded-full flex items-center justify-center bg-white flex-shrink-0 border-4 border-slate-50 shadow-xl">
+                    <UserCircle className="h-16 w-16 text-blue-600" />
+                  </div>
+                  <div>
+                    <Badge className="bg-blue-600 mb-4">Verified Author</Badge>
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">About {post.author.name}</h3>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed italic italic">
+                      "{post.author.bio}"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <footer className="flex flex-col sm:flex-row justify-between items-center gap-8 pt-8">
+              <div className="nm-flat px-8 py-4 rounded-2xl bg-white/50">
+                 <SocialShareButtons title={post.title} excerpt={post.excerpt} />
+              </div>
+              <Link href="/blog" className="nm-button px-8 py-4 rounded-2xl font-black text-blue-600 bg-white">
+                Finish Reading
               </Link>
-            ))}
+            </footer>
           </div>
-        </section>
-      )}
+        </article>
+
+        {/* Related Posts Hardened */}
+        {relatedPosts.length > 0 && (
+          <section className="space-y-12 mt-12">
+            <h2 className="text-3xl font-black tracking-tighter text-slate-800 text-center">Continue Your Research</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedPosts.map((relatedPost) => (
+                <Link 
+                  key={relatedPost.id} 
+                  href={`/blog/${relatedPost.slug}`}
+                  className="nm-flat p-4 rounded-[40px] group transition-all hover:scale-105"
+                >
+                  {relatedPost.imageUrl && (
+                    <div className="relative aspect-video overflow-hidden rounded-[32px] nm-inset p-1 mb-4">
+                      <Image
+                        src={relatedPost.imageUrl}
+                        alt={relatedPost.imageAlt || relatedPost.title}
+                        fill
+                        className="object-cover rounded-[30px] transition duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4 space-y-3">
+                    <Badge variant="outline" className="nm-flat-sm border-none bg-white text-[10px] font-bold px-3 uppercase tracking-widest">
+                      {relatedPost.category}
+                    </Badge>
+                    <h3 className="font-black leading-tight text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      {relatedPost.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </>
   );
 }

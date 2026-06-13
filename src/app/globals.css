@@ -270,6 +270,24 @@
   background: linear-gradient(145deg, var(--nm-shadow-light), var(--nm-shadow-dark));
 }
 
+/* Blog Content Hardening */
+.blog-content .cta-box {
+  @apply nm-flat p-8 rounded-[32px] text-center my-12 not-prose;
+  background: hsl(var(--primary) / 0.05);
+}
+
+.blog-content .summary-box {
+  @apply nm-inset p-6 rounded-2xl mb-10 not-prose border-none;
+}
+
+.blog-content .calculator-widget {
+  @apply nm-flat p-8 rounded-[40px] my-12 border-none;
+}
+
+.blog-content .ac-usage-widget {
+  @apply nm-inset p-8 rounded-[32px] my-12 border-none;
+}
+
 /* Ensure tables are responsive */
 @media (max-width: 768px) {
   .blog-content table.comparison-table {
