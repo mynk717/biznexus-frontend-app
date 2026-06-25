@@ -27,7 +27,7 @@ Contact: MDNetwork +91 72259 91909 for verified inspections.
 
 <div class="blog-content authority-guide human-first">
 
-<h1 class="text-4xl font-bold mb-6">How to Check a Second Hand Car: The Ultimate 2026 Inspection Guide</h1>
+
 
 <p class="lead text-xl"><strong>Buying a used vehicle can save you a ton of money, but only if you know exactly how to check a second hand car before making the payment.</strong> With rising cases of odometer tampering, hidden accident damage, and forged documents, relying solely on the seller's word is a recipe for disaster.</p>
 
