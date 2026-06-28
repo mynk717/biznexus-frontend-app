@@ -101,6 +101,20 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
       </summary>
       <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">You must apply via the PM Surya Ghar portal and select a CREDA-empanelled vendor like MDNetwork. The empanelled vendor handles the technical installation and the paperwork required to release the state and central subsidies.</p>
     </details>
+    <details class="group border-b dark:border-slate-700 pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600 dark:text-slate-100">
+        Does CREDA provide subsidies for commercial businesses in Raipur?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">The primary rooftop subsidies under PM Surya Ghar are reserved for residential homes and housing societies. However, CREDA often releases separate schemes and accelerated depreciation benefits for commercial/industrial setups.</p>
+    </details>
+    <details class="group border-b dark:border-slate-700 pb-4">
+      <summary class="font-bold cursor-pointer list-none flex justify-between items-center group-open:text-blue-600 dark:text-slate-100">
+        Is it mandatory to use a CREDA-empanelled vendor?
+        <span class="transition-transform group-open:rotate-180">▼</span>
+      </summary>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes! If you want to claim the extra state subsidy (up to ₹30,000 in Chhattisgarh), the installation must be executed by a vendor officially registered and empanelled with CREDA.</p>
+    </details>
   </div>
 
   <div class="cta-box bg-slate-50 text-slate-900 p-12 rounded-3xl text-center my-16 shadow-2xl border border-slate-200 not-prose">
