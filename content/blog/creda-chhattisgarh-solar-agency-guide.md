@@ -104,8 +104,8 @@ schema: {"faqSchema": {"@context": "https://schema.org", "@type": "FAQPage", "ma
   </div>
 
   <div class="cta-box bg-slate-50 text-slate-900 p-12 rounded-3xl text-center my-16 shadow-2xl border border-slate-200 not-prose">
-    <p class="text-3xl font-black mb-4">Want Solar Without the Paperwork Hassle?</p>
-    <p class="text-slate-600 mb-8 max-w-2xl mx-auto text-lg">MDNetwork partners with CREDA-empanelled system integrators to guarantee your double-subsidy. We handle the CSPDCL net-metering and CREDA documentation 100%.</p>
+    <p class="text-3xl font-black mb-4 text-slate-900 dark:text-slate-900">Want Solar Without the Paperwork Hassle?</p>
+    <p class="text-slate-700 dark:text-slate-700 mb-8 max-w-2xl mx-auto text-lg">MDNetwork partners with CREDA-empanelled system integrators to guarantee your double-subsidy. We handle the CSPDCL net-metering and CREDA documentation 100%.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="/contact" class="bg-blue-600 text-white px-10 py-5 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">Get a Free Solar Assessment</a>
       <a href="tel:+917225991909" class="bg-white text-slate-800 px-10 py-5 rounded-xl font-bold hover:bg-slate-100 transition border border-slate-200 shadow-sm">Talk to our Raipur Team</a>
